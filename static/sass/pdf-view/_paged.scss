@@ -1,0 +1,99 @@
+/* Pagedjs/paged media specific styles */
+
+@page {
+  size: 110mm 200mm;
+  margin-top: 15mm;
+  margin-right: 10mm;
+  margin-bottom: 25mm;
+  margin-left: 15mm;
+  /* bleed: 6mm;
+   marks: crop cross; */
+	background-color: white;
+  @footnote {
+    float: bottom;
+  }
+	@bottom-center {
+    content: counter(page);
+  }
+}
+
+@page {
+	bleed: 4mm;
+	marks: crop;
+}
+
+@page:left {
+	margin-right: 15mm;
+  margin-left: 10mm;
+}
+
+@page:right {
+  @top-left { 
+		content: string(chapterTitle);
+  }
+	@top-right {
+		content: string(articleTitle);
+	}
+}
+
+
+@page:first {
+  @top-left {
+    content: "";
+  }
+  @bottom-right-corner {
+    content: ""; 
+  }
+}
+
+.pagedjs_sheet {
+	z-index: 1;
+}
+
+.pagedjs_margin-bottom-left-corner,
+.pagedjs_margin-bottom-right-corner {
+  font-size: 1.5rem;
+  font-family: Ortica, serif;
+}
+
+.pagedjs_footnote_area {
+	margin-top: 1rem;
+}
+
+.pagedjs_footnote_content {
+	padding-top: 5px;
+}
+
+.pagedjs_pages .pagedjs_blank_page {
+	.pagedjs_margin-bottom-center, .pagedjs_margin-top-center {
+		.pagedjs_margin-content {
+			display: none;
+		}
+	} 
+} 
+
+
+/* Setting variables */
+
+h1,
+.chapter-title {
+	string-set: chapterTitle content(text);
+}
+
+
+h2 {
+  counter-increment: countChapter;
+	string-set: articleTitle content(text);
+	counter-set: footnote-marker 0 footnote 0;
+	string-set: author "";
+}
+
+span.author {
+	string-set: author content(text);
+}
+
+/* Move the footnotes to the footer */
+span.footnote {
+  float: footnote;
+}
+

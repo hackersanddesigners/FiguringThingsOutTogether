@@ -1,0 +1,13 @@
+/* Fonts */
+
+@include font("NotCourierSans", "../fonts/NotCourierSans");
+@include font("NotCourierSans", "../fonts/NotCourierSans-Bold", $weight: 'bold');
+
+@mixin font-notcouriersans( $weight: normal) {
+	font-family: Authentic, sans-serif;
+	font-weight: $weight;
+}
+
+.font-notcouriersans {
+	@include font-authentic();
+}

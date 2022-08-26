@@ -1,0 +1,29 @@
+@use 'sass:math';
+@import "../vendor/plumber";
+
+// Baseline correction values for each font. 
+$baseline-ortica: 0.569;
+$baseline-combine: 0.524;
+$baseline-authentic: 0.522;
+
+@include plumber-set-defaults(
+    $grid-height: 6pt,
+    $font-size: 2,
+    $line-height: 2,
+    $leading-top: 2,
+    $leading-bottom: 2,
+		$baseline: $baseline-ortica,
+);
+
+@function strip-units($number) {
+  @return math.div($number, ($number * 0 + 1));
+}
+
+/*
+baseline increments in steps of 6pt,
+so 2 units in plumber correspond to one lineheight. 
+*/
+@function pt($size_in_pt) {
+  $result: strip-units(calc($size_in_pt / 6));
+  @return $result;
+}

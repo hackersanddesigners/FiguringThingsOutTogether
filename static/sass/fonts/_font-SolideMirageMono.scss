@@ -1,0 +1,11 @@
+/* Fonts */
+
+@include font("SolideMirageMono", "../fonts/SolideMirageMono");
+
+@mixin font-solidemiragemono() {
+	font-family: SolideMirageMono, sans-serif;
+}
+
+.font-solidemiragemono {
+	@include font-solidemiragemono();
+}

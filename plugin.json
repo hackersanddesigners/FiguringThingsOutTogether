@@ -1,0 +1,10 @@
+{
+	"id": "FiguringThingsOutTogether",
+	"domain": "FiguringThingsOutTogether",
+	"plugin": {
+			"name": "FiguringThingsOutTogether",
+			"author": "Heerko",
+			"summary": "Custom Wiki2print book design"
+	},
+	"releases": []
+}

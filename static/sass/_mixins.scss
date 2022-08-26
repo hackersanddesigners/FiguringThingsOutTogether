@@ -1,0 +1,12 @@
+@mixin font($fontname, $filename, $weight: 'normal') {
+	@font-face {
+		font-family: $fontname;
+		src: url($filename + ".eot");
+		src: url($filename + ".eot?#iefix") format('embedded-opentype'),
+		url($filename + ".woff") format('woff');
+		// url($filename + ".ttf") format('truetype'),
+		// url($filename + ".svg#" + $fontname) format('svg');
+		font-weight: $weight;
+		font-style: normal;
+	};
+}

@@ -1,0 +1,11 @@
+/* Fonts */
+
+@include font("SolideMirageEtroit", "../fonts/SolideMirageEtroit");
+
+@mixin font-solidemirageetroit() {
+	font-family: SolideMirageEtroit, sans-serif;
+}
+
+.font-solidemirageetroit {
+	@include font-solidemirageetroit();
+}

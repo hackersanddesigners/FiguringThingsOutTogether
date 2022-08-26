@@ -1,0 +1,10 @@
+
+@include font("le-murmure", "../fonts/le-murmure");
+
+@mixin font-le-murmure() {
+	font-family: le-murmure, sans-serif;
+}
+
+.font-le-murmure {
+	@include font-le-murmure();
+}

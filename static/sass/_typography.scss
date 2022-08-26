@@ -1,0 +1,83 @@
+/* Fonts & typography & baseline grid 
+the baseline grid is tightly coupled (by Plumber) to 
+the typeface so you find them combined in this file.
+
+It intentionally verbose in declaring the styles to
+make it easier to adapt. 
+*/
+
+@import "fonts/fonts";
+
+body {
+	@include font-authentic(90);
+}
+
+.pagedjs_page_content {
+	orphans: 2;
+	widows: 2;
+	text-indent: 0.5cm;
+}
+
+
+h1 {
+	// @include font-combine();
+}
+
+h2 {
+	// @include font-combine();
+	text-align: center;
+}
+
+h3 {
+	@include font-authentic(150);
+	text-align: center;
+	&:first-child {
+		margin-top: 0;
+		padding-top: 0;
+	}
+}
+
+blockquote {
+	//@include font-combine;
+	margin-left: 1cm;
+	margin-right: 1cm;
+	> p {
+		margin: 0;
+		padding: 0;
+		text-indent: 0;
+	}
+}
+
+sup,
+.footnote {
+	@include font-authentic($weight:150);
+	vertical-align: top; 
+	position: relative; 
+	top: -0.2em;
+	// margin-left: -0.5pt;
+	&:after {
+		font-variant-position: initial;
+	}
+	// font-size: 7pt;
+	// line-height: 8.8pt;
+
+}
+.full-spread-image-caption,
+.thumbcaption {
+	@include font-authentic(90);
+	text-align: center;
+}	
+.full-spread-image-caption {
+	line-height: 8pt;
+	text-align: left;
+}
+
+
+	/* we have to disable the baseline grid margin/padding 
+	that Plumber sets above for the first element on a page */
+	.chapter > p:first-child {
+		margin-top: 0;
+		padding-top: 0;
+		// text-indent: 0 !important;
+		// commented after revisions from astrit.
+	}
