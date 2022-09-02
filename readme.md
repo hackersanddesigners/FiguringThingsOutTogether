@@ -1,4 +1,4 @@
-# Book Starter
+# Figuring Things Out Together Publication 
 
 [Wiki2Print](https://github.com/hackersanddesigners/wiki2print) allows for inline styling using the CSS button in the editor, but this may get cumbersome in larger projects. This repository is a starting point for creating the styling of a book in a more 'regular' webdevelopment workflow, using Sass, Plumber (for the baseline grid), Gulp for compilation and Browser-sync for live reloading. It is installed as a Flask plugin.
 
