@@ -50,6 +50,21 @@
 	z-index: 1;
 }
 
+
+.article-contents {
+	columns: 2;
+	display: block;
+
+	// .thumb,
+	a.image {
+		column-span: all;
+	}
+
+	h3 {
+		column-span: all;
+	}
+}
+
 .pagedjs_margin-bottom-left-corner,
 .pagedjs_margin-bottom-right-corner {
   font-size: 1.5rem;
@@ -75,7 +90,7 @@
 
 /* Setting variables */
 
-h1,
+h2,
 .chapter-title {
 	string-set: chapterTitle content(text);
 }
@@ -83,9 +98,9 @@ h1,
 
 h2 {
   counter-increment: countChapter;
-	string-set: articleTitle content(text);
+	// string-set: articleTitle content(text);
 	counter-set: footnote-marker 0 footnote 0;
-	string-set: author "";
+	// string-set: author "";
 }
 
 span.author {

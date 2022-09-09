@@ -48,17 +48,17 @@ Setting named-pages
 https://pagedjs.org/documentation/8-named-page/
 */
 
-h1 {
-	page: chapter-title;
-}
+// h1 {
+// 	page: chapter-title;
+// }
 
-.empty-page {
-	page: empty-page !important;
-}
+// .empty-page {
+// 	page: empty-page !important;
+// }
 
-.title-page {
-	page: chapter-title;
-}
+// .title-page {
+// 	page: chapter-title;
+// }
 
 /* Prevent superscript from messing up the line-height */
 sup { vertical-align: top; position: relative; top: -0.5em; }

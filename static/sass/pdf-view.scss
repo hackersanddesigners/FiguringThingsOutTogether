@@ -24,7 +24,7 @@ body {
   color: var(--color-main);
 	margin: 0;
 	padding: 0;
-	background-color: blue;
+	// background-color: blue;
 }
 
 img {
@@ -53,7 +53,7 @@ https://pagedjs.org/documentation/8-named-page/
 */
 
 h1 {
-	page: chapter-title;
+	// page: chapter-title;
 }
 
 .empty-page {
@@ -61,7 +61,7 @@ h1 {
 }
 
 .title-page {
-	page: chapter-title;
+	// page: chapter-title;
 }
 
 /* Prevent superscript from messing up the line-height */
@@ -70,6 +70,13 @@ sup { vertical-align: top; position: relative; top: -0.5em; }
 a {
   text-decoration: none;
   color: black;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+h2{
+
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
@@ -99,20 +106,20 @@ a.image {
 }
 
 
-@page chapter-title {
-	@top-center {
-    content: "";
-  }
-	@bottom-center {
-		content: "";
-	}
-	@top-left {
-    content: "";
-  }
-	@top-right {
-    content: "";
-  }
-}
+// @page chapter-title {
+// 	@top-center {
+//     content: "";
+//   }
+// 	@bottom-center {
+// 		content: "";
+// 	}
+// 	@top-left {
+//     content: "";
+//   }
+// 	@top-right {
+//     content: "";
+//   }
+// }
 
 
 /* 

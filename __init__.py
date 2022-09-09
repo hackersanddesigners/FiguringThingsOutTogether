@@ -14,6 +14,7 @@ and the flask_plugin docs:
 https://github.com/flask-plugin/flask-plugin
 """
 
+from pprint import pprint
 import flask
 from flask import request
 from flask_plugin import Plugin
@@ -55,21 +56,21 @@ def pagedjs(pagename):
 
 @plugin.route('/html/', methods=['GET', 'POST'])
 def inspect():
-	# from pprint import pprint
-	# pprint(vars(plugin.name))
+  # from pprint import pprint
+  # pprint(vars(plugin.name))
 
-	publication = get_publication(
-		WIKI,
-		SUBJECT_NS,
-		STYLES_NS,
-		plugin.name,
-	)
-	return flask.render_template(
-		'web-view.html', 
-		title = plugin.name,
-		html  = publication['html'],
-		css   = publication['css']
-	)
+  publication = get_publication(
+    WIKI,
+    SUBJECT_NS,
+    STYLES_NS,
+    plugin.name,
+  )
+  return flask.render_template(
+    'web-view.html', 
+    title = plugin.name,
+    html  = publication['html'],
+    css   = publication['css']
+  )
 
 # The filters in this plugin work on request time
 # this endpoint returns the filtered html, 
@@ -96,9 +97,47 @@ def filter(html):
   print("filtering...")	
   soup = BeautifulSoup(html, 'html.parser')
   soup = imageSpreads(soup)
+  soup = wrapChapters(soup)
   html = str(soup) #soup.prettify() # dont use prettify. It causes whitespace in layout in some instances #
   html = removeSrcSets(html)
   return html
+
+# Searches in the document for h2 tags and author divs (immediatly following an h2!)
+# All content besides those two get wrapped in a <div class="article-contents"> 
+def wrapChapters(soup):
+  chapter_name = ""
+  last_tag_was_h2 = False
+  
+  main = soup.find("div", class_="mw-parser-output")
+  new_main = soup.new_tag('div', **{"class": 'mw-parser-output wrapped'}) 
+  contents = soup.new_tag('div', **{"class": 'article-contents ' + chapter_name}) 
+  children = iter(main.children)
+  
+  for child in children:
+    if( last_tag_was_h2 ): # check if element immediately after h2 has a author div.
+      if(child.name == None): # only tags
+        continue
+      auth = child.find_all(class_="author") 
+      if len( auth ) > 0:
+        new_main.append(copy.copy(child)) # append it to the doc
+        last_tag_was_h2 = False
+        next(children)
+        continue # next element in the loop
+      
+    if(child.name == 'h2'):
+      chapter_name = re.sub('\W+','-', child.find(text=True).lower())
+      new_main.append(copy.copy(contents)) # append the previous content tag. TODO: don't do this if contents is empty :)
+      new_main.append(copy.copy(child)) # append the h2 element as well
+      contents = soup.new_tag('div', **{"class": 'article-contents ' + chapter_name}) # new contents element for next chapter
+      chapter_name = ""
+      last_tag_was_h2 = True
+    else:
+      contents.append(copy.copy(child))
+      
+  new_main.append(contents) # append the previous content tag. TODO: don't do this if contents is empty :)
+  main.replace_with(new_main) # replace with the new structure
+  
+  return soup 
 
 # somethings wrong with the srcsets from the wiki. We only need originals anyway.
 def removeSrcSets(html):
