@@ -32,7 +32,7 @@
 		content: string(chapterTitle);
   }
 	@top-right {
-		content: string(articleTitle);
+		content: string(author);
 	}
 }
 
@@ -55,7 +55,7 @@
 	columns: 2;
 	display: block;
 
-	// .thumb,
+	.thumb,
 	a.image {
 		column-span: all;
 	}
@@ -100,15 +100,15 @@ h2 {
   counter-increment: countChapter;
 	// string-set: articleTitle content(text);
 	counter-set: footnote-marker 0 footnote 0;
-	// string-set: author "";
+	string-set: author "";
 }
 
 span.author {
 	string-set: author content(text);
 }
 
-/* Move the footnotes to the footer */
-span.footnote {
-  float: footnote;
-}
+// /* Move the footnotes to the footer */
+// span.footnote {
+//   float: footnote;
+// }
 
