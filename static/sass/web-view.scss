@@ -12,15 +12,16 @@ https://jamonserrano.github.io/plumber-sass/
 @import "debug";
 
 /* General styling */
-html {
-  font-size: 62.5%;
-}
+// html {
+// 	font-size: 62.5%;
+// }
 
 body {
-  color: var(--color-main);
+	color: var(--color-main);
 	margin: 0;
 	padding: 0;
-	background-color: salmon;
+	display: flex;
+	align-items: center;
 }
 
 img {
@@ -30,17 +31,142 @@ img {
 	max-height: 80%;
 	border-radius: 1rem;
 	display: block;
-	margin: 12pt auto;	
+	margin: 12pt auto;
 }
 
-h3 + p {
+h3+p {
 	text-indent: 0 !important;
 }
 
 .pagedjs_pages .chapter.invert-type {
-	h2 + p {
+	h2+p {
 		text-indent: 0 !important;
 	}
+}
+
+//contents block
+.toclimit-3{
+	width: 20% !important;
+	background-color: #b19cd9;
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	height: 100vh;
+	margin-left: 0!important;
+}
+
+//articles block
+.mw-parser-output{
+	// display: none;
+	position: relative;
+	width: 75%;
+	z-index: 9;
+	background-color: white;
+
+	box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+	-webkit-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+	-moz-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+
+	overflow: scroll;
+}
+
+//messsing around
+.wrap-btn{
+	position: fixed;
+	z-index: 948293;
+}
+
+div{
+	border: solid;
+}
+
+.tab{
+	z-index: 9584594;
+    position: absolute;
+}
+
+//scriptotheek
+
+// exclude child div from parent div
+// #webview > div:not(.scriptothek) {
+// 	display: none;
+// }
+
+.content > div:not(.toc) {
+	z-index: 9;
+	left: 20%;
+}
+
+h1,p{
+	padding: 10px;
+
+}
+
+.categs{
+	width: 100%;
+	display: inline-flex;
+}
+
+.scriptothek{
+	position: fixed;
+	width: 25%;
+	height: 100vh;
+
+	margin: 0;
+	padding: 0;
+
+	right: 0!important;
+	top: 0;
+	background-color: yellow;
+
+	overflow: scroll;
+}
+
+.script-img{
+	margin-bottom: 5%;
+
+}
+
+.scriptinner{
+	display: inline-flex;
+	width: 100%;
+}
+
+.item{
+	width: 30%;
+	padding: 5px;
+	hyphens: auto;
+}
+
+.scriptimg-wrapper{
+	border: solid;
+}
+
+.scriptimage img{
+	filter: opacity(0.0);
+	color: blue;
+	margin: 0pt!important;
+	max-height: none!important;
+}
+
+.change-behind{
+	position: fixed;
+	width: 73%;
+	left: 20%;
+	z-index: 8934239;
+	font-size: 50px;
+	padding-right: 5px;
+
+	background-color: transparent;
+	border: none;
+
+	text-align: right;
+	cursor: pointer;
+}
+
+.change-behind:hover{
+	color: blue;
 }
 
 /*
@@ -56,19 +182,27 @@ h1 {
 	page: empty-page !important;
 }
 
+@page empty-page{
+	background-color: blue!important;
+}
+
 .title-page {
 	page: chapter-title;
 }
 
 /* Prevent superscript from messing up the line-height */
-sup { vertical-align: top; position: relative; top: -0.5em; }
+sup {
+	vertical-align: top;
+	position: relative;
+	top: -0.5em;
+}
 
 a {
-  text-decoration: none;
-  color: black;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word;
+	text-decoration: none;
+	color: black;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-word;
 }
 
 /* Generic css */
@@ -89,6 +223,7 @@ a.image {
 	padding: 0;
 	text-indent: 0;
 	text-align: center;
+
 	a {
 		display: block;
 	}
@@ -97,17 +232,20 @@ a.image {
 
 @page chapter-title {
 	@top-center {
-    content: "";
-  }
+		content: "";
+	}
+
 	@bottom-center {
 		content: "";
 	}
+
 	@top-left {
-    content: "";
-  }
+		content: "";
+	}
+
 	@top-right {
-    content: "";
-  }
+		content: "";
+	}
 }
 
 
@@ -124,7 +262,8 @@ a.image {
 
 
 /* For placement op p5js sketch relative to the page */
-.pagedjs_page, .pagedjs_pagebox {
+.pagedjs_page,
+.pagedjs_pagebox {
 	position: relative;
 }
 
@@ -141,4 +280,3 @@ a.image {
 .thumbinner.image-container {
 	width: auto !important;
 }
-
