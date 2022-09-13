@@ -8,6 +8,7 @@
 function renderSketch(page, num ){
 
 	const s = (sketch) => {
+		return // for now. Remove me.
 		let canvas, el;
 		let dimensions = {};
 		sketch.setup = () => {

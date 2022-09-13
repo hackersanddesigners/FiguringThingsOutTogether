@@ -174,14 +174,15 @@ Setting named-pages
 https://pagedjs.org/documentation/8-named-page/
 */
 
-h1 {
-	page: chapter-title;
-}
+// h1 {
+// 	page: chapter-title;
+// }
 
-.empty-page {
-	page: empty-page !important;
-}
+// .empty-page {
+// 	page: empty-page !important;
+// }
 
+<<<<<<< HEAD
 @page empty-page{
 	background-color: blue!important;
 }
@@ -189,6 +190,11 @@ h1 {
 .title-page {
 	page: chapter-title;
 }
+=======
+// .title-page {
+// 	page: chapter-title;
+// }
+>>>>>>> 1b3812ad59d0d73283e2545daac4a3e2e4d48108
 
 /* Prevent superscript from messing up the line-height */
 sup {

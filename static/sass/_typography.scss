@@ -9,24 +9,28 @@ make it easier to adapt.
 @import "fonts/fonts";
 
 body {
-	@include font-authentic(90);
+	@include font-authentic(60);
+	font-size: 12px;
+	// font-weight: normal;
 }
 
 .pagedjs_page_content {
 	orphans: 2;
 	widows: 2;
-	text-indent: 0.5cm;
+	// text-indent: 0.5cm;
 }
 
-
-h1 {
-	// @include font-combine();
-}
 
 h2 {
 	// @include font-combine();
-	text-align: center;
+	@include font-solidemirageetroit();
+	font-size: 72px;
 }
+
+// h2 {
+// 	// @include font-combine();
+// 	text-align: center;
+// }
 
 h3 {
 	@include font-authentic(150);
