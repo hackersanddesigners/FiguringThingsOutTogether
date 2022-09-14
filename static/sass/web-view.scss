@@ -78,7 +78,7 @@ h3+p {
 }
 
 div{
-	border: solid;
+	border: solid 1px;
 }
 
 .tab{
@@ -95,12 +95,15 @@ div{
 
 .content > div:not(.toc) {
 	z-index: 9;
-	left: 20%;
+	left: 23%;
 }
 
-h1,p{
+h1,p,h2{
 	padding: 10px;
+}
 
+h2{
+	font-size: inherit;
 }
 
 .categs{
@@ -108,7 +111,7 @@ h1,p{
 	display: inline-flex;
 }
 
-.scriptothek{
+.Demo-script{
 	position: fixed;
 	width: 25%;
 	height: 100vh;
@@ -178,11 +181,10 @@ https://pagedjs.org/documentation/8-named-page/
 // 	page: chapter-title;
 // }
 
-// .empty-page {
+// .empty-page 
 // 	page: empty-page !important;
 // }
 
-<<<<<<< HEAD
 @page empty-page{
 	background-color: blue!important;
 }
@@ -190,11 +192,9 @@ https://pagedjs.org/documentation/8-named-page/
 .title-page {
 	page: chapter-title;
 }
-=======
 // .title-page {
 // 	page: chapter-title;
 // }
->>>>>>> 1b3812ad59d0d73283e2545daac4a3e2e4d48108
 
 /* Prevent superscript from messing up the line-height */
 sup {

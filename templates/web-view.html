@@ -29,25 +29,17 @@
       {{ html | safe }}
     </div>
 
-    <div class='test'></div>
-    <div class='test'></div>
-    <div class='test'></div>
-    <div class='test'></div>
-
-  <!-- SCRIPTOTHEEK -->
-    <div class="scriptothek">
-      <!-- #TODO: 
-        1.make a demo version in the wiki of scriptothek
-        2.make this a block that retreives data from the wiki; has to be a valid Python identifier -->
+  <!-- SCRIPTOTHEEK -- old version-->
+    <!-- <div class="scriptothek">
       <h2 id="mw-toc-heading">Scriptothek</h2>
       <div class="categs">
         <span class="item">Name</span>
         <span class="item">Thumbnail</span>
         <span class="item">Size</span>
         <span class="item">Description</span>
-      </div>
+      </div> -->
 
-      <div class="script-img">
+      <!-- <div class="script-img">
         <div class="scriptinner">
           <div class="item thumbcaption"><p>Platframe01.png</p>
             <div class="magnify"><a class="internal" href="/wiki/File:Platframe01.png" title="Enlarge"></a></div>
@@ -64,7 +56,7 @@
             pedi debitio</div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- #TODO: make this into a separate script file and move it to js folder + connect -->
     <script>
@@ -85,19 +77,18 @@
         }); 
 
         //between each h1 tag make a div wrap
-        $("h1").each(function() {
-          $(this).nextUntil( "h1" ).wrapAll( "<div></div>" );
-          // uncomment the two lines to move the h1 inside the wrapped div
-          const el = $(this).next();
-          $(this).prependTo(el);
-        });
+        // $("h2").each(function() {
+        //   $(this).nextUntil( "h2" ).wrapAll( "<div></div>" );
+        //   // uncomment the two lines to move the h1 inside the wrapped div
+        //   const el = $(this).next();
+        //   $(this).prependTo(el);
+        // });
 
-        //add class name to each div within a content page = Chapter
-        $( ".mw-parser-output div" ).addClass( "Chapter" );
-        $( "ul" ).addClass( "lol" );
+        // //add class name to each div within a content page = Chapter
+        // $( ".mw-parser-output div" ).addClass( "Chapter" );
 
-        //remove Chapter class where unnecessary, such as on image divs
-        $( ".thumb, .thumbinner, .thumbcaption, .magnify, .mw-references-wrap, .toclimit-3, .toc, .toctitle" ).removeClass( "Chapter" );
+        // //remove Chapter class where unnecessary, such as on image divs
+        // $( ".thumb, .thumbinner, .thumbcaption, .magnify, .mw-references-wrap, .toclimit-3, .toc, .toctitle" ).removeClass( "Chapter" );
 
 
     

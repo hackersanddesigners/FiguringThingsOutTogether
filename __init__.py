@@ -1,5 +1,4 @@
 """BookStarter Flask plugin
-
 This Flask plugin overwrites some of the default 
 routes of Wiki2print so we can customize the output. 
 We're loading a custom html template, filter some 
@@ -7,7 +6,6 @@ of the output from Mediawiki to allow for things
 like image spreads, and to filter out some unwanted 
 html. Depending on taste some of the filtering could
 be moved to javascript in paged_custom.js
-
 Further documentation:
 https://flask.palletsprojects.com/en/2.1.x/
 and the flask_plugin docs:
@@ -147,6 +145,7 @@ def removeSrcSets(html):
   html = re.sub(r"srcset=", "xsrcset=", html)
   return html
 
+
 # Creates the html necessary for spreads
 # <section class="full-spread-image-section">
 # 	<div class="full-page-image full-page-image-left">
@@ -200,39 +199,3 @@ def imageSpreads(soup):
         if len(p.get_text(strip=True)) == 0:
           p.extract() # Remove empty tag
   return soup
-
-
-# My demos
-# According to the logic of the previous 
-def createArticleSection(soup, p):
-  section = soup.new_tag('section', **{"class": 'full-article-section'}) # outer section
-  fpi = soup.new_tag('div', **{"class":'full-article'}) # outer wrapper for image
-  div = soup.new_tag('div') # inner wrapper for image
-  if( h1 ):
-    div.append(h1) # image in inner div
-  else:
-    print( "missing content for spread?	")
-  fpi.append(div) # div in outer wrapper
-  section.append(fpi) # wrapper in section
-  fpi2 = copy.copy(fpi)  # copied
-  fpi2['class'] = "full-article"
-  section.append(fpi2)
-  return section
-
-#stolen code
-# def article(soup):
-#   h1s = soup.find_all('h1')
-#   if(h1s):
-#     for article in h1s
-
-# h1s = soup.find_all('h1')
-# for el in h1s:
-#     els = [i for i in itertools.takewhile(
-#               lambda x: x.name not in [el.name, 'script'],
-#               el.next_siblings)]
-#     section = soup.new_tag('section')
-#     el.wrap(section)
-#     for tag in els:
-#         section.append(tag)
-
-# print(soup.prettify())
