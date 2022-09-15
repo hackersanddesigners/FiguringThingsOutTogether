@@ -61,7 +61,6 @@ h3+p {
 	// display: none;
 	position: relative;
 	width: 75%;
-	z-index: 9;
 	background-color: white;
 
 	box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
@@ -71,7 +70,7 @@ h3+p {
 	overflow: scroll;
 }
 
-//messsing around
+//messsing around big time
 .wrap-btn{
 	position: fixed;
 	z-index: 948293;
@@ -87,7 +86,6 @@ div{
 }
 
 //scriptotheek
-
 // exclude child div from parent div
 // #webview > div:not(.scriptothek) {
 // 	display: none;
@@ -106,12 +104,17 @@ h2{
 	font-size: inherit;
 }
 
-.categs{
-	width: 100%;
-	display: inline-flex;
+// .categs{
+// 	width: 100%;
+// 	display: inline-flex;
+// }
+
+.Chapter{
+	z-index: 10;
+	background-color: white;
 }
 
-.Demo-script{
+.Demo-script .Chapter{
 	position: fixed;
 	width: 25%;
 	height: 100vh;
@@ -121,9 +124,10 @@ h2{
 
 	right: 0!important;
 	top: 0;
-	background-color: yellow;
+	background-color: yellow!important;
 
 	overflow: scroll;
+	z-index: -10;
 }
 
 .script-img{
@@ -156,7 +160,7 @@ h2{
 .change-behind{
 	position: fixed;
 	width: 73%;
-	left: 20%;
+	// left: 23%;
 	z-index: 8934239;
 	font-size: 50px;
 	padding-right: 5px;

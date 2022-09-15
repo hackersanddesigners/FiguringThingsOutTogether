@@ -10,62 +10,26 @@
 
 {% block content %}
 <main id="webview">
-  <!-- OPTION 1: BREAK DOWN THE CONTENT
-    ALL DIVS ARE INDEPENDENT AND SEPERATE: BUTTON + CONTENTS + ARTICLES + SCRIPTOTHEEK -->
-
   <!-- BUTTON -->
     <button class="change-behind" trigger = "0">&larr;</button>
-
-
-<!-- If I manage to append unique ID's to each Chapter then these buttons will open one chapter at a time -->
-    <!-- <div class="tab">
-      <button class="article" onclick="openCity(event, 'London')">London</button>
-      <button class="article" onclick="openCity(event, 'Paris')">Paris</button>
-      <button class="article" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-    </div> -->
 
   <!-- ARTICLES + CONTENTS -->
     <div class="content">
       {{ html | safe }}
     </div>
 
-  <!-- SCRIPTOTHEEK -- old version-->
-    <!-- <div class="scriptothek">
-      <h2 id="mw-toc-heading">Scriptothek</h2>
-      <div class="categs">
-        <span class="item">Name</span>
-        <span class="item">Thumbnail</span>
-        <span class="item">Size</span>
-        <span class="item">Description</span>
-      </div> -->
+        <!-- TODO: 
+          1.make this into a separate script file and move it to js folder + connect 
+          2.
+        -->
 
-      <!-- <div class="script-img">
-        <div class="scriptinner">
-          <div class="item thumbcaption"><p>Platframe01.png</p>
-            <div class="magnify"><a class="internal" href="/wiki/File:Platframe01.png" title="Enlarge"></a></div>
-          </div>
-          <div class="item scriptimg-wrapper">
-            <a class="item scriptimage" href="/wiki/File:Platframe01.png"><img alt="Platframe01.png" class="thumbimage"
-              decoding="async" height="182" src="/static/images/Platframe01.png"
-              srcset="/wiki/mediawiki/images/thumb/a/a8/Platframe01.png/450px-Platframe01.png 1.5x, /wiki/mediawiki/images/thumb/a/a8/Platframe01.png/600px-Platframe01.png 2x"
-              width="300"></a>
-          </div>
-          <div class="item thumbsize">2MB</div>
-          <div class="item thumbdescription">Mraerori onsectas ut
-            landaerorae
-            pedi debitio</div>
-        </div>
-      </div>
-    </div> -->
-
-    <!-- #TODO: make this into a separate script file and move it to js folder + connect -->
     <script>
       $(document).ready(function(){
 
         // this one moves the page left and right
         $('.change-behind').click(function(){
             if($('.mw-parser-output').attr("trigger")==="0"){
-                $('.mw-parser-output, .change-behind').animate({"left":"20%"},700);
+                $('.mw-parser-output, .change-behind').animate({"left":"23%"},700);
                 $('.mw-parser-output, .change-behind').attr("trigger","1");
                 $('.change-behind').text("←" == $(this).text() ? "→" : "←");
             }
@@ -76,7 +40,7 @@
             }
         }); 
 
-        //between each h1 tag make a div wrap
+        //between each h2 tag make a div wrap
         // $("h2").each(function() {
         //   $(this).nextUntil( "h2" ).wrapAll( "<div></div>" );
         //   // uncomment the two lines to move the h1 inside the wrapped div
@@ -90,34 +54,7 @@
         // //remove Chapter class where unnecessary, such as on image divs
         // $( ".thumb, .thumbinner, .thumbcaption, .magnify, .mw-references-wrap, .toclimit-3, .toc, .toctitle" ).removeClass( "Chapter" );
 
-
-    
     });
-
-    var nodelist = document.querySelectorAll('.test');
-
-    for (var i = 0; i < nodelist.length; i += 1) {
-      nodelist[i].textContent = 'element'+i;
-    }
-
-        // var id = 0; // variable for generating unique id
-
-        // function cdiv() {
-        //   var div = document.getElementsByClassName('Chapter');
-        //   div.innerHTML = 'Chapter' + id;
-        //   div.id = 'Chapter' + id++; // generate unique id and then increment value
-        //   document.body.appendChild(div);
-        // }
-
-        // for (var i = 0; i < 10; i++) {
-        //   for (var b = 0; b < 10; b++) {
-        //     cdiv();
-        //   }
-        // }
-
-    //open one article at a time
-
-
     </script>
 </main>
 {% endblock %}
