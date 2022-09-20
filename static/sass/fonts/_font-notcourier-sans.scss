@@ -4,7 +4,7 @@
 @include font("NotCourierSans", "../fonts/NotCourierSans-Bold", $weight: 'bold');
 
 @mixin font-notcouriersans( $weight: normal) {
-	font-family: Authentic, sans-serif;
+	font-family: NotCourierSans, sans-serif;
 	font-weight: $weight;
 }
 

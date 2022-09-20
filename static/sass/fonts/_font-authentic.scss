@@ -8,7 +8,7 @@
 @include font("Authentic-condensed", "../fonts/AUTHENTICSans-Condensed-90", $weight: '90');
 @include font("Authentic-condensed", "../fonts/AUTHENTICSans-Condensed-130", $weight: '130');
 
-@mixin font-authentic( $weight: 90) {
+@mixin font-authentic( $weight: 60) {
 	font-family: Authentic, sans-serif;
 	// font-weight: $weight;
 }
