@@ -2,10 +2,10 @@
 
 @include font("SolideMirageMono", "../fonts/SolideMirageMono");
 
-@mixin font-solidemiragemono() {
+@mixin font-solidemirage-mono() {
 	font-family: SolideMirageMono, sans-serif;
 }
 
-.font-solidemiragemono {
-	@include font-solidemiragemono();
+.font-solidemirage-mono {
+	@include font-solidemirage-mono();
 }

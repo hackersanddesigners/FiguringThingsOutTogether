@@ -1,0 +1,11 @@
+/* Fonts */
+
+@include font("Louise-Regular", "../fonts/Louise-Regular");
+
+@mixin font-louise-regular() {
+	font-family: Louise-Regular, sans-serif;
+}
+
+.font-louise-regular {
+	@include font-louise-regular();
+}
