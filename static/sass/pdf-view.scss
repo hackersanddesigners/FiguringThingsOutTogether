@@ -195,6 +195,11 @@ a.image {
 		margin-bottom: 30pt; // space for the author float
 	}
 
+	.author-wrap {
+		display: flex;
+		justify-content: end;
+	}
+	
 	.author {
 		@include font-authentic();
 		margin: 10pt;
