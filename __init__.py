@@ -95,10 +95,20 @@ def filter(html):
   print("filtering...")	
   soup = BeautifulSoup(html, 'html.parser')
   soup = imageSpreads(soup)
-  soup = wrapChapters(soup)
+  # soup = wrapChapters(soup)
+  soup = wrapAuthors(soup)
   html = str(soup) #soup.prettify() # dont use prettify. It causes whitespace in layout in some instances #
   html = removeSrcSets(html)
   return html
+
+# wrap author span in a div to have some control over the layout
+def wrapAuthors(soup):
+  authors = soup.find_all("span", class_="author") 
+  for author in authors:
+    div = soup.new_tag('div', **{"class": 'author-wrap'}) 
+    div.append(copy.copy(author))
+    author.replace_with(div)
+  return soup
 
 # Searches in the document for h2 tags and author divs (immediatly following an h2!)
 # All content besides those two get wrapped in a <div class="article-contents"> 
@@ -108,6 +118,7 @@ def wrapChapters(soup):
   
   main = soup.find("div", class_="mw-parser-output")
   new_main = soup.new_tag('div', **{"class": 'mw-parser-output wrapped'}) 
+  article = soup.new_tag('div', **{"class": 'article-wrap ' + chapter_name}) 
   contents = soup.new_tag('div', **{"class": 'article-contents ' + chapter_name}) 
   children = iter(main.children)
   
@@ -117,16 +128,22 @@ def wrapChapters(soup):
         continue
       auth = child.find_all(class_="author") 
       if len( auth ) > 0:
-        new_main.append(copy.copy(child)) # append it to the doc
+        article.append(copy.copy(auth[0])) # append it to the doc
         last_tag_was_h2 = False
         next(children)
         continue # next element in the loop
       
     if(child.name == 'h2'):
       chapter_name = re.sub('\W+','-', child.find(text=True).lower())
-      new_main.append(copy.copy(contents)) # append the previous content tag. TODO: don't do this if contents is empty :)
-      new_main.append(copy.copy(child)) # append the h2 element as well
+      
+      article.append(copy.copy(contents)) #existing content goes in previous article
+      article = soup.new_tag('div', **{"class": 'article-wrap ' + chapter_name})  # new article 
+      article.append(copy.copy(child)) #append the h2
+      new_main.append(article) #h2
+      # new_main.append(copy.copy(contents)) # append the previous content tag. TODO: don't do this if contents is empty :)
+      # new_main.append(copy.copy(child)) # append the h2 element as well
       contents = soup.new_tag('div', **{"class": 'article-contents ' + chapter_name}) # new contents element for next chapter
+      
       chapter_name = ""
       last_tag_was_h2 = True
     else:
