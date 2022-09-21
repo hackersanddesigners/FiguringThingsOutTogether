@@ -36,7 +36,7 @@ function browsersyncReload(cb){
 // Watch Task
 function watchTask(){
   // watch('*.html', browsersyncReload);
-  watch(['**/*.scss', '**/*.js'], series(scssTask, browsersyncReload));
+  watch(['static/**/*.scss', 'static/**/*.js'], series(scssTask, browsersyncReload));
 }
 
 // Run Flask server
@@ -66,6 +66,3 @@ exports.default = series(
 	browsersyncServe,
 	watchTask
 )
-
-
-
