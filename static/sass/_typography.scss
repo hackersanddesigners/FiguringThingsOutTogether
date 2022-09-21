@@ -95,18 +95,9 @@ sup,
 	// commented after revisions from astrit.
 }
 
-.pagedjs_pagebox {
-
-	.pagedjs_margin-bottom-left-corner,
-	.pagedjs_margin-bottom-right-corner {
+.pagedjs_margin-bottom-left-corner-holder,
+.pagedjs_margin-bottom-right-corner-holder {
+	.pagedjs_margin-content {
 		@include font-louise-regular();
-		font-size: 64pt;
-		vertical-align: super;
-		margin: -64pt 10pt 0 0;
-		padding: 10pt;
-	}
-
-	.pagedjs_margin-bottom-right-corner {
-		text-align: right;
 	}
 }

@@ -35,6 +35,19 @@
 }
 
 
+/*
+	because we're changing the right margin based on layout
+	we need to fix the top-right margin box
+	Ugly, but best i could come up with
+*/
+.pagedjs_pagebox .pagedjs_margin-top-right {
+	position: absolute;
+	right: var(--pagedjs-margin-left); // keep left and right margin the same
+	text-align: right; // but align right
+	top: 0;
+	height: var(--pagedjs-margin-top);
+}
+
 // @page:first {
 //   @top-left {
 //     content: "";
@@ -118,4 +131,42 @@ span.author {
 // span.footnote {
 //   float: footnote;
 // }
+
+
+
+/* PAGE NUMBERS */
+.pagedjs_pagebox {
+
+	.pagedjs_margin-bottom-left-corner-holder,
+	.pagedjs_margin-bottom-right-corner-holder {
+		position: relative;
+	
+		.pagedjs_margin-content {
+			position: absolute;
+			bottom: 0;
+			width: 100pt !important;
+			// @include font-louise-regular(); // moved to typography
+			font-size: 44pt;
+			padding: 0 10pt;
+			line-height: 1.4; // any lower and descenders go off the page
+		}
+	}
+
+	.pagedjs_margin-bottom-left-corner-holder {
+		.pagedjs_margin-content {
+			left: 0;
+			text-align: left;
+		}
+	}
+
+	.pagedjs_margin-bottom-right-corner-holder {
+		.pagedjs_margin-content {
+			right: 0;
+			text-align: right;
+		}
+	}
+}
+
+
+
 
