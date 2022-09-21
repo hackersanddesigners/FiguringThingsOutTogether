@@ -17,11 +17,11 @@ https://jamonserrano.github.io/plumber-sass/
 
 /* General styling */
 html {
-  font-size: 62.5%;
+	font-size: 62.5%;
 }
 
 body {
-  color: var(--color-main);
+	color: var(--color-main);
 	margin: 0;
 	padding: 0;
 	// background-color: blue;
@@ -34,15 +34,15 @@ img {
 	max-height: 80%;
 	border-radius: 1rem;
 	display: block;
-	margin: 12pt auto;	
+	margin: 12pt auto;
 }
 
-h3 + p {
+h3+p {
 	text-indent: 0 !important;
 }
 
 .pagedjs_pages .chapter.invert-type {
-	h2 + p {
+	h2+p {
 		text-indent: 0 !important;
 	}
 }
@@ -65,21 +65,25 @@ h1 {
 }
 
 /* Prevent superscript from messing up the line-height */
-sup { vertical-align: top; position: relative; top: -0.5em; }
-
-a {
-  text-decoration: none;
-  color: black;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word;
+sup {
+	vertical-align: top;
+	position: relative;
+	top: -0.5em;
 }
 
-h2{
+a {
+	text-decoration: none;
+	color: black;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-word;
+}
 
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word;
+h2 {
+
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-word;
 }
 
 /* Generic css */
@@ -100,6 +104,7 @@ a.image {
 	padding: 0;
 	text-indent: 0;
 	text-align: center;
+
 	a {
 		display: block;
 	}
@@ -135,7 +140,8 @@ a.image {
 
 
 /* For placement op p5js sketch relative to the page */
-.pagedjs_page, .pagedjs_pagebox {
+.pagedjs_page,
+.pagedjs_pagebox {
 	position: relative;
 }
 
@@ -153,3 +159,87 @@ a.image {
 	width: auto !important;
 }
 
+.contributors {
+	display: none;
+}
+
+.layout-1 {
+	page: layout1;
+}
+
+.layout-2 {
+	page: layout2;
+}
+
+@page layout1 {
+	margin-right: 40mm;
+	background: yellow;
+}
+
+@page layout2 {
+	// margin-right: 40mm;
+	background: pink;
+}
+
+.layout-1 {
+	h3 {
+		@include font-authentic();
+		padding: 4pt 30pt 0 ;
+		border-width: 1pt;
+		border-radius: 30pt;
+		border-color: black;
+		border-style: solid;
+		text-align: center;
+		font-size: 54px;
+		text-align: center;
+		margin-bottom: 30pt; // space for the author float
+	}
+
+	.author {
+		@include font-authentic();
+		margin: 10pt;
+		border-width: 1pt;
+		border-radius: 30pt;
+		border-color: black;
+		border-style: solid;
+		text-align: center;
+		font-size: 24px;
+		padding: 10pt;
+		margin-right: -40mm;
+		// float: right;
+		display: inline-flex;
+	}
+
+	p {
+		border: 1pt solid black;
+		margin: 0;
+		padding: 10pt;
+	}
+
+	p:empty {
+		border: none;
+	}
+
+	// .article-contents {
+	// 	// columns: 2;
+	// 	display: block;
+
+	// 	.thumb,
+	// 	a.image {
+	// 		column-span: all;
+	// 	}
+
+	// 	h3 {
+	// 		column-span: all;
+	// 	}
+
+	// 	&>*:first-child {
+	// 		margin-top: 0;
+	// 	}
+	// }
+}
+
+
+.layout-2 { 
+	columns: 2;
+}

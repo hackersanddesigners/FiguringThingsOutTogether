@@ -1,6 +1,8 @@
 /* Pagedjs/paged media specific styles */
 
 @page {
+	bleed: 4mm;
+	marks: crop;
   size: 110mm 200mm;
   margin-top: 15mm;
   margin-right: 10mm;
@@ -12,80 +14,81 @@
   @footnote {
     float: bottom;
   }
-	@bottom-center {
+	@bottom-right-corner {
     content: counter(page);
   }
-}
-
-@page {
-	bleed: 4mm;
-	marks: crop;
-}
-
-@page:left {
-	margin-right: 15mm;
-  margin-left: 10mm;
-}
-
-@page:right {
-  @top-left { 
-		content: string(chapterTitle);
+	@top-left { 
+		content: string(articleTitle);
   }
 	@top-right {
-		content: string(author);
+		content: string(chapterTitle);
 	}
 }
 
-
-@page:first {
-  @top-left {
-    content: "";
+@page:left {
+	@bottom-right-corner {
+    content: '';
   }
-  @bottom-right-corner {
-    content: ""; 
+  @bottom-left-corner {
+		content: counter(page);
   }
 }
+
+
+// @page:first {
+//   @top-left {
+//     content: "";
+//   }
+//   @bottom-right-corner {
+//     content: ""; 
+//   }
+// }
 
 .pagedjs_sheet {
 	z-index: 1;
 }
 
 
-.article-contents {
-	columns: 2;
-	display: block;
 
-	.thumb,
-	a.image {
-		column-span: all;
-	}
+// .article-contents {
+// 	columns: 2;
+// 	display: block;
 
-	h3 {
-		column-span: all;
-	}
-}
+// 	.thumb,
+// 	a.image {
+// 		column-span: all;
+// 	}
 
-.pagedjs_margin-bottom-left-corner,
-.pagedjs_margin-bottom-right-corner {
-  font-size: 1.5rem;
-  font-family: Ortica, serif;
-}
+// 	h3 {
+// 		column-span: all;
+// 	}
 
-.pagedjs_footnote_area {
-	margin-top: 1rem;
-}
+// 	& > *:first-child {
+// 		margin-top: 0;
+// 	}
+// }
 
-.pagedjs_footnote_content {
-	padding-top: 5px;
-}
+// .pagedjs_margin-bottom-left-corner,
+// .pagedjs_margin-bottom-right-corner {
+//   font-size: 1.5rem;
+//   font-family: Ortica, serif;
+// }
 
-.pagedjs_pages .pagedjs_blank_page {
-	.pagedjs_margin-bottom-center, .pagedjs_margin-top-center {
-		.pagedjs_margin-content {
-			display: none;
-		}
-	} 
-} 
+// .pagedjs_footnote_area {
+// 	margin-top: 1rem;
+// }
+
+// .pagedjs_footnote_content {
+// 	padding-top: 5px;
+// }
+
+// .pagedjs_pages .pagedjs_blank_page {
+// 	.pagedjs_margin-bottom-center, .pagedjs_margin-top-center {
+// 		.pagedjs_margin-content {
+// 			display: none;
+// 		}
+// 	} 
+// } 
 
 
 /* Setting variables */
@@ -93,6 +96,10 @@
 h2,
 .chapter-title {
 	string-set: chapterTitle content(text);
+}
+
+h3 {
+	string-set: articleTitle content(text);
 }
 
 
