@@ -5,7 +5,8 @@
 	width: var(--pagedjs-width);
 	height: var(--pagedjs-height);
 	overflow: hidden;
-	left: calc(calc(var(--pagedjs-bleed-left) + var(--pagedjs-margin-left))*-1);
+	// left: calc(calc(var(--pagedjs-bleed-left) + var(--pagedjs-margin-left))*-1);
+	left: calc(calc((var(--pagedjs-bleed-left) + var(--pagedjs-margin-left)) + var(--pagedjs-padding-left ))* -1);
 	top: calc(calc(var(--pagedjs-bleed-top) + var(--pagedjs-margin-top))*-1);
 	position: absolute;
 	// background-color: black;
@@ -21,7 +22,8 @@
 
 /* compensate for bleeds */
 .pagedjs_right_page .full-page-image div {
-	margin-left: calc( calc(-1 * var(--pagedjs-width)) + var(--pagedjs-bleed-left ) + var(--pagedjs-bleed-right ));
+	// margin-left: calc( calc(-1 * var(--pagedjs-width)) + var(--pagedjs-bleed-left ) + var(--pagedjs-bleed-right ));
+	margin-left: calc(var(--pagedjs-width)*-1 - var(--pagedjs-bleed-left)*2 + var(--pagedjs-bleed-right)*2);
 }
 
 .full-page-image img {

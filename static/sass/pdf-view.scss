@@ -30,11 +30,11 @@ body {
 img {
 	width: auto; // height is set with javascript
 	height: auto;
-	max-width: 85%;
-	max-height: 80%;
-	border-radius: 1rem;
-	display: block;
-	margin: 12pt auto;
+	max-width: 100%;
+	max-height: 100%;
+	// border-radius: 1rem;
+	// display: block;
+	// margin: 12pt auto;
 }
 
 h3+p {
@@ -152,6 +152,7 @@ a.image {
 
 .thumbinner {
 	margin: 0 auto;
+	width: auto !important;
 }
 
 /* mediawiki gives thumbs an inline fixed width */
@@ -193,7 +194,6 @@ a.image {
 
 	.author {
 		@include font-authentic();
-		margin: 10pt;
 		border-width: 1pt;
 		border-radius: 30pt;
 		border-color: black;
@@ -201,8 +201,7 @@ a.image {
 		text-align: center;
 		font-size: 24px;
 		padding: 10pt;
-		margin-right: -40mm;
-		// float: right;
+		margin: -10mm -10mm 0 0;
 		display: inline-flex;
 	}
 
