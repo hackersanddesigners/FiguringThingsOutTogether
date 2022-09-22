@@ -164,13 +164,6 @@ a.image {
 	display: none;
 }
 
-.layout-1 {
-	page: layout1;
-}
-
-.layout-2 {
-	page: layout2;
-}
 
 
 .layout-1 {
@@ -194,7 +187,7 @@ a.image {
 
 	.author {
 		@include font-authentic();
-		border-width: 1pt;
+		border-width: 1pt;	
 		border-radius: 30pt;
 		border-color: black;
 		border-style: solid;

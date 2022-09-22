@@ -35,6 +35,25 @@
 }
 
 
+@page layout1 {
+	margin-right: 40mm;
+	// background: yellow;
+}
+
+@page layout2 {
+	// margin-right: 40mm;
+	// background: pink;
+}
+
+
+.layout-1 {
+	page: layout1;
+}
+
+.layout-2 {
+	page: layout2;
+}
+
 /*
 	because we're changing the right margin based on layout
 	we need to fix the top-right margin box
