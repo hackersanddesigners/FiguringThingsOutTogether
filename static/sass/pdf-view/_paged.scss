@@ -35,6 +35,15 @@
 }
 
 
+@page layout-title {
+	// margin-right: 40mm;
+	// background: pink;
+	// background-color: green;
+	// margin: 0;
+	// padding: 0;
+}
+
+
 @page layout1 {
 	margin-right: 40mm;
 	// background: yellow;
@@ -45,6 +54,10 @@
 	// background: pink;
 }
 
+.title-image-wrap {
+	page: layout-title;
+	
+}
 
 .layout-1 {
 	page: layout1;

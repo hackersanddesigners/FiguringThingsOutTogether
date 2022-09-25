@@ -97,6 +97,7 @@ def filter(html):
   soup = imageSpreads(soup)
   # soup = wrapChapters(soup)
   soup = wrapAuthors(soup)
+  soup = wrapTitleImages(soup)
   html = str(soup) #soup.prettify() # dont use prettify. It causes whitespace in layout in some instances #
   html = removeSrcSets(html)
   return html
@@ -108,6 +109,19 @@ def wrapAuthors(soup):
     div = soup.new_tag('div', **{"class": 'author-wrap'}) 
     div.append(copy.copy(author))
     author.replace_with(div)
+  return soup
+
+# wrap author span in a div to have some control over the layout
+def wrapTitleImages(soup):
+  images = soup.find_all("img", class_="title_image") 
+  for image in images:
+    wrap = image.find_parent("div", class_="thumb")
+    pprint(wrap)
+    # wrap['class'] = "image-wrapper"
+    wrap['class'] = wrap.get('class', []) + ['title-image-wrap']
+    # div = soup.new_tag('div', **{"class": 'title-image-wrap'}) 
+    # div.append(copy.copy(image))
+    # image.replace_with(div)
   return soup
 
 # Searches in the document for h2 tags and author divs (immediatly following an h2!)
