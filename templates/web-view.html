@@ -11,7 +11,7 @@
 {% block content %}
 <main id="webview">
   <!-- BUTTON -->
-    <button class="change-behind" trigger = "0">&larr;</button>
+  <button class="change-behind" trigger = "0">&larr;</button>
 
   <!-- ARTICLES + CONTENTS -->
     <div class="content">
@@ -20,7 +20,6 @@
 
         <!-- TODO: 
           1.make this into a separate script file and move it to js folder + connect 
-          2.
         -->
 
     <script>
@@ -28,31 +27,22 @@
 
         // this one moves the page left and right
         $('.change-behind').click(function(){
-            if($('.mw-parser-output').attr("trigger")==="0"){
-                $('.mw-parser-output, .change-behind').animate({"left":"23%"},700);
-                $('.mw-parser-output, .change-behind').attr("trigger","1");
+            if($('.chapter, .Introduction-Figuring-Things').attr("trigger")==="0"){
+                $('.chapter, .Introduction-Figuring-Things').animate({"left":"20%"},700);
+                $('.chapter, .Introduction-Figuring-Things').attr("trigger","1");
                 $('.change-behind').text("←" == $(this).text() ? "→" : "←");
+
+                $('.Demo-script').css("z-index", "-1");
             }
             else{
-                $('.mw-parser-output, .change-behind').animate({"left":"0px"},700);
-                $('.mw-parser-output, .change-behind').attr("trigger","0");
+                $('.chapter, .Introduction-Figuring-Things').animate({"left":"0px"},700);
+                $('.chapter, .Introduction-Figuring-Things').attr("trigger","0");
                 $('.change-behind').text("&larr;" == $(this).text() ? "&larr;" : "→");
+
+                $('.Demo-script').css("z-index", "2");
+                $('.toclimit-3').css("z-index", "0");
             }
         }); 
-
-        //between each h2 tag make a div wrap
-        // $("h2").each(function() {
-        //   $(this).nextUntil( "h2" ).wrapAll( "<div></div>" );
-        //   // uncomment the two lines to move the h1 inside the wrapped div
-        //   const el = $(this).next();
-        //   $(this).prependTo(el);
-        // });
-
-        // //add class name to each div within a content page = Chapter
-        // $( ".mw-parser-output div" ).addClass( "Chapter" );
-
-        // //remove Chapter class where unnecessary, such as on image divs
-        // $( ".thumb, .thumbinner, .thumbcaption, .magnify, .mw-references-wrap, .toclimit-3, .toc, .toctitle" ).removeClass( "Chapter" );
 
     });
     </script>

@@ -12,19 +12,75 @@ https://jamonserrano.github.io/plumber-sass/
 @import "debug";
 
 /* General styling */
-// html {
-// 	font-size: 62.5%;
-// }
+//TODO: figure out why it's overflowing
+html {
+	// font-size: 62.5%;
+	width: 100vw;
+	height: 100%;
+}
 
 body {
 	color: var(--color-main);
 	margin: 0;
 	padding: 0;
-	display: flex;
-	align-items: center;
+
+	position: relative;
+
+	overflow-x: hidden;
+	// display: flex;
+	// align-items: center;
 }
 
-img {
+//Table of Contents
+.toclimit-3{
+	width: 20% !important;
+	height: 100%;
+	background-color: #b19cd9;
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	z-index: 1;
+}
+
+// all chapters
+.chapter,
+.Introduction-Figuring-Things{
+	position: relative;
+	width: 75%;
+	left: 20%;
+	background-color: white;
+	top: 0;
+
+	box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+	-webkit-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+	-moz-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+}
+
+//prevent intro be affected by TOC
+.introduction{
+	display: contents;
+	top: 0;
+}
+
+.change-behind{
+	position: fixed;
+	width: 55%;
+	left: 20%;
+	top: 0;
+	z-index: 8934239;
+	font-size: 20px;
+	padding-right: 5px;
+
+	background-color: blue;
+	border: none;
+
+	text-align: right;
+	cursor: pointer;
+}
+
+img,
+.thumbinner {
 	width: auto; // height is set with javascript
 	height: auto;
 	max-width: 85%;
@@ -34,87 +90,8 @@ img {
 	margin: 12pt auto;
 }
 
-h3+p {
-	text-indent: 0 !important;
-}
-
-.pagedjs_pages .chapter.invert-type {
-	h2+p {
-		text-indent: 0 !important;
-	}
-}
-
-//contents block
-.toclimit-3{
-	width: 20% !important;
-	background-color: #b19cd9;
-	position: fixed;
-	top: 0;
-	left: 0;
-
-	height: 100vh;
-	margin-left: 0!important;
-}
-
-//articles block
-.mw-parser-output{
-	// display: none;
-	position: relative;
-	width: 75%;
-	background-color: white;
-
-	box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
-	-webkit-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
-	-moz-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
-
-	overflow: scroll;
-}
-
-//messsing around big time
-.wrap-btn{
-	position: fixed;
-	z-index: 948293;
-}
-
-div{
-	border: solid 1px;
-}
-
-.tab{
-	z-index: 9584594;
-    position: absolute;
-}
-
-//scriptotheek
-// exclude child div from parent div
-// #webview > div:not(.scriptothek) {
-// 	display: none;
-// }
-
-.content > div:not(.toc) {
-	z-index: 9;
-	left: 23%;
-}
-
-h1,p,h2{
-	padding: 10px;
-}
-
-h2{
-	font-size: inherit;
-}
-
-// .categs{
-// 	width: 100%;
-// 	display: inline-flex;
-// }
-
-.Chapter{
-	z-index: 10;
-	background-color: white;
-}
-
-.Demo-script .Chapter{
+//scriptothek
+.Demo-script{
 	position: fixed;
 	width: 25%;
 	height: 100vh;
@@ -126,54 +103,27 @@ h2{
 	top: 0;
 	background-color: yellow!important;
 
-	overflow: scroll;
-	z-index: -10;
+	z-index: -1;
+	overflow: scroll!important;
 }
 
-.script-img{
-	margin-bottom: 5%;
 
+// h3+p {
+// 	text-indent: 0 !important;
+// }
+
+// .pagedjs_pages .chapter.invert-type {
+// 	h2+p {
+// 		text-indent: 0 !important;
+// 	}
+// }
+
+h1,p,h2{
+	padding: 10px;
 }
 
-.scriptinner{
-	display: inline-flex;
-	width: 100%;
-}
-
-.item{
-	width: 30%;
-	padding: 5px;
-	hyphens: auto;
-}
-
-.scriptimg-wrapper{
-	border: solid;
-}
-
-.scriptimage img{
-	filter: opacity(0.0);
-	color: blue;
-	margin: 0pt!important;
-	max-height: none!important;
-}
-
-.change-behind{
-	position: fixed;
-	width: 73%;
-	// left: 23%;
-	z-index: 8934239;
-	font-size: 50px;
-	padding-right: 5px;
-
-	background-color: transparent;
-	border: none;
-
-	text-align: right;
-	cursor: pointer;
-}
-
-.change-behind:hover{
-	color: blue;
+h2{
+	font-size: inherit;
 }
 
 /*
