@@ -1,0 +1,132 @@
+/* General styling */
+html {
+	font-size: 62.5%;
+}
+
+body {
+	color: var(--color-main);
+	margin: 0;
+	padding: 0;
+	// background-color: blue;
+}
+
+img {
+	width: auto; // height is set with javascript
+	height: auto;
+	max-width: 100%;
+	max-height: 100%;
+	// border-radius: 1rem;
+	// display: block;
+	// margin: 12pt auto;
+}
+
+h3+p {
+	text-indent: 0 !important;
+}
+
+.pagedjs_pages .chapter.invert-type {
+	h2+p {
+		text-indent: 0 !important;
+	}
+}
+
+/*
+Setting named-pages
+https://pagedjs.org/documentation/8-named-page/
+*/
+
+h1 {
+	// page: chapter-title;
+}
+
+
+.empty-page {
+	page: empty-page !important;
+}
+
+.title-page {
+	// page: chapter-title;
+}
+
+/* Prevent superscript from messing up the line-height */
+sup {
+	vertical-align: top;
+	position: relative;
+	top: -0.5em;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-word;
+}
+
+h2 {
+
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-word;
+}
+
+/* Generic css */
+
+/* Show url of a tags */
+/* a::after {
+content: " (" attr(href) ")";
+} */
+
+
+a.image {
+	display: block;
+	text-align: center;
+}
+
+.pagedjs_pages .pagedjs_area .chapter .image-container {
+	margin: 0;
+	padding: 0;
+	text-indent: 0;
+	text-align: center;
+
+	a {
+		display: block;
+	}
+}
+
+
+// @page chapter-title {
+// 	@top-center {
+//     content: "";
+//   }
+// 	@bottom-center {
+// 		content: "";
+// 	}
+// 	@top-left {
+//     content: "";
+//   }
+// 	@top-right {
+//     content: "";
+//   }
+// }
+
+
+
+/* thumbnails, keep caption and image on same page */
+.thumb {
+	break-inside: avoid;
+}
+
+.thumbinner {
+	margin: 0 auto;
+	width: auto !important;
+}
+
+/* mediawiki gives thumbs an inline fixed width */
+.thumbinner.image-container {
+	width: auto !important;
+}
+
+.contributors {
+	display: none;
+}

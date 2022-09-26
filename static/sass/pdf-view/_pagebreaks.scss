@@ -1,8 +1,19 @@
 
-h3 {
-	// page-break-before: left;
-	page-break-before:right;
+h2 {
+	break-before: right;
 }
+
+.chapter {
+	break-before: left;
+}
+// h3 {
+// 	// page-break-before: left;
+// 	// page-break-before:
+// }
+
+// .title-image-wrap  {
+// 	page-break-before: left;
+// }
 
 // h3:first-of-type{
 // 	page-break-before: avoid;

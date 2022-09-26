@@ -67,6 +67,11 @@
 	page: layout2;
 }
 
+
+.pagedjs_margin {
+	
+}
+
 /*
 	because we're changing the right margin based on layout
 	we need to fix the top-right margin box
@@ -197,6 +202,23 @@ span.author {
 			text-align: right;
 		}
 	}
+}
+
+/* For placement op p5js sketch relative to the page */
+.pagedjs_page,
+.pagedjs_pagebox {
+	position: relative;
+}
+
+/* 
+	Change the display of these margin elements to inline-block
+	so they have a meaningful width for use with the P5js sketch.
+*/
+.pagedjs_pages .pagedjs_margin-top-center .pagedjs_margin-content,
+.pagedjs_pages .pagedjs_margin-bottom-center .pagedjs_margin-content {
+	display: inline-block;
+	width: auto !important;
+	margin: 0 auto;
 }
 
 

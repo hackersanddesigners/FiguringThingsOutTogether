@@ -1,0 +1,9 @@
+@include font("Sligoil-Micro", "../fonts/Sligoil-Micro");
+
+@mixin font-sligoil-micro() {
+	font-family: Sligoil-Micro, sans-serif;
+}
+
+.font-sligoil-micro {
+	@include font-sligoil-micro();
+}
