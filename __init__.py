@@ -12,6 +12,7 @@ and the flask_plugin docs:
 https://github.com/flask-plugin/flask-plugin
 """
 
+from operator import length_hint
 from pprint import pprint
 import flask
 from flask import request
@@ -98,9 +99,19 @@ def filter(html):
   # soup = wrapChapters(soup)
   soup = wrapAuthors(soup)
   soup = wrapTitleImages(soup)
+  soup = filterPBR(soup)
   html = str(soup) #soup.prettify() # dont use prettify. It causes whitespace in layout in some instances #
   html = removeSrcSets(html)
   return html
+
+#filters out br's wrapped in p's without other content
+def filterPBR(soup):
+  ps = soup.select('p:has(br:first-child)')
+  for p in ps:
+    if(len(p.contents) == 2 and p.string == None and len(p.contents[1]) == 1 ):
+      br = soup.new_tag('br', **{"class": 'replaced'}) 
+      p.replace_with(br)
+  return soup
 
 # wrap author span in a div to have some control over the layout
 def wrapAuthors(soup):
