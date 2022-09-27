@@ -12,7 +12,6 @@ and the flask_plugin docs:
 https://github.com/flask-plugin/flask-plugin
 """
 
-from operator import length_hint
 from pprint import pprint
 import flask
 from flask import request

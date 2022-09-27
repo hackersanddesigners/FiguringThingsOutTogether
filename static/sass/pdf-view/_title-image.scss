@@ -56,5 +56,8 @@
 		transform: rotate(-90deg);
 		transform-origin: top left;
 		padding: 20pt 80pt;
+
+		@include font-sligoil-micro();
+		font-size: 9pt;
 	}
 }

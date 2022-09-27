@@ -13,7 +13,7 @@ class MM_Handler extends Paged.Handler {
 	}
 
 	afterPageLayout(pageElement, page, breakTokenage){
-		return this.alignImagesToBaseline(pageElement, 12);
+		// return this.alignImagesToBaseline(pageElement, 12);
 	}
 
 	afterPreview(pages) {
