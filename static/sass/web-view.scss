@@ -51,54 +51,36 @@ body {
 	z-index: 1;
 }
 
-//Picking links on the field 
-//chapter Setting_conditions
-a[href*="Platframe_Postscript"],
-a[href*="Re-,_Un-,Defining_Tools"],
-a[href*="Open-source_Parenting"],
-a[href*="A_history_of_consensus_decision_making"],
-a[href*="Algorithmic_Consensus"],
-a[href*="Mycelines:_A_Sympoetic_Imagination"],
-
-//chapter How-to's -- !SKIPPED! due to an error
-a[href*="Mud_Batteries"],
-a[href*="Gerwani_and_Api_Kartini._Indonesian_Women's_Movement"],
-a[href*="Display(ing)"],
-
-//chapter Prompts
-a[href*="Prompts_for_hanging_out_in_a_spreadsheet"],
-a[href*="Propositioning"],
-a[href*="Roleplaying_in_Etherpad"],
-
-//chapter Scripted Syllabi
-a[href*="Interfacial-Workouts"],
-a[href*="wiki_reflections"],
-
-//chapter Active Bibliographies
-a[href*="Workshop_Histories_and_Practices"],
-
-//DemoScript
-a[href*="Demo_Scriptotheek"]{
-	display: none;
-}
-
 // all chapters
-.chapter,
-.Introduction-Figuring-Things{
+.chapter{
 	position: relative;
 	width: 75%;
 	left: 20%;
 	background-color: white;
 	top: 0;
 
+	display: none;
+
+	min-height: 100vh;
+
 	box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
 	-webkit-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
 	-moz-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
 }
 
+//show on selected chapter with its id
+.chapter:target{
+	display: block;
+}
+
+//introduction (to be finalized)
+.chapter.introduction{
+	display: block;
+}
+
 //prevent intro be affected by TOC
-.introduction{
-	display: contents;
+.Introduction-Figuring-Things{
+	display: contents!important;
 	top: 0;
 }
 
@@ -148,17 +130,17 @@ img,
 
 //trying to show one chapter at a time
 
-.setting-conditions,
-.how-tos,
-.prompts,
-.scripted-syllabi,
-.active-bibliographies{
-	display: none;
-}
+// .setting-conditions,
+// .how-tos,
+// .prompts,
+// .scripted-syllabi,
+// .active-bibliographies{
+// 	display: none;
+// }
 
-a[href*="Test_Area"]{
-	display: none;
-}
+// a[href*="Test_Area"]{
+// 	display: none;
+// }
 
 
 // h3+p {
