@@ -51,8 +51,28 @@ body {
 	z-index: 1;
 }
 
-// all chapters
+a[href*="Test_Area"],
+a[href*="Demo_Scriptotheek"]{
+	display: none;
+}
+
 .chapter{
+	position: relative;
+	width: 75%;
+	left: 20%;
+	background-color: white;
+	top: 0;
+
+	height: auto;
+
+	box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+	-webkit-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+	-moz-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+}
+
+// all chapters
+// .chapter
+.article{
 	position: relative;
 	width: 75%;
 	left: 20%;
@@ -69,7 +89,12 @@ body {
 }
 
 //show on selected chapter with its id
-.chapter:target{
+// .article{
+// 	display: none;
+// }
+
+// .chapter:target,
+.article:target{
 	display: block;
 }
 
@@ -78,11 +103,19 @@ body {
 	display: block;
 }
 
+// .article{
+// 	display: none;
+// }
+
+// .article:target{
+// 	display: block;
+// }
+
 //prevent intro be affected by TOC
-.Introduction-Figuring-Things{
-	display: contents!important;
-	top: 0;
-}
+// .Introduction-Figuring-Things{
+// 	display: contents!important;
+// 	top: 0;
+// }
 
 .change-behind{
 	position: fixed;
