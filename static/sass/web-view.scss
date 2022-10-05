@@ -53,6 +53,8 @@ body {
 
 li{
 	list-style: none;
+	border-left: solid 0.5px;
+    padding-left: 5px;
 }
 
 a[href*="Test_Area"],
@@ -63,7 +65,7 @@ a[href*="Demo_Scriptotheek"]{
 //Picking links on the field 
 //chapter Setting_conditions
 a[href*="Platframe_Postscript"],
-a[href*="Re-,_Un-,Defining_Tools"],
+a[href*="#Re-,_Un-,_Defining_Tools"],
 a[href*="Open-source_Parenting"],
 a[href*="A_history_of_consensus_decision_making"],
 a[href*="Algorithmic_Consensus"],
@@ -179,6 +181,10 @@ img,
 	margin: 12pt auto;
 }
 
+.test-area{
+	visibility: hidden;
+}
+
 //scriptothek
 .Demo-script{
 	position: fixed;
@@ -194,6 +200,8 @@ img,
 
 	z-index: -1;
 	overflow: scroll!important;
+
+	visibility: visible;
 }
 
 //trying to show one chapter at a time
