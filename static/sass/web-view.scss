@@ -51,11 +51,14 @@ body {
 	z-index: 1;
 }
 
-li{
+li.toclevel-1,
+li.toclevel-2 {
 	list-style: none;
+
 	border-left: solid 0.5px;
     padding-left: 5px;
 }
+
 
 a[href*="Test_Area"],
 a[href*="Demo_Scriptotheek"]{
@@ -153,6 +156,10 @@ a[href*="Demo_Scriptotheek"]{
 // 	display: contents!important;
 // 	top: 0;
 // }
+
+.Introduction-Figuring-Things{
+	margin-top: -5px;
+}
 
 .btn-wrapper{
 	position: fixed;
