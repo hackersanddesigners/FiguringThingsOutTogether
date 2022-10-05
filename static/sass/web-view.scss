@@ -154,20 +154,24 @@ a[href*="Demo_Scriptotheek"]{
 // 	top: 0;
 // }
 
-.change-behind{
+.btn-wrapper{
 	position: fixed;
-	width: 55%;
+	width: 75%;
 	left: 20%;
 	top: 0;
-	z-index: 8934239;
-	font-size: 20px;
-	padding-right: 5px;
+	background-color: transparent;
 
+    // box-shadow: 0 15px 15px -5px white;
+	z-index: 8934239;
+	text-align: right;
+}
+
+.change-behind{
+	font-size: 50px;
+	padding: 10px;
+	cursor: pointer;
 	background-color: transparent;
 	border: none;
-
-	text-align: right;
-	cursor: pointer;
 }
 
 img,

@@ -11,7 +11,9 @@
 {% block content %}
 <main id="webview">
   <!-- BUTTON -->
-  <button class="change-behind" trigger = "0">&larr;</button>
+  <div class="btn-wrapper">
+    <button class="change-behind">&larr;</button>
+  </div>
 
   <!-- ARTICLES + CONTENTS -->
     <div class="content">
@@ -24,20 +26,20 @@
 
         // this one moves the page left and right
         $('.change-behind').click(function(){
-            if($('.chapter, .Introduction-Figuring-Things').attr("trigger")==="0"){
-                $('.chapter, .Introduction-Figuring-Things').animate({"left":"20%"},700);
-                $('.chapter, .Introduction-Figuring-Things').attr("trigger","1");
+            if($('.chapter, .Introduction-Figuring-Things, .btn-wrapper').attr("trigger")==="0"){
+                $('.chapter, .Introduction-Figuring-Things, .btn-wrapper').animate({"left":"20%"},700);
+                $('.chapter, .Introduction-Figuring-Things, .btn-wrapper').attr("trigger","1");
                 $('.change-behind').text("←" == $(this).text() ? "→" : "←");
 
                 $('.Demo-script').css("z-index", "-1");
             }
             else{
-                $('.chapter, .Introduction-Figuring-Things').animate({"left":"0px"},700);
-                $('.chapter, .Introduction-Figuring-Things').attr("trigger","0");
+                $('.chapter, .Introduction-Figuring-Things, .btn-wrapper').animate({"left":"0px"},700);
+                $('.chapter, .Introduction-Figuring-Things, .btn-wrapper').attr("trigger","0");
                 $('.change-behind').text("&larr;" == $(this).text() ? "&larr;" : "→");
 
-                $('.Demo-script').css("z-index", "2");
-                $('.toclimit-3').css("z-index", "0");
+                $('.Demo-script').delay(3000).css("z-index", "2");
+                $('.toclimit-3').delay(3000).css("z-index", "0");
             }
           });
 
