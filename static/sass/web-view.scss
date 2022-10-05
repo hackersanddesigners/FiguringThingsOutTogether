@@ -51,7 +51,42 @@ body {
 	z-index: 1;
 }
 
+li{
+	list-style: none;
+}
+
 a[href*="Test_Area"],
+a[href*="Demo_Scriptotheek"]{
+	display: none;
+}
+
+//Picking links on the field 
+//chapter Setting_conditions
+a[href*="Platframe_Postscript"],
+a[href*="Re-,_Un-,Defining_Tools"],
+a[href*="Open-source_Parenting"],
+a[href*="A_history_of_consensus_decision_making"],
+a[href*="Algorithmic_Consensus"],
+a[href*="Mycelines:_A_Sympoetic_Imagination"],
+
+//chapter How-to's -- !SKIPPED! due to an error
+a[href*="Mud_Batteries"],
+a[href*="Gerwani_and_Api_Kartini._Indonesian_Women's_Movement"],
+a[href*="Display(ing)"],
+
+//chapter Prompts
+a[href*="Prompts_for_hanging_out_in_a_spreadsheet"],
+a[href*="Propositioning"],
+a[href*="Roleplaying_in_Etherpad"],
+
+//chapter Scripted Syllabi
+a[href*="Interfacial-Workouts"],
+a[href*="wiki_reflections"],
+
+//chapter Active Bibliographies
+a[href*="Workshop_Histories_and_Practices"],
+
+//DemoScript
 a[href*="Demo_Scriptotheek"]{
 	display: none;
 }
