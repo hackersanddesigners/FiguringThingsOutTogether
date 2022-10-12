@@ -94,6 +94,7 @@ def filtered_html(pagename):
 def filter(html):
   print("filtering...")	
   soup = BeautifulSoup(html, 'html.parser')
+  soup = fixImageLinks(soup)
   soup = imageSpreads(soup)
   # soup = wrapChapters(soup)
   soup = wrapAuthors(soup)
@@ -105,9 +106,18 @@ def filter(html):
 
 def web_filter(html):
   soup = BeautifulSoup(html, 'html.parser')
+  soup = fixImageLinks(soup)
   soup = moveToc(soup)
   html = str(soup)
   return html
+
+def fixImageLinks(soup):
+  images = soup.find_all("img")
+  for image in images:
+    parent = image.parent
+    if( parent.name == "a"):
+      parent['href'] = image['src']
+  return soup
 
 def moveToc(soup):
   toc_wrap = soup.new_tag('div', **{"class": 'toc-wrap'}) 
@@ -143,7 +153,7 @@ def wrapTitleImages(soup):
   images = soup.find_all("img", class_="title_image") 
   for image in images:
     wrap = image.find_parent("div", class_="thumb")
-    pprint(wrap)
+    # pprint(wrap)
     # wrap['class'] = "image-wrapper"
     wrap['class'] = wrap.get('class', []) + ['title-image-wrap']
     # div = soup.new_tag('div', **{"class": 'title-image-wrap'}) 
