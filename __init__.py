@@ -63,12 +63,12 @@ def inspect():
     STYLES_NS,
     plugin.name,
   )
-  return flask.render_template(
+  return web_filter(flask.render_template(
     'web-view.html', 
     title = plugin.name,
     html  = publication['html'],
     css   = publication['css']
-  )
+  ))
 
 # The filters in this plugin work on request time
 # this endpoint returns the filtered html, 
@@ -103,6 +103,23 @@ def filter(html):
   html = removeSrcSets(html)
   return html
 
+def web_filter(html):
+  soup = BeautifulSoup(html, 'html.parser')
+  soup = moveToc(soup)
+  html = str(soup)
+  return html
+
+def moveToc(soup):
+  toc_wrap = soup.new_tag('div', **{"class": 'toc-wrap'}) 
+  toc_css = soup.select('.chapter:first-of-type style[data-mw-deduplicate]')
+  toc = soup.select('.chapter:first-of-type [class^="toclimit-"]')
+  content = soup.select('.content')
+  if( toc_css and toc and content ):
+    toc_wrap.append(toc_css[0])
+    toc_wrap.append(toc[0])
+    content[0].insert_before(toc_wrap)
+  return soup
+  
 #filters out br's wrapped in p's without other content
 def filterPBR(soup):
   ps = soup.select('p:has(br:first-child)')
