@@ -40,8 +40,8 @@ body {
 }
 
 //Table of Contents
-.toclimit-3{
-	width: 20% !important;
+.toc-wrap{
+	width: 20%;
 	height: 100%;
 	background-color: #b19cd9;
 	position: fixed;
@@ -49,6 +49,7 @@ body {
 	left: 0;
 
 	z-index: 1;
+	overflow: scroll;
 }
 
 li.toclevel-1,
@@ -59,6 +60,10 @@ li.toclevel-2 {
     padding-left: 5px;
 }
 
+li.toclevel-3,
+li.toclevel-4{
+	display: none;
+}
 
 a[href*="Test_Area"],
 a[href*="Demo_Scriptotheek"]{
@@ -74,9 +79,9 @@ a[href*="A_history_of_consensus_decision_making"],
 a[href*="Algorithmic_Consensus"],
 a[href*="Mycelines:_A_Sympoetic_Imagination"],
 
-//chapter How-to's -- !SKIPPED! due to an error
+//chapter How-to's
 a[href*="Mud_Batteries"],
-a[href*="Gerwani_and_Api_Kartini._Indonesian_Women's_Movement"],
+a[href*="Gerwani_and_Api_Kartini._Indonesian_Womens_Movement"],
 a[href*="Display(ing)"],
 
 //chapter Prompts
@@ -129,9 +134,9 @@ a[href*="Demo_Scriptotheek"]{
 }
 
 //show on selected chapter with its id
-// .article{
-// 	display: none;
-// }
+.article{
+	display: none;
+}
 
 // .chapter:target,
 .article:target{
