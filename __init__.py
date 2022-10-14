@@ -153,12 +153,8 @@ def wrapTitleImages(soup):
   images = soup.find_all("img", class_="title_image") 
   for image in images:
     wrap = image.find_parent("div", class_="thumb")
-    # pprint(wrap)
-    # wrap['class'] = "image-wrapper"
     wrap['class'] = wrap.get('class', []) + ['title-image-wrap']
-    # div = soup.new_tag('div', **{"class": 'title-image-wrap'}) 
-    # div.append(copy.copy(image))
-    # image.replace_with(div)
+    image.parent['class'] = image.parent.get('class', []) + ['bg'] # add bg class for showing/hiding fore/background
   return soup
 
 # Searches in the document for h2 tags and author divs (immediatly following an h2!)

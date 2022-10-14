@@ -41,6 +41,14 @@
 
 }
 
+.pagedjs_pages .pagedjs_margin .pagedjs_margin-content {
+	background-color: white;
+	border-radius: 1rem;
+	padding: 6px 10px 1px;
+	width: auto;
+}
+
+
 /*
 	because we're changing the right margin based on layout
 	we need to fix the top-right margin box
@@ -155,6 +163,7 @@ span.footnote {
 			font-size: 44pt;
 			padding: 0 10pt;
 			line-height: 1.4; // any lower and descenders go off the page
+			background-color: transparent;
 		}
 	}
 
