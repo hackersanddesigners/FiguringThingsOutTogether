@@ -7,7 +7,8 @@
 	overflow: hidden;
 	// left: calc(calc(var(--pagedjs-bleed-left) + var(--pagedjs-margin-left))*-1);
 	left: calc(calc((var(--pagedjs-bleed-left) + var(--pagedjs-margin-left)) + var(--pagedjs-padding-left ))* -1);
-	top: calc(calc(var(--pagedjs-bleed-top) + var(--pagedjs-margin-top))*-1);
+	// top: calc(calc(var(--pagedjs-bleed-top) + var(--pagedjs-margin-top))*-1);
+	top: calc((var(--pagedjs-bleed-top) + var(--pagedjs-margin-top) + var(--pagedjs-padding-top)) * -1 );
 	position: absolute;
 	// background-color: black;
 }
