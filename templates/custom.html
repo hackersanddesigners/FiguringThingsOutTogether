@@ -24,6 +24,21 @@
 {% endblock %} 
 
 {% block content %}
+{% set checks = [ 'hide_foreground', 'hide_background'] %}
+<div class="print-ui">
+	<input type="checkbox" class="show_hide" id="show_hide" /><label for="show_hide"><a class="menu__icon mobile"><span></span></a></label>
+	<div class="ui">
+		<div class="print-ui-element">
+		</div>
+		{% for check in checks %}
+		<div class="print-ui-element">
+			<label><input type="checkbox" id="{{check}}" value=1 {% if (request.args.get(check)|int )	 != 0 %}checked{% endif %} />Toggle {{check}}</label>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+
 
 <template id="source"> {{ html | safe }} </template>
 {% endblock %}
