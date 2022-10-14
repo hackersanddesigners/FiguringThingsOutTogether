@@ -15,6 +15,8 @@
     <button class="change-behind">&larr;</button>
   </div>
 
+  <button class="close">X</button>
+
   <!-- ARTICLES + CONTENTS -->
     <div class="content">
       {{ html | safe }}
@@ -26,23 +28,21 @@
 
         // this one moves the page left and right
         $('.change-behind').click(function(){
-            if($('.chapter, .Introduction-Figuring-Things, .btn-wrapper').attr("trigger")==="0"){
-                $('.chapter, .Introduction-Figuring-Things, .btn-wrapper').animate({"left":"20%"},700);
-                $('.chapter, .Introduction-Figuring-Things, .btn-wrapper').attr("trigger","1");
+            if($('.content, .btn-wrapper').attr("trigger")==="0"){
+                $('.content, .btn-wrapper').animate({"left":"20%"},700);
+                $('.content, .btn-wrapper').attr("trigger","1");
                 $('.change-behind').text("←" == $(this).text() ? "→" : "←");
 
                 $('.Demo-script').css("z-index", "-1");
             }
             else{
-                $('.chapter, .Introduction-Figuring-Things, .btn-wrapper').animate({"left":"0px"},700);
-                $('.chapter, .Introduction-Figuring-Things, .btn-wrapper').attr("trigger","0");
+                $('.content, .btn-wrapper').animate({"left":"50px"},700);
+                $('.content, .btn-wrapper').attr("trigger","0");
                 $('.change-behind').text("&larr;" == $(this).text() ? "&larr;" : "→");
 
                 $('.Demo-script').delay(3000).css("z-index", "2");
-                $('.toclimit-3').delay(3000).css("z-index", "0");
             }
           });
-
 
             $('a[href*="Setting_conditions"]').click(function(){
               $('a[href*="Platframe_Postscript"]').toggle();
@@ -53,11 +53,11 @@
               $('a[href*="Mycelines:_A_Sympoetic_Imagination"]').toggle();
             });
 
-            // problematic one because of '
-            // $('a[href*="How-to's"]').click(function(){
-            //   $(".how-tos").toggle();
-            //   $(".Introduction-Figuring-Things").hide();
-            // });
+            $('a[href*="How-tos"]').click(function(){
+              $('a[href*="Mud_Batteries"]').toggle();
+              $('a[href*="Gerwani_and_Api_Kartini._Indonesian_Womens_Movement"]').toggle();
+              $('a[href*="Display(ing)"]').toggle() 
+            });
 
             $('a[href*="Prompts"]').click(function(){
               $('a[href*="Prompts_for_hanging_out_in_a_spreadsheet"]').toggle();
@@ -75,11 +75,23 @@
               $('a[href*=""]').toggle();
             });
 
-        //potential animation to be developed
-        // $('.chapter').click(function(){
-        //   $('.chapter.introduction').fadeOut();
-        // });
+            $('.script-image .thumbimage').click(function(){
+              $('.Demo-script').css("width", "96.5%");
+              $('.script-image, .thumbinner').css({"width":"100%"}, 700);
 
+              // $('.content, .btn-wrapper').css({"width":"16%"},700);
+              $('.introduction, .setting-conditions, .how-tos, .prompts, .scripted-syllabi, .active-bibliographies, .btn-wrapper').hide();
+              $('.close').toggle();
+            });
+
+            $('.close').click(function(){
+              $('.Demo-script').css("width", "21.5%");
+              $('.script-image, .thumbinner').css({"width":"100%"}, 700);
+
+              $('.close').hide();
+
+              $('.introduction, .setting-conditions, .how-tos, .prompts, .scripted-syllabi, .active-bibliographies, .btn-wrapper').show();
+            });
     });
     </script>
 </main>
