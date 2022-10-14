@@ -12,20 +12,11 @@ https://jamonserrano.github.io/plumber-sass/
 @import "debug";
 
 /* General styling */
-//TODO: figure out why it's overflowing
-html {
-	// font-size: 62.5%;
-	width: 100vw;
-	height: 100%;
-}
-
-a:hover{
-	text-decoration: underline;
-}
-
-a:active{
-	text-decoration: underline;
-}
+// html {
+// 	font-size: 62.5%;
+// 	width: 100vw;
+// 	height: 100%;
+// }
 
 body {
 	color: var(--color-main);
@@ -35,8 +26,18 @@ body {
 	position: relative;
 
 	overflow-x: hidden;
-	// display: flex;
-	// align-items: center;
+}
+
+#webview{
+	display: flex;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+a:active{
+	text-decoration: underline;
 }
 
 //Table of Contents
@@ -48,7 +49,7 @@ body {
 	top: 0;
 	left: 0;
 
-	z-index: 1;
+	z-index: -1;
 	overflow: scroll;
 }
 
@@ -101,10 +102,17 @@ a[href*="Demo_Scriptotheek"]{
 	display: none;
 }
 
-.chapter{
-	position: relative;
+.content{
+	position: absolute;
+
 	width: 75%;
 	left: 20%;
+}
+
+.chapter{
+	position: relative;
+	// width: 75%;
+	// left: 20%;
 	background-color: white;
 	top: 0;
 
@@ -116,54 +124,15 @@ a[href*="Demo_Scriptotheek"]{
 }
 
 // all chapters
-// .chapter
 .article{
 	position: relative;
-	width: 75%;
-	left: 20%;
-	background-color: white;
-	top: 0;
-
 	display: none;
-
-	min-height: 100vh;
-
-	box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
-	-webkit-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
-	-moz-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
-}
-
-//show on selected chapter with its id
-.article{
-	display: none;
+	padding: 1%;
 }
 
 // .chapter:target,
 .article:target{
 	display: block;
-}
-
-//introduction (to be finalized)
-.chapter.introduction{
-	display: block;
-}
-
-// .article{
-// 	display: none;
-// }
-
-// .article:target{
-// 	display: block;
-// }
-
-//prevent intro be affected by TOC
-// .Introduction-Figuring-Things{
-// 	display: contents!important;
-// 	top: 0;
-// }
-
-.Introduction-Figuring-Things{
-	margin-top: -5px;
 }
 
 .btn-wrapper{
@@ -186,6 +155,10 @@ a[href*="Demo_Scriptotheek"]{
 	border: none;
 }
 
+.close{
+	display: none;
+}
+
 img,
 .thumbinner {
 	width: auto; // height is set with javascript
@@ -197,6 +170,10 @@ img,
 	margin: 12pt auto;
 }
 
+.wikitable .filehistory{
+	display: block;
+}
+
 .test-area{
 	visibility: hidden;
 }
@@ -204,8 +181,10 @@ img,
 //scriptothek
 .Demo-script{
 	position: fixed;
-	width: 25%;
+	width: 21.5%;
 	height: 100vh;
+
+	// resize: horizontal;
 
 	margin: 0;
 	padding: 0;
@@ -218,23 +197,21 @@ img,
 	overflow: scroll!important;
 
 	visibility: visible;
+
+	box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+	-webkit-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+	-moz-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+}
+
+.script-image .thumbimage{
+	border: solid black;
+}
+
+.script-image{
+	margin-bottom: 5%;
 }
 
 //trying to show one chapter at a time
-
-// .setting-conditions,
-// .how-tos,
-// .prompts,
-// .scripted-syllabi,
-// .active-bibliographies{
-// 	display: none;
-// }
-
-// a[href*="Test_Area"]{
-// 	display: none;
-// }
-
-
 // h3+p {
 // 	text-indent: 0 !important;
 // }
@@ -303,6 +280,7 @@ content: " (" attr(href) ")";
 a.image {
 	display: block;
 	text-align: center;
+	border: solid black;
 }
 
 .pagedjs_pages .pagedjs_area .chapter .image-container {
