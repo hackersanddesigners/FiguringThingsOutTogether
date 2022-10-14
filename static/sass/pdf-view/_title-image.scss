@@ -1,5 +1,5 @@
 .pagedjs_layout-title_page .pagedjs_area {
-	z-index: -1;
+	// z-index: -1;
 }
 
 
@@ -7,22 +7,25 @@
 	
 	.image {
 		position: absolute;
-		width: calc(var(--pagedjs-pagebox-width) / 2);
+		// width: calc(var(--pagedjs-pagebox-width) / 2);
+		// width: calc(var(--pagedjs-pagebox-width) );
 		height: calc(var(--pagedjs-height) - var(--pagedjs-bleed-right) - var(--pagedjs-bleed-left));
 		overflow: hidden;
 		// right: calc(calc(var(--pagedjs-bleed-right) + var(--pagedjs-margin-right) + var(--pagedjs-padding-right) )*-1);
 		right: calc(calc(var(--pagedjs-margin-right) + var(--pagedjs-padding-right))*-1);
 		// top: calc(calc(var(--pagedjs-bleed-top) + var(--pagedjs-margin-top) + var(--pagedjs-padding-top) )*-1);
 		top: calc(calc(var(--pagedjs-margin-top) + var(--pagedjs-padding-top))*-1);
-		outline: 1px dashed yellow;
+		// outline: 1px dashed yellow;
 		display: flex;
-		justify-content: center;
+    justify-content: flex-end;
 		align-items: center;
+		background-color: yellow;
 
 		img {
 			max-width: 100%;
 			max-height: 100%;
 			height: auto;
+			mix-blend-mode: multiply;
 		}
 	}
 
