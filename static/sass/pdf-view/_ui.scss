@@ -43,6 +43,7 @@
 	background: yellow;
 	font-size: 5rem;
 	font-family: le-murmure, sans-serif;
+	color: blue;
 	input[type=checkbox]{
     width: 5rem;
     height: 5rem;
@@ -57,61 +58,15 @@
 
 input:checked ~ .ui {
 	left: 50%;
-	box-shadow: 0 10px 10px rgba(0,0,0,0.5);
+	box-shadow: 0 0 20px rgb(0 0 255 / 100%);
 	transform: translate(-50%, -50%);
 }
-
-// .menu__icon {
-// 	height: 16px;
-// 	width: 21px;
-// 	position: absolute;
-// 	top: 10px;
-// 	left: 10px;
-// 	display: inline-block;
-// 	vertical-align: middle;
-// 	z-index: 20;
-// }
-	
-// .menu__icon span {
-// 	display: block;
-// 	background: black;
-// 	width: 100%;
-// 	height: 2px;
-// 	margin-top: -1px;
-// 	position: absolute;
-// 	left: 0;
-// 	top: 50%;
-// }
-	
-// .menu__icon:before,
-// .menu__icon:after {
-// 	content: "";
-// 	display: block;
-// 	background: black;
-// 	width: 100%;
-// 	height: 2px;
-// 	position: absolute;
-// 	left: 0;
-// 	transform-origin: center center;
-// 	transform: rotate(0deg);
-// 	transition: all 0.3s ease;
-// }
-	
-// .menu__icon:before {
-// 	top: 1px;
-// 	margin-top: -1px;
-// }
-	
-// .menu__icon:after {
-// 	bottom: 1px;
-// 	margin-bottom: -1px;
-// }
 
 /* From: https://codepen.io/varystrategic/pen/YPMOVO */
 
 $icon_size: 3em;
 
-.menu__icon {
+.show_hide ~ label .menu__icon {
 	pointer-events: all;
   display: inline-block;
   position: relative;
@@ -122,7 +77,7 @@ $icon_size: 3em;
   border-radius: 50%;
   border: $icon_size/3.5 solid blue;
   box-sizing: border-box;
-	transition: border 0.3s ease, color 0.3s ease;
+	transition: border 0.6s ease;
   
   &:before,
   &:after {
@@ -134,7 +89,7 @@ $icon_size: 3em;
     transform: translate(-50%,-50%);
     font-family: "times new roman";
     font-weight: bold;
-    font-size: $icon_size*2.5;
+    font-size: $icon_size*2.2;
     color: blue;
 		transition: border 0.3s ease, color 0.3s ease;
   }
@@ -150,12 +105,16 @@ $icon_size: 3em;
 }	
 
 .show_hide:checked ~ label .menu__icon {
-	border-color: transparent;
-	background-color: transparent;
+	// border-color: transparent;
+	// background-color: transparent;
+	border-width: 0px;
 	border: 0px;
-	transition: border 0.3s ease;
+	transition: border 0.6s ease;
 	&:after{
 		color: transparent;
+	}
+	&:before{
+		z-index: 1;
 	}
 }
 
@@ -181,6 +140,9 @@ $icon_size: 3em;
 		img {
 			opacity: 0;
 		}
+		.bg {
+			background-color: black;
+		}
 	}
 }
 
@@ -192,5 +154,8 @@ $icon_size: 3em;
 	}
 	.p5Canvas {
 		display: none !important;
+	}
+	.bg {
+		background-color: transparent !important;
 	}
 }
