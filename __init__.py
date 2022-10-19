@@ -101,6 +101,7 @@ def filter(html):
   soup = wrapTitleImages(soup)
   soup = filterPBR(soup)
   soup = hideFromBook(soup)
+  soup = tocID(soup)
   html = str(soup) #soup.prettify() # dont use prettify. It causes whitespace in layout in some instances #
   html = removeSrcSets(html)
   return html
@@ -114,7 +115,6 @@ def web_filter(html):
 
 def hideFromBook(soup):
   hide = soup.find_all(class_="hide-from-book")
-  pprint("hide")
   for el in hide:
     el.decompose()
   return soup
@@ -127,6 +127,12 @@ def fixImageLinks(soup):
       parent['href'] = image['src']
   return soup
 
+def tocID(soup):
+  toc = soup.select('.chapter:first-of-type [class^="toclimit-"] > div > ul')
+  if( toc ):
+    toc[0]['id'] = "toc-list"
+  return soup
+  
 def moveToc(soup):
   toc_wrap = soup.new_tag('div', **{"class": 'toc-wrap'}) 
   toc_css = soup.select('.chapter:first-of-type style[data-mw-deduplicate]')
