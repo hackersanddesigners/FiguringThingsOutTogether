@@ -100,6 +100,7 @@ def filter(html):
   soup = wrapAuthors(soup)
   soup = wrapTitleImages(soup)
   soup = filterPBR(soup)
+  soup = hideFromBook(soup)
   html = str(soup) #soup.prettify() # dont use prettify. It causes whitespace in layout in some instances #
   html = removeSrcSets(html)
   return html
@@ -110,6 +111,13 @@ def web_filter(html):
   soup = moveToc(soup)
   html = str(soup)
   return html
+
+def hideFromBook(soup):
+  hide = soup.find_all(class_="hide-from-book")
+  pprint("hide")
+  for el in hide:
+    el.decompose()
+  return soup
 
 def fixImageLinks(soup):
   images = soup.find_all("img")
@@ -152,9 +160,11 @@ def wrapAuthors(soup):
 def wrapTitleImages(soup):
   images = soup.find_all("img", class_="title_image") 
   for image in images:
+    bg = soup.new_tag('span', **{"class": 'bg'})
+    image.wrap(bg)
     wrap = image.find_parent("div", class_="thumb")
     wrap['class'] = wrap.get('class', []) + ['title-image-wrap']
-    image.parent['class'] = image.parent.get('class', []) + ['bg'] # add bg class for showing/hiding fore/background
+    # image.parent['class'] = image.parent.get('class', []) + ['bg'] # add bg class for showing/hiding fore/background
   return soup
 
 # Searches in the document for h2 tags and author divs (immediatly following an h2!)
