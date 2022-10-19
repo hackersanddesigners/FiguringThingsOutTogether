@@ -2,11 +2,7 @@
 
 // @include font("Authentic", "../fonts/AUTHENTICSans-60", $weight: light);
 @include font("Authentic", "../fonts/AUTHENTICSans-90", $weight: regular);
-// @include font("Authentic", "../fonts/AUTHENTICSans-130", $weight: bold);
 @include font("Authentic", "../fonts/AUTHENTICSans-150", $weight: bold);
-// @include font("Authentic", "../fonts/AUTHENTICSans-90", $weight: '90');
-// @include font("Authentic", "../fonts/AUTHENTICSans-130", $weight: '130');
-// @include font("Authentic", "../fonts/AUTHENTICSans-150", $weight: '150');
 // @include font("Authentic-condensed", "../fonts/AUTHENTICSans-Condensed-60", $weight: light);
 // @include font("Authentic-condensed", "../fonts/AUTHENTICSans-Condensed-90", $weight: regular);
 // @include font("Authentic-condensed", "../fonts/AUTHENTICSans-Condensed-130", $weight: bold);
@@ -16,15 +12,15 @@
 	font-weight: $weight;
 }
 
-@mixin font-authentic-condensed ( $weight: regular) {
-	font-family: Authentic-condensed, sans-serif;
-	font-weight: $weight;
-}
+// @mixin font-authentic-condensed ( $weight: regular) {
+// 	font-family: Authentic-condensed, sans-serif;
+// 	font-weight: $weight;
+// }
  
 .font-authentic {
 	@include font-authentic();
 }
 
-.font-authentic-condensed {
-	@include font-authentic-condensed();
-}
+// .font-authentic-condensed {
+// 	@include font-authentic-condensed();
+// }
