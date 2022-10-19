@@ -1,52 +1,58 @@
+:root {
+	--margin: 0px;
+}
+
 .full-spread-image-section {
+	--spacing-left: var(--pagedjs-padding-left) + var(--pagedjs-margin-left);
+	--spacing-top: var(--pagedjs-padding-top) + var(--pagedjs-margin-top);
+	--half-bleed: calc( var(--pagedjs-bleed-left) / 2 ); // assuming equal bleed on all sides
 
-}
-.full-page-image {
-	width: var(--pagedjs-width);
-	height: var(--pagedjs-height);
-	overflow: hidden;
-	// left: calc(calc(var(--pagedjs-bleed-left) + var(--pagedjs-margin-left))*-1);
-	left: calc(calc((var(--pagedjs-bleed-left) + var(--pagedjs-margin-left)) + var(--pagedjs-padding-left ))* -1);
-	// top: calc(calc(var(--pagedjs-bleed-top) + var(--pagedjs-margin-top))*-1);
-	top: calc((var(--pagedjs-bleed-top) + var(--pagedjs-margin-top) + var(--pagedjs-padding-top)) * -1 );
-	position: absolute;
-	// background-color: black;
-}
+	.full-page-image {
+		
+		position: absolute;
+		width: calc( var(--pagedjs-width) - var(--pagedjs-bleed-left ));
+		height: calc( var(--pagedjs-height) - var(--pagedjs-bleed-top ));
+		
+		overflow: hidden;
+		
+		left: calc(calc(var(--spacing-left) + var(--half-bleed))* -1);
+		top: calc(calc(var(--spacing-top) + var(--half-bleed))* -1);
+		outline: 1px solid red;
+	}
 
-.full-page-image div {
-	width: calc(var(--pagedjs-width)*2 - var(--pagedjs-bleed-left) - var(--pagedjs-bleed-right));
-	height: var(--pagedjs-height);
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-}
+	.full-page-image div {
+		// we add a little bit extra width to compensate for the part of the image that
+		// will disappear into the binding fold.
+		width: calc(var(--pagedjs-width)*2 - calc(var(--pagedjs-bleed-left) * 2 ));
+		height: var(--pagedjs-height);
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+	}
 
-/* compensate for bleeds */
-.pagedjs_right_page .full-page-image div {
-	// margin-left: calc( calc(-1 * var(--pagedjs-width)) + var(--pagedjs-bleed-left ) + var(--pagedjs-bleed-right ));
-	margin-left: calc(var(--pagedjs-width)*-1 - var(--pagedjs-bleed-left)*2 + var(--pagedjs-bleed-right)*2);
-}
+	/* compensate for bleeds */
+	.pagedjs_right_page & .full-page-image div {
+		// margin-left: calc(var(--pagedjs-width) * -1 );
+		// This is all tricky as hell. If we add to the width of the div above, we 
+		// also need to compensate on the margin of this right page. 
+		margin-left: calc(calc(var(--pagedjs-width) - var(--pagedjs-bleed-left) * 2 ) * -1);
+	}
 
-.full-page-image img {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-	margin: 0 !important;
-}
+	.full-page-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		margin: 0 !important;
+		max-width: unset;
+		max-height: unset;
+	}
 
-// .full-page-image {
-// 	page-break-before: always;
-// }
-
-.title-spread .full-page-image {
-	background-color: black;
-}
-
-.full-spread-image-section .full-page-image div.full-spread-image-caption {
-	height: auto;
-	position: absolute;
-	display: block;
-	right: calc(calc(var(--pagedjs-bleed-right) + var(--pagedjs-margin-right)));
-	bottom: calc(var(--pagedjs-bleed-bottom) + var(--pagedjs-margin-bottom));
-	width: calc(var(--pagedjs-width) - var(--pagedjs-bleed-right) - var(--pagedjs-margin-right) - var(--pagedjs-bleed-left) - var(--pagedjs-margin-left));
+	.full-page-image div.full-spread-image-caption {
+		height: auto;
+		position: absolute;
+		display: block;
+		right: calc(calc(var(--pagedjs-bleed-right) + var(--pagedjs-margin-right)));
+		bottom: calc(var(--pagedjs-bleed-bottom) + var(--pagedjs-margin-bottom));
+		width: calc(var(--pagedjs-width) - var(--pagedjs-bleed-right) - var(--pagedjs-margin-right) - var(--pagedjs-bleed-left) - var(--pagedjs-margin-left));
+	}
 }
