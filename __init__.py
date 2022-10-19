@@ -166,8 +166,8 @@ def wrapAuthors(soup):
 def wrapTitleImages(soup):
   images = soup.find_all("img", class_="title_image") 
   for image in images:
-    bg = soup.new_tag('span', **{"class": 'bg'})
-    image.wrap(bg)
+    # bg = soup.new_tag('span', **{"class": 'bg'})
+    # image.wrap(bg)
     wrap = image.find_parent("div", class_="thumb")
     wrap['class'] = wrap.get('class', []) + ['title-image-wrap']
     # image.parent['class'] = image.parent.get('class', []) + ['bg'] # add bg class for showing/hiding fore/background
