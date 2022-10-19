@@ -91,7 +91,7 @@ sup,
 	// commented after revisions from astrit.
 }
 .pagedjs_margin{
-	@include font-authentic-condensed();
+	@include font-authentic(bold);
 	font-size: 12pt;	
 }
 
