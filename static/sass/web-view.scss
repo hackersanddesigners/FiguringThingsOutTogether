@@ -155,17 +155,13 @@ a[href*="Demo_Scriptotheek"]{
 	border: none;
 }
 
-.close{
-	display: none;
-}
+// 
 
-img,
-.thumbinner {
+img {
 	width: auto; // height is set with javascript
 	height: auto;
-	max-width: 85%;
+	max-width: 50%;
 	max-height: 80%;
-	border-radius: 1rem;
 	display: block;
 	margin: 12pt auto;
 }
@@ -178,13 +174,15 @@ img,
 	visibility: hidden;
 }
 
+.pagedjs_pages .two-columns {
+    columns: 2;
+}
+
 //scriptothek
 .Demo-script{
 	position: fixed;
 	width: 21.5%;
 	height: 100vh;
-
-	// resize: horizontal;
 
 	margin: 0;
 	padding: 0;
@@ -203,13 +201,82 @@ img,
 	-moz-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
 }
 
-.script-image .thumbimage{
-	border: solid black;
+.script-image {
+	// width: 10%; // height is set with javascript
+	position: relative;
+	right: 0;
+	cursor: pointer;
 }
 
-.script-image{
-	margin-bottom: 5%;
+.script-image .thumbimage{
+	border: solid black;
+	width: 10%;
 }
+
+// .thumb .tright{
+// 	margin-bottom: 5%;
+// }
+
+.hide-from-book{
+	display: none;
+	position: relative;
+}
+
+.slideshow-buttons{
+	width: 96.5%;
+	position: fixed;
+	// background-color: #b19cd9;
+	right: 0;
+	z-index: 5;
+	top:50%;
+	display: none;
+}
+
+.close-wrapper{
+	width: 96.5%;
+	position: fixed;
+	// background-color: #b19cd9;
+	right: 0;
+	z-index: 5;
+	top:0;
+	display: none;
+}
+
+.prev,
+.next,
+.close{
+	border:none;
+	display:inline-block;
+	padding:8px 16px;
+	vertical-align:middle;
+	overflow:hidden;
+	text-decoration:none;
+	color:inherit;
+	background-color:inherit;
+	text-align:center;
+	cursor:pointer;
+	white-space:nowrap;
+	font-size: 50px;
+}
+
+.prev{
+	position:absolute;
+	left:0%;
+	// transform:translate(0%,-50%);
+	// -ms-transform:translate(-0%,-50%)
+}
+
+.next{
+	position:absolute;
+	right:0%;
+	// transform:translate(0%,-50%);
+	// -ms-transform:translate(-0%,-50%)
+}
+
+
+// .mySlides img{
+// 	width: 500px!important;
+// }
 
 //trying to show one chapter at a time
 // h3+p {
