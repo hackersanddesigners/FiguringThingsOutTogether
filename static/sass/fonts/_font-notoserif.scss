@@ -1,0 +1,9 @@
+@include font("NotoSerifItalic", "../fonts/NotoSerifItalic");
+
+@mixin font-notoserif() {
+	font-family: NotoSerifItalic-Micro, serif;
+}
+
+.font-notoserif {
+	@include font-notoserif();
+}
