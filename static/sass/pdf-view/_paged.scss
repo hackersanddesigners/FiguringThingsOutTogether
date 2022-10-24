@@ -162,7 +162,7 @@ span.footnote {
 			// @include font-louise-regular(); // moved to typography
 		
 			padding: 0 20pt;
-			line-height: 2; // any lower and descenders go off the page
+			line-height: 1.7; // any lower and descenders go off the page, but high and the it goes over the title image
 			background-color: transparent;
 			font-size: 40pt;
 		}
