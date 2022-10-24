@@ -7,7 +7,8 @@
 
 		.image {
 			position: absolute;
-			height: calc(var(--pagedjs-height) - var(--pagedjs-bleed-right) - var(--pagedjs-bleed-left));
+			// height: calc(var(--pagedjs-height) - var(--pagedjs-bleed-right) - var(--pagedjs-bleed-left) );
+			height: calc(var(--pagedjs-height) - var(--pagedjs-bleed-right) - var(--pagedjs-bleed-bottom) * 2 - var(--pagedjs-margin-bottom ) ); // the * 2 - var(--pagedjs-margin-bottom ) part is to make the image start above the page number
 			overflow: hidden;
 			left: calc((var(--pagedjs-margin-left) + var(--pagedjs-padding-left))*-1);
 			right: calc(calc(var(--pagedjs-margin-right) + var(--pagedjs-padding-right))*-1);
