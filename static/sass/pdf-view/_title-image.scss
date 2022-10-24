@@ -2,66 +2,68 @@
 	z-index: -1;
 }
 
+.pagedjs_pages {
+	.title-image-wrap {
 
-.title-image-wrap {
-	
-	.image {
-		position: absolute;
-		height: calc(var(--pagedjs-height) - var(--pagedjs-bleed-right) - var(--pagedjs-bleed-left));
-		overflow: hidden;
-		left: calc((var(--pagedjs-margin-left) + var(--pagedjs-padding-left))*-1);
-		right: calc(calc(var(--pagedjs-margin-right) + var(--pagedjs-padding-right))*-1);
-		top: calc(calc(var(--pagedjs-margin-top) + var(--pagedjs-padding-top))*-1);
-		display: flex;
-    justify-content: flex-end;
-		align-items: center;
-		
-		span.bg {
-			width: 100%;
-			// height: 100%;			
-			background-color: yellow;
+		.image {
+			position: absolute;
+			height: calc(var(--pagedjs-height) - var(--pagedjs-bleed-right) - var(--pagedjs-bleed-left));
+			overflow: hidden;
+			left: calc((var(--pagedjs-margin-left) + var(--pagedjs-padding-left))*-1);
+			right: calc(calc(var(--pagedjs-margin-right) + var(--pagedjs-padding-right))*-1);
+			top: calc(calc(var(--pagedjs-margin-top) + var(--pagedjs-padding-top))*-1);
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+
+			span.bg {
+				width: 100%;
+				// height: 100%;			
+				background-color: yellow;
+			}
+
+			img {
+				max-width: 100%;
+				max-height: 100%;
+				height: auto;
+				mix-blend-mode: multiply;
+				display: block;
+			}
 		}
-		img {
-			max-width: 100%;
-			max-height: 100%;
-			height: auto;
-			mix-blend-mode: multiply;
-			display: block;
+
+		/* weird swapping of values because of the transform gives me headache */
+		// .thumbcaption {
+		// 	// height: calc(var(--pagedjs-pagebox-width)/2);
+		// 	// left: calc(var(--pagedjs-width)/2);
+		// 	outline: 3px dashed red;
+		// 	overflow: hidden;
+		// 	position: absolute;
+		// 	// top: calc(var(--pagedjs-height) - var(--pagedjs-bleed-top) - var(--pagedjs-bleed-bottom));
+		// 	transform: rotate(90deg);
+		// 	transform-origin: top left;
+		// 	width: calc(var(--pagedjs-height) - var(--pagedjs-bleed-right) - var(--pagedjs-bleed-left));
+		// 	top: calc(calc(var(--pagedjs-margin-top) + var(--pagedjs-padding-top)) * -1);
+		// 	// left: calc(calc(var(--pagedjs-margin-left) + var(--pagedjs-padding-left)) * -1);
+		// 	left: calc(calc(var(--pagedjs-pagebox-width)/2) - var(--pagedjs-margin-left) - var(--pagedjs-padding-left));
+		// 	// right: calc(var(--pagedjs-pagebox-height)/-2);
+		// 	padding: 20pt 40pt;
+		// }
+		.thumbcaption {
+			overflow: hidden;
+			position: absolute;
+
+			height: calc(var(--pagedjs-pagebox-width)/2);
+			width: calc(var(--pagedjs-height) - var(--pagedjs-bleed-right) - var(--pagedjs-bleed-left));
+
+			left: calc(calc(var(--pagedjs-margin-left) + var(--pagedjs-padding-left)) * -1);
+			top: calc(var(--pagedjs-height) - var(--pagedjs-bleed-top)*2 - var(--pagedjs-margin-top) - var(--pagedjs-padding-top));
+
+			transform: rotate(-90deg);
+			transform-origin: top left;
+			padding: 20pt 80pt;
+
+			@include font-sligoil-micro();
+			font-size: 9pt;
 		}
-	}
-
-	/* weird swapping of values because of the transform gives me headache */
-	// .thumbcaption {
-	// 	// height: calc(var(--pagedjs-pagebox-width)/2);
-	// 	// left: calc(var(--pagedjs-width)/2);
-	// 	outline: 3px dashed red;
-	// 	overflow: hidden;
-	// 	position: absolute;
-	// 	// top: calc(var(--pagedjs-height) - var(--pagedjs-bleed-top) - var(--pagedjs-bleed-bottom));
-	// 	transform: rotate(90deg);
-	// 	transform-origin: top left;
-	// 	width: calc(var(--pagedjs-height) - var(--pagedjs-bleed-right) - var(--pagedjs-bleed-left));
-	// 	top: calc(calc(var(--pagedjs-margin-top) + var(--pagedjs-padding-top)) * -1);
-	// 	// left: calc(calc(var(--pagedjs-margin-left) + var(--pagedjs-padding-left)) * -1);
-	// 	left: calc(calc(var(--pagedjs-pagebox-width)/2) - var(--pagedjs-margin-left) - var(--pagedjs-padding-left));
-	// 	// right: calc(var(--pagedjs-pagebox-height)/-2);
-	// 	padding: 20pt 40pt;
-	// }
-	.thumbcaption {
-		overflow: hidden;
-		position: absolute;
-		
-		height: calc(var(--pagedjs-pagebox-width)/2);
-		width: calc(var(--pagedjs-height) - var(--pagedjs-bleed-right) - var(--pagedjs-bleed-left));
-
-		left: calc(calc(var(--pagedjs-margin-left) + var(--pagedjs-padding-left)) * -1);
-		top: calc(var(--pagedjs-height) - var(--pagedjs-bleed-top)*2 - var(--pagedjs-margin-top) - var(--pagedjs-padding-top));
-
-		transform: rotate(-90deg);
-		transform-origin: top left;
-		padding: 20pt 80pt;
-
-		@include font-sligoil-micro();
-		font-size: 9pt;
 	}
 }
