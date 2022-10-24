@@ -3,8 +3,7 @@
 }
 
 .pagedjs_pages {
-	.title-image-wrap {
-
+	.wide-image-wrap {
 		.image {
 			position: absolute;
 			// height: calc(var(--pagedjs-height) - var(--pagedjs-bleed-right) - var(--pagedjs-bleed-left) );
@@ -66,5 +65,9 @@
 			@include font-sligoil-micro();
 			font-size: 9pt;
 		}
+	}
+
+	.title-image-wrap {
+		@extend .wide-image-wrap;
 	}
 }
