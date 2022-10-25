@@ -160,10 +160,11 @@ span.footnote {
 			bottom: 0;
 			width: 100pt !important;
 			// @include font-louise-regular(); // moved to typography
-			font-size: 44pt;
-			padding: 0 10pt;
-			line-height: 1.4; // any lower and descenders go off the page
+		
+			padding: 0 20pt;
+			line-height: 1.7; // any lower and descenders go off the page, but high and the it goes over the title image
 			background-color: transparent;
+			font-size: 40pt;
 		}
 	}
 

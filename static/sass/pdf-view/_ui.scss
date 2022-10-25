@@ -117,6 +117,13 @@ $icon_size: 3em;
 	.pagedjs_pagebox{
 		*, *::after, *::before, a {
 			color: transparent !important;
+			border-color: transparent !important;
+		}
+		ul {
+			list-style: none;
+		}
+		li::marker {
+			display: none;
 		}
 		img {
 			opacity: 0;

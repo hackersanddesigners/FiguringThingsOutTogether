@@ -102,6 +102,7 @@ def filter(html):
   soup = filterPBR(soup)
   soup = hideFromBook(soup)
   soup = tocID(soup)
+  soup = internalLinks(soup)
   html = str(soup) #soup.prettify() # dont use prettify. It causes whitespace in layout in some instances #
   html = removeSrcSets(html)
   return html
@@ -112,6 +113,24 @@ def web_filter(html):
   soup = moveToc(soup)
   html = str(soup)
   return html
+
+# adds a title attribute to internal links with the name of the article that is being linked to.
+def internalLinks(soup):
+  links = soup.select('a[href^="#"]:not(#toc-list *, [class^="toclevel-"] *, .print-ui *):not(.footnote)')
+  for link in links:
+    href = link['href']
+    print( "looking for article " + href)
+    ref = soup.find(id=href[1:])
+    if( ref ):
+      # should be a div, but i've also seen the headline>span
+      if( ref.name == "span" ):
+        txt = ref.string
+      if( ref.name == "div" ):
+        txt = ref.h3.span.string
+      print("Found article. Title: " + txt )
+      link['title'] = txt
+      link['class'] = "internal-link"
+  return soup
 
 def hideFromBook(soup):
   hide = soup.find_all(class_="hide-from-book")
@@ -164,7 +183,8 @@ def wrapAuthors(soup):
 
 # wrap author span in a div to have some control over the layout
 def wrapTitleImages(soup):
-  images = soup.find_all("img", class_="title_image") 
+  # images = soup.find_all("img", class_="title_image") 
+  images = soup.select('img.title_image,img.wide_image')
   for image in images:
     # bg = soup.new_tag('span', **{"class": 'bg'})
     # image.wrap(bg)

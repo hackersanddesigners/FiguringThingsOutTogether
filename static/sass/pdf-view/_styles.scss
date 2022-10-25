@@ -139,3 +139,19 @@ a.image {
 .contributors {
 	display: none;
 }
+
+.internal-link {
+	// position: relative;
+}
+
+.internal-link::after {
+	content: "see " attr(title) " >>>";
+	display: inline-block;
+	position: absolute;
+	white-space: nowrap;
+	right: 0;
+	margin-top: -0.4rem;
+	margin-right: calc( var(--pagedjs-margin-right) * -0.5 );
+	font-size: 6pt;
+	font-weight: bold;
+}
