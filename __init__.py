@@ -174,12 +174,19 @@ def internalLinks(soup):
       # should be a div, but i've also seen the headline>span
       if( ref.name == "span" ):
         txt = ref.string
-      if( ref.name == "div" ):
-        txt = ref.h3.span.string
+      elif( ref.name == "div" ):
+        txt = ref.h3.find(text=True, recursive=True)
+      else:
+        txt = "No title found."
       print("Found article. Title: " + txt )
       link['title'] = txt
       link['class'] = "internal-link"
   return soup
+
+def extractText(element):
+  string = ""
+  
+  return string
 
 def hideFromBook(soup):
   hide = soup.find_all(class_="hide-from-book")
