@@ -273,10 +273,12 @@ img {
 	// -ms-transform:translate(-0%,-50%)
 }
 
-
-// .mySlides img{
-// 	width: 500px!important;
-// }
+.mySlides{
+	width: 200px!important;
+	border: solid black;
+	// height: 100vh;
+	// position: fixed;
+}
 
 //trying to show one chapter at a time
 // h3+p {
