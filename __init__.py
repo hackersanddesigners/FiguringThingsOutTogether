@@ -111,9 +111,58 @@ def web_filter(html):
   soup = BeautifulSoup(html, 'html.parser')
   soup = fixImageLinks(soup)
   soup = moveToc(soup)
+  soup = scriptothek(soup)
   html = str(soup)
   return html
 
+def scriptothek(soup):
+  scriptothek = soup.new_tag('div', **{"class": 'scriptothek-wrapper'})
+  content = soup.select('.content')
+  # search for nodes with class scriptothek
+  els = soup.select('.scriptothek')
+  last_id = ""
+  container = soup.new_tag('div')
+  slideshow = soup.new_tag('div', class_="scriptothek-slideshow")
+  container.append(slideshow)
+  for el in els:
+    print(el)
+    # try to find chapter
+    article = el.find_parent('div', class_="article")
+    id = article['id']
+    if( id != last_id ):
+      # if new chapter, new div. Append the old div if it has contents
+      if( len(container.contents) > 1 ):
+        container["class"] = 'scriptothek-chapter chapter-' + last_id
+        scriptothek.append(container)
+      container = soup.new_tag('div')
+      slideshow = soup.new_tag('div', class_="scriptothek-slideshow")
+      container.append(slideshow)
+      last_id = id
+    if( el.name == 'img'):
+      if("title_image" in el['class']):
+        # directly add to scriptothek
+        el["class"] += "script-trailer"
+        container.append(el.parent)
+      else:
+        el["class"] += "script-image"
+        slideshow.append(img.parent)
+    elif ( el.name == 'div' ):
+      # search for images
+      imgs = el.find_all("img")
+      for img in imgs:
+        # add images to scriptothek
+        img["class"] += "script-image"
+        slideshow.append(img.parent)
+  # pprint(scriptothek.prettify())
+  content[0].insert_after(scriptothek)
+  return soup
+
+# def getArticleTitle(article):
+#   title = ""
+#   h3 = article.find(h3)
+#   title = h3.span.string
+#   return title
+  
 # adds a title attribute to internal links with the name of the article that is being linked to.
 def internalLinks(soup):
   links = soup.select('a[href^="#"]:not(#toc-list *, [class^="toclevel-"] *, .print-ui *):not(.footnote)')
