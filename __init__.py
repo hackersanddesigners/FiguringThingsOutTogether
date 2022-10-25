@@ -175,7 +175,7 @@ def internalLinks(soup):
       if( ref.name == "span" ):
         txt = ref.string
       elif( ref.name == "div" ):
-        txt = ref.h3.find(text=True, recursive=True)
+        txt = ''.join(ref.h3.find_all(text=True, recursive=True))
       else:
         txt = "No title found."
       print("Found article. Title: " + txt )
