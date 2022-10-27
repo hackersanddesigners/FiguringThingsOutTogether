@@ -30,6 +30,15 @@
       {{ html | safe }}
     </div>
 
+<div>
+  <div class="thumb tright script-trailer">...</div>
+  <div class="scriptotheek-slideshow">
+    <div class="script-image"></div>
+    <div class="script-image"></div>
+    <div class="script-image"></div>
+    <div class="script-image"></div>
+  </div>
+</div>
 
     <script>
       $(document).ready(function(){
@@ -52,41 +61,69 @@
             }
           });
 
-            $('a[href*="Setting_conditions"]').click(function(){
-              $('a[href*="Platframe_Postscript"]').toggle();
-              $('a[href*="Re-,_Un-,Defining_Tools"]').toggle();
-              $('a[href*="Open-source_Parenting"]').toggle();
-              $('a[href*="A_history_of_consensus_decision_making"]').toggle();
-              $('a[href*="Algorithmic_Consensus"]').toggle();
-              $('a[href*="Mycelines:_A_Sympoetic_Imagination"]').toggle();
+        // on article click hide intro !sketch! *develop a better solution*
+        $('.toclevel-2').click(function(){
+          $('.Introduction-Figuring-Things').hide();
+        });
+
+          //TOC links toggle
+            $('a[href*="First,_Then…_Repeat."]').click(function(){
+              $('a[href*="Workshop_scripts_in_practice"]').toggle();
             });
 
-            $('a[href*="How-tos"]').click(function(){
-              $('a[href*="Mud_Batteries"]').toggle();
-              $('a[href*="Gerwani_and_Api_Kartini._Indonesian_Womens_Movement"]').toggle();
-              $('a[href*="Display(ing)"]').toggle() 
+            $('a[href*="Setting_conditions"]').click(function(){
+              $('a[href*="Open-source_Parenting"]').toggle();
+              $('a[href*="Platframe_Postscript"]').toggle();
+              $('a[href*="WINWIN"]').toggle();
+              $('a[href*="On_consensus,_in_two_parts"]').toggle();
+              $('a[href*="Re-_and_Un-_Defining_Tools"]').toggle();
+              $('a[href*="Mycelines:_A_Sympoetic_Imagination"]').toggle();
+              $('a[href*="fileSHA_as_protocol"]').toggle();
+              $('a[href*="Skinship"]').toggle();
             });
 
             $('a[href*="Prompts"]').click(function(){
-              $('a[href*="Prompts_for_hanging_out_in_a_spreadsheet"]').toggle();
-              $('a[href*="Propositioning"]').toggle();
+              $('a[href*="Reading_Food"]').toggle();
+              $('a[href*="Across_Distance_and_Difference"]').toggle();
               $('a[href*="Roleplaying_in_Etherpad"]').toggle();
+              $('a[href*="Spreadsheet_Routines"]').toggle();
+              $('a[href*="Channeling_Listeners"]').toggle();
+              $('a[href*="Untitling"]').toggle();
             });
 
-            $('a[href*="Scripted_syllabi"]').click(function(){
+            $('a[href*="How-tos"]').click(function(){
+              $('a[href*="Learning_to_Experiment,_Sharing_Techniques"]').toggle();
+              $('a[href*="Scripts_from:_Learning_to_Experiment,_Sharing_Techniques_(ed._Julia_Bee_and_Gerko_Egert)"]').toggle();
+              $('a[href*="Give_and_Take"]').toggle();
+              $('a[href*="Conceptual_Speed_Dating"]').toggle();
+              $('a[href*="Bodystrike"]').toggle();
+              $('a[href*="The_Button_Saga"]').toggle();
+              $('a[href*="Mud_Batteries"]').toggle();
+              $('a[href*="Gerwani_and_Api_Kartini._Indonesian_Womens_Movement"]').toggle();
+              $('a[href*="Display(ing)"]').toggle();
+            });
+
+            $('a[href*="Distributed_Curricula"]').click(function(){
+              $('a[href*="Cooperative_gaming"]').toggle();
+              $('a[href*="A_case_of_mistaken_identity"]').toggle();
               $('a[href*="Interfacial-Workouts"]').toggle();
+              $('a[href*="Am_I_a_hacker_now?"]').toggle();
               $('a[href*="wiki_reflections"]').toggle();
+              $('a[href*="ChattyPub"]').toggle();
+              $('a[href*="Scripting_Workshops"]').toggle();
             });
 
             $('a[href*="Active_bibliographies"]').click(function(){
               $('a[href*="Workshop_Histories_and_Practices"]').toggle();
-              $('a[href*=""]').toggle();
+              $('a[href*="Did_video_kill_the_radio_(star)?"]').toggle();
+              $('a[href*="Solarpunk_Postscript"]').toggle();
+              $('a[href*="Workshop_Matters_and_Materials"]').toggle();
             });
 
             $('.script-image .thumbimage').click(function(){
               $('.Demo-script').css("width", "96.5%");
-              $('.thumbinner').css({"width":"100%"}, 700);
-              $('.thumbimage').hide();
+              // $('.thumbinner').css({"width":"100%"}, 700);
+              $('.script-image').hide();
               $('.hide-from-book, .close-wrapper, .slideshow-buttons').show();
 
               // $('.content, .btn-wrapper').css({"width":"16%"},700);
@@ -95,13 +132,15 @@
 
             $('.close').click(function(){
               $('.Demo-script').css("width", "21.5%");
-              $('.thumbinner').css({"width":"100%"}, 700);
-              $('.thumbimage').show();
+              // $('.thumbinner').css({"width":"100%"}, 700);
+              $('.script-image').show();
 
               $('.hide-from-book, .close-wrapper, .slideshow-buttons').hide();
 
               $('.introduction, .setting-conditions, .how-tos, .prompts, .scripted-syllabi, .active-bibliographies, .btn-wrapper').show();
             });
+
+            $(".image").hide()
     });
 
 

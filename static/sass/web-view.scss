@@ -66,36 +66,53 @@ li.toclevel-4{
 	display: none;
 }
 
-a[href*="Test_Area"],
-a[href*="Demo_Scriptotheek"]{
-	display: none;
-}
-
 //Picking links on the field 
+//chapter First,_Then…_Repeat.
+// a[href*="Workshop_scripts_in_practice"],
+
 //chapter Setting_conditions
-a[href*="Platframe_Postscript"],
-a[href*="#Re-,_Un-,_Defining_Tools"],
 a[href*="Open-source_Parenting"],
-a[href*="A_history_of_consensus_decision_making"],
-a[href*="Algorithmic_Consensus"],
+a[href*="Platframe_Postscript"],
+a[href*="WINWIN"],
+a[href*="On_consensus,_in_two_parts"],
+a[href*="#Re-_and_Un-_Defining_Tools"],
 a[href*="Mycelines:_A_Sympoetic_Imagination"],
+a[href*="fileSHA_as_protocol"],
+a[href*="Skinship"],
+
+//chapter Prompts
+a[href*="Reading_Food"],
+a[href*="Across_Distance_and_Difference"],
+a[href*="Roleplaying_in_Etherpad"],
+a[href*="Spreadsheet_Routines"],
+a[href*="Channeling_Listeners"],
+a[href*="Untitling"],
 
 //chapter How-to's
+a[href*="Learning_to_Experiment,_Sharing_Techniques"],
+a[href*="Scripts_from:_Learning_to_Experiment,_Sharing_Techniques_(ed._Julia_Bee_and_Gerko_Egert)"],
+a[href*="Give_and_Take"],
+a[href*="Conceptual_Speed_Dating"],
+a[href*="Bodystrike"],
+a[href*="The_Button_Saga"],
 a[href*="Mud_Batteries"],
 a[href*="Gerwani_and_Api_Kartini._Indonesian_Womens_Movement"],
 a[href*="Display(ing)"],
 
-//chapter Prompts
-a[href*="Prompts_for_hanging_out_in_a_spreadsheet"],
-a[href*="Propositioning"],
-a[href*="Roleplaying_in_Etherpad"],
-
-//chapter Scripted Syllabi
+//chapter Distributed_Curricula
+a[href*="Cooperative_gaming"],
+a[href*="A_case_of_mistaken_identity"],
 a[href*="Interfacial-Workouts"],
+a[href*="Am_I_a_hacker_now?"],
 a[href*="wiki_reflections"],
+a[href*="ChattyPub"],
+a[href*="Scripting_Workshops"],
 
 //chapter Active Bibliographies
 a[href*="Workshop_Histories_and_Practices"],
+a[href*="Did_video_kill_the_radio_(star)?"],
+a[href*="Solarpunk_Postscript"],
+a[href*="Workshop_Matters_and_Materials"],
 
 //DemoScript
 a[href*="Demo_Scriptotheek"]{
@@ -135,6 +152,10 @@ a[href*="Demo_Scriptotheek"]{
 	display: block;
 }
 
+.Introduction-Figuring-Things{
+	padding: 1%;
+}
+
 .btn-wrapper{
 	position: fixed;
 	width: 75%;
@@ -155,8 +176,6 @@ a[href*="Demo_Scriptotheek"]{
 	border: none;
 }
 
-// 
-
 img {
 	width: auto; // height is set with javascript
 	height: auto;
@@ -168,10 +187,6 @@ img {
 
 .wikitable .filehistory{
 	display: block;
-}
-
-.test-area{
-	visibility: hidden;
 }
 
 .pagedjs_pages .two-columns {
@@ -273,10 +288,12 @@ img {
 	// -ms-transform:translate(-0%,-50%)
 }
 
-
-// .mySlides img{
-// 	width: 500px!important;
-// }
+.mySlides{
+	width: 200px!important;
+	border: solid black;
+	// height: 100vh;
+	// position: fixed;
+}
 
 //trying to show one chapter at a time
 // h3+p {
