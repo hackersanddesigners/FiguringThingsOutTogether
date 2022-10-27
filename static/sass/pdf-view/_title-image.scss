@@ -69,5 +69,14 @@
 
 	.title-image-wrap {
 		@extend .wide-image-wrap;
+
+		.image {
+			left: 20%;
+		}
+	}
+
+	/* Fix the margin content disappearing under the iamge */
+	.pagedjs_area:has(.title_image) {
+    z-index: -1;
 	}
 }

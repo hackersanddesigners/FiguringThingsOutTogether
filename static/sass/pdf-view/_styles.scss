@@ -145,7 +145,7 @@ a.image {
 }
 
 .internal-link::after {
-	content: "see " attr(title) " >>>";
+	content: attr(title) " →";
 	display: inline-block;
 	position: absolute;
 	white-space: nowrap;

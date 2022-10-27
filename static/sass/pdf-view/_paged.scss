@@ -109,6 +109,10 @@
 	padding-top: 5px;
 }
 
+.pagedjs_footnote_inner_content {
+	padding-left: 2.5cm;
+}
+
 // .pagedjs_pages .pagedjs_blank_page {
 // 	.pagedjs_margin-bottom-center, .pagedjs_margin-top-center {
 // 		.pagedjs_margin-content {
@@ -133,7 +137,7 @@ h3 {
 h2 {
   counter-increment: countChapter;
 	// string-set: articleTitle content(text);
-	counter-set: footnote-marker 0 footnote 0;
+	// counter-set: footnote-marker 0 footnote 0;
 	string-set: author "";
 }
 

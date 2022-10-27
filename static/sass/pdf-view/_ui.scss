@@ -111,6 +111,25 @@ $icon_size: 3em;
 	font-size: 4rem;
 	position: absolute;
 	top: 2rem;
+	font-size: 2rem;
+	color: blue;
+	text-decoration: none;
+
+	&::before {
+    border: 3px solid blue;
+    border-bottom: none;
+    border-left: none;
+    content: "";
+    display: block;
+    height: 2rem;
+    transform: translate(0.4rem,1rem) rotate(-45deg);
+    width: 2rem;
+		transition: all 0.3s ease;
+	}
+
+	&:hover:before {
+		transform: translate(0.4rem,0rem) rotate(-45deg);
+	}
 }
 
 .hide_foreground {
