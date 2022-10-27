@@ -68,7 +68,7 @@ li.toclevel-4{
 
 //Picking links on the field 
 //chapter First,_Then…_Repeat.
-a[href*="Workshop_scripts_in_practice"],
+// a[href*="Workshop_scripts_in_practice"],
 
 //chapter Setting_conditions
 a[href*="Open-source_Parenting"],
@@ -152,6 +152,10 @@ a[href*="Demo_Scriptotheek"]{
 	display: block;
 }
 
+.Introduction-Figuring-Things{
+	padding: 1%;
+}
+
 .btn-wrapper{
 	position: fixed;
 	width: 75%;
@@ -172,8 +176,6 @@ a[href*="Demo_Scriptotheek"]{
 	border: none;
 }
 
-// 
-
 img {
 	width: auto; // height is set with javascript
 	height: auto;
@@ -186,10 +188,6 @@ img {
 .wikitable .filehistory{
 	display: block;
 }
-
-// .test-area{
-// 	visibility: hidden;
-// }
 
 .pagedjs_pages .two-columns {
     columns: 2;

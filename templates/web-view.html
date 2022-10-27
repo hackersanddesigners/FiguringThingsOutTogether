@@ -61,7 +61,12 @@
             }
           });
 
+        // on article click hide intro !sketch! *develop a better solution*
+        $('.toclevel-2').click(function(){
+          $('.Introduction-Figuring-Things').hide();
+        });
 
+          //TOC links toggle
             $('a[href*="First,_Then…_Repeat."]').click(function(){
               $('a[href*="Workshop_scripts_in_practice"]').toggle();
             });
@@ -71,7 +76,7 @@
               $('a[href*="Platframe_Postscript"]').toggle();
               $('a[href*="WINWIN"]').toggle();
               $('a[href*="On_consensus,_in_two_parts"]').toggle();
-              $('a[href*="#Re-_and_Un-_Defining_Tools"]').toggle();
+              $('a[href*="Re-_and_Un-_Defining_Tools"]').toggle();
               $('a[href*="Mycelines:_A_Sympoetic_Imagination"]').toggle();
               $('a[href*="fileSHA_as_protocol"]').toggle();
               $('a[href*="Skinship"]').toggle();
