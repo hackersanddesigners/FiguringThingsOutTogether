@@ -122,7 +122,7 @@ def scriptothek(soup):
   els = soup.select('.scriptothek')
   last_id = ""
   container = soup.new_tag('div')
-  slideshow = soup.new_tag('div', class_="scriptothek-slideshow")
+  slideshow = soup.new_tag('div',**{"class":"scriptothek-slideshow"})
   container.append(slideshow)
   for el in els:
     print(el)
