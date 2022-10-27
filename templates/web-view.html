@@ -30,15 +30,6 @@
       {{ html | safe }}
     </div>
 
-<div>
-  <div class="thumb tright script-trailer">...</div>
-  <div class="scriptotheek-slideshow">
-    <div class="script-image"></div>
-    <div class="script-image"></div>
-    <div class="script-image"></div>
-    <div class="script-image"></div>
-  </div>
-</div>
 
     <script>
       $(document).ready(function(){
@@ -120,55 +111,46 @@
               $('a[href*="Workshop_Matters_and_Materials"]').toggle();
             });
 
-            $('.script-image .thumbimage').click(function(){
-              $('.Demo-script').css("width", "96.5%");
-              // $('.thumbinner').css({"width":"100%"}, 700);
-              $('.script-image').hide();
-              $('.hide-from-book, .close-wrapper, .slideshow-buttons').show();
+            $('a[href*="Platframe_Postscript').click(function(){
+              $('.chapter-Platframe_Postscript').show();
+            });
 
-              // $('.content, .btn-wrapper').css({"width":"16%"},700);
+            $('.script-trailer').click(function(e) {
+              e.preventDefault();
+              $('.scriptothek-wrapper').css("width", "96.5%");
+
+              $('.script-trailer').hide();
+              $('.scriptothek-slideshow, .close-wrapper, .slideshow-buttons').show();
+
               $('.introduction, .setting-conditions, .how-tos, .prompts, .scripted-syllabi, .active-bibliographies, .btn-wrapper').hide();
             });
 
             $('.close').click(function(){
-              $('.Demo-script').css("width", "21.5%");
-              // $('.thumbinner').css({"width":"100%"}, 700);
-              $('.script-image').show();
+              $('.scriptothek-wrapper').css("width", "21.5%");
+              $('.script-trailer').show();
 
-              $('.hide-from-book, .close-wrapper, .slideshow-buttons').hide();
-
+              $('.scriptothek-slideshow, .close-wrapper, .slideshow-buttons').hide();
               $('.introduction, .setting-conditions, .how-tos, .prompts, .scripted-syllabi, .active-bibliographies, .btn-wrapper').show();
             });
-
-            $(".image").hide()
     });
+</script>
+    <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
 
-
-    let slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
     }
 
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      let dots = document.getElementsByClassName("dot");
-      if (n > slides.length) {slideIndex = 1}    
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("script-image");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
       }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";  
-      dots[slideIndex-1].className += " active";
+      x[slideIndex-1].style.display = "block";  
     }
     </script>
 </main>
