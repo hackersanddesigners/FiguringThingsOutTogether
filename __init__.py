@@ -141,17 +141,20 @@ def scriptothek(soup):
     if( el.name == 'img'):
       if("title_image" in el['class']):
         # directly add to scriptothek
-        el["class"] += "script-trailer"
-        container.append(el.parent)
+        el.parent["class"] += ["script-trailer"]
+        del el["srcset"]
+        container.insert(0, el.parent)
       else:
-        el["class"] += "script-image"
+        el.parent["class"] += ["script-image"]
+        del el["srcset"]
         slideshow.append(img.parent)
     elif ( el.name == 'div' ):
       # search for images
       imgs = el.find_all("img")
       for img in imgs:
         # add images to scriptothek
-        img["class"] += "script-image"
+        img.parent["class"] += ["script-image"]
+        del img["srcset"]
         slideshow.append(img.parent)
   # pprint(scriptothek.prettify())
   content[0].insert_after(scriptothek)
@@ -174,12 +177,19 @@ def internalLinks(soup):
       # should be a div, but i've also seen the headline>span
       if( ref.name == "span" ):
         txt = ref.string
-      if( ref.name == "div" ):
-        txt = ref.h3.span.string
+      elif( ref.name == "div" ):
+        txt = ''.join(ref.h3.find_all(text=True, recursive=True))
+      else:
+        txt = "No title found."
       print("Found article. Title: " + txt )
       link['title'] = txt
       link['class'] = "internal-link"
   return soup
+
+def extractText(element):
+  string = ""
+  
+  return string
 
 def hideFromBook(soup):
   hide = soup.find_all(class_="hide-from-book")
