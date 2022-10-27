@@ -64,9 +64,10 @@ $icon_size: 3em;
   height: $icon_size;
   background: whitesmoke;
   border-radius: 50%;
-  border: calc($icon_size/3.5) solid blue;
+  border: calc($icon_size/5) solid blue;
   box-sizing: border-box;
-	transition: border 0.6s ease;
+	// transition: border 0.6s ease, transform 0.6s ease, background-col;
+	transition: all 0.6s ease;
   
   &:before,
   &:after {
@@ -80,7 +81,8 @@ $icon_size: 3em;
     font-weight: bold;
     font-size: $icon_size*2.2;
     color: blue;
-		transition: border 0.3s ease, color 0.3s ease;
+		transition: border 0.3s ease, color 0.3s ease , transform 0.3s ease;
+		z-index: 1;
   }
   
   &:after {
@@ -97,13 +99,20 @@ $icon_size: 3em;
 	// border-color: transparent;
 	// background-color: transparent;
 	border-width: 0px;
-	transition: border 0.6s ease;
+	// transition: border 0.6s ease, transform 0.6s ease;
 	background-color: transparent;
+	transform: rotateZ(45deg);
+	// &:after{
+	// 	color: transparent;
+	// }
+	// &:before{
+	// 	z-index: 1;
+	// }
 	&:after{
-		color: transparent;
+		
 	}
 	&:before{
-		z-index: 1;
+		color: transparent;
 	}
 }
 
