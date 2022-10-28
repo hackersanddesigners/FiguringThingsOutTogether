@@ -113,6 +113,7 @@ def web_filter(html):
   soup = moveToc(soup)
   soup = scriptothek(soup)
   html = str(soup)
+  html = removeSrcSets(html)
   return html
 
 def scriptothek(soup):
