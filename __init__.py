@@ -135,7 +135,7 @@ def scriptothek(soup):
         container["class"] = 'scriptothek-chapter chapter-' + last_id
         scriptothek.append(container)
       container = soup.new_tag('div')
-      slideshow = soup.new_tag('div', class_="scriptothek-slideshow")
+      slideshow = soup.new_tag('div', **{"class":"scriptothek-slideshow"})
       container.append(slideshow)
       last_id = id
     if( el.name == 'img'):
@@ -145,7 +145,7 @@ def scriptothek(soup):
         del el["srcset"]
         container.insert(0, el.parent)
       else:
-        el.parent["class"] += ["script-image"]
+        el["class"] += ["script-image"]
         del el["srcset"]
         slideshow.append(img.parent)
     elif ( el.name == 'div' ):
@@ -153,10 +153,10 @@ def scriptothek(soup):
       imgs = el.find_all("img")
       for img in imgs:
         # add images to scriptothek
-        img.parent["class"] += ["script-image"]
+        img["class"] += ["script-image"]
         del img["srcset"]
         slideshow.append(img.parent)
-  # pprint(scriptothek.prettify())
+  pprint(scriptothek.prettify())
   content[0].insert_after(scriptothek)
   return soup
 
