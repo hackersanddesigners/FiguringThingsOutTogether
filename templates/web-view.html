@@ -111,9 +111,11 @@
               $('a[href*="Workshop_Matters_and_Materials"]').toggle();
             });
 
-            $('a[href*="Platframe_Postscript').click(function(){
-              $('.chapter-Platframe_Postscript').show();
-            });
+
+
+            // $('a[href*="Platframe_Postscript').click(function(){
+            //   $('.chapter-Platframe_Postscript').show();
+            // });
 
             $('.script-trailer').click(function(e) {
               e.preventDefault();
@@ -125,6 +127,20 @@
               $('.introduction, .setting-conditions, .how-tos, .prompts, .scripted-syllabi, .active-bibliographies, .btn-wrapper').hide();
             });
 
+            var $gallery = $(".scriptothek-slideshow"),
+                tot = $("> *", $gallery).length,
+                counter = 0;
+
+            $(".prev, .next").on("click", function() {
+                counter = $(this).hasClass("next") ? ++counter : --counter;
+                counter = counter<0 ? tot-1 : counter%tot;
+
+                $gallery.css({
+                    transition: "0.5s",
+                    transform: "translateX(-"+  (100*counter)  +"%)"
+                });
+            });
+
             $('.close').click(function(){
               $('.scriptothek-wrapper').css("width", "21.5%");
               $('.script-trailer').show();
@@ -134,25 +150,6 @@
             });
     });
 </script>
-    <script>
-    var slideIndex = 1;
-    showDivs(slideIndex);
-
-    function plusDivs(n) {
-      showDivs(slideIndex += n);
-    }
-
-    function showDivs(n) {
-      var i;
-      var x = document.getElementsByClassName("script-image");
-      if (n > x.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = x.length}
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";  
-      }
-      x[slideIndex-1].style.display = "block";  
-    }
-    </script>
 </main>
 {% endblock %}
 

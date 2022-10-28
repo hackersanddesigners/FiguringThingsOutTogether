@@ -219,11 +219,31 @@ img {
 
 .scriptothek-slideshow{
 	display: none;
+	display: -webkit-inline-box;
 }
 
-.script-image{
+// .script-image{
+// 	width: 100%;
+// }
+
+.scriptothek-slideshow>* {
+	// display: inline-block; 
+	vertical-align:top;
+	overflow: hidden;
+}
+
+a.image{
+	width: 100%;
+}
+
+
+.test-area{
 	display: none;
 }
+
+// .scriptothek-slideshow > .script-image:nth-of-type(1){
+// 	display: block!important;
+// }
 
 // .script-image .thumbimage{
 // 	border: solid black;
