@@ -81,7 +81,7 @@ a[href*="fileSHA_as_protocol"],
 a[href*="Skinship"],
 
 //chapter Prompts
-a[href*="Reading_Food"],
+a[href*="Relearning_Food"],
 a[href*="Across_Distance_and_Difference"],
 a[href*="Roleplaying_in_Etherpad"],
 a[href*="Spreadsheet_Routines"],
@@ -90,6 +90,7 @@ a[href*="Untitling"],
 
 //chapter How-to's
 a[href*="Learning_to_Experiment,_Sharing_Techniques"],
+a[href*="The_perfect_robbery"],
 a[href*="Scripts_from:_Learning_to_Experiment,_Sharing_Techniques_(ed._Julia_Bee_and_Gerko_Egert)"],
 a[href*="Give_and_Take"],
 a[href*="Conceptual_Speed_Dating"],
@@ -105,6 +106,7 @@ a[href*="A_case_of_mistaken_identity"],
 a[href*="Interfacial-Workouts"],
 a[href*="Am_I_a_hacker_now?"],
 a[href*="wiki_reflections"],
+a[href*="Critical_Coding_Cookbook"],
 a[href*="ChattyPub"],
 a[href*="Scripting_Workshops"],
 
@@ -214,7 +216,7 @@ img {
 
 //hide all scriptotheeks
 .scriptothek-chapter{
-	display: none;
+	// display: none;
 }
 
 .scriptothek-slideshow{
