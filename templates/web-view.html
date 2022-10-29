@@ -135,6 +135,8 @@
               $('a[href*="Did_video_kill_the_radio_(star)?"]').toggle();
               $('a[href*="Solarpunk_Postscript"]').toggle();
               $('a[href*="Workshop_Matters_and_Materials"]').toggle();
+              $('a[href*="A_Note_on_the_design_of_this_publication"]').toggle();
+              $('a[href*="Colophon"]').toggle();
             });
 
             //universal close (rewrite more of those)
@@ -155,21 +157,27 @@
               }
             });
 
-//SLIDESHOW 0
-            $('a[href*="Open-source_Parenting').click(function(){
-              $('.scriptothek-chapter-0').show();
-              $('.scriptothek-slideshow-0').hide();
-              $('.scriptothek-chapter-1, .scriptothek-chapter-2, .scriptothek-chapter-3, .scriptothek-chapter-4, .scriptothek-chapter-5').hide();
-            });
 
-            $('.script-trailer-0').click(function(e) {
+            //prevent default on script-trailer
+            $('.script-trailer').click(function(e) {
               e.preventDefault();
               $('.scriptothek-wrapper').css("width", "96.5%");
-
-              $('.script-trailer-0, .slideshow1-buttons, .close').hide();
-              $('.scriptothek-slideshow-0, .close-wrapper, .slideshow0-buttons, .close0').show();
-
               $('.chapter, .btn-wrapper').hide();
+            }); 
+
+            // $('.toclevel-2').click(function() {
+            //   $('.scriptothek-chapter').hide()
+            // }); 
+
+//SLIDESHOW 0
+            $('a[href*="Open-source_Parenting').click(function(){
+              $('.scriptothek-chapter, .scriptothek-slideshow-0').hide();
+              $('.scriptothek-chapter-0').show();
+            });
+
+            $('.script-trailer-0').click(function() {
+              $('.script-trailer-0, .slideshow-buttons, .close').hide();
+              $('.scriptothek-slideshow-0, .close-wrapper, .slideshow0-buttons, .close0').show();
             });
 
             $('.close0').click(function(){
@@ -178,19 +186,13 @@
 
 //SLIDESHOW 1
             $('a[href*="Platframe_Postscript').click(function(){
+              $('.scriptothek-chapter, .scriptothek-slideshow-1').hide();
               $('.scriptothek-chapter-1').show();
-              $('.scriptothek-slideshow-1').hide();
-              $('.scriptothek-chapter-0, .scriptothek-chapter-2, .scriptothek-chapter-3, .scriptothek-chapter-4, .scriptothek-chapter-5').hide();
             });
 
-            $('.script-trailer-1').click(function(e) {
-              e.preventDefault();
-              $('.scriptothek-wrapper').css("width", "96.5%");
-
-              $('.script-trailer-1, .slideshow0-buttons, .close').hide();
-              $('.scriptothek-slideshow-1, .close-wrapper, .slideshow-buttons, .close1').show();
-
-              $('.chapter, .btn-wrapper').hide();
+            $('.script-trailer-1').click(function() {
+              $('.script-trailer-1, .slideshow-buttons, .close').hide();
+              $('.scriptothek-slideshow-1, .close-wrapper, .slideshow1-buttons, .close1').show();
             });
 
             $('.close1').click(function(){
@@ -199,19 +201,13 @@
 
 //SLIDESHOW 2
             $('a[href*="Across_Distance_and_Difference"]').click(function(){
+              $('.scriptothek-chapter, .scriptothek-slideshow-2').hide();
               $('.scriptothek-chapter-2').show();
-              $('.scriptothek-slideshow-2').hide();
-              $('.scriptothek-chapter-0, .scriptothek-chapter-1, .scriptothek-chapter-3, .scriptothek-chapter-4, .scriptothek-chapter-5').hide();
             });
 
-            $('.script-trailer-2').click(function(e) {
-              e.preventDefault();
-              $('.scriptothek-wrapper').css("width", "96.5%");
-
-              $('.script-trailer-2, .slideshow2-buttons, .close').hide();
-              $('.scriptothek-slideshow-2, .close-wrapper, .slideshow-buttons, .close2').show();
-
-              $('.chapter, .btn-wrapper').hide();
+            $('.script-trailer-2').click(function() {
+              $('.script-trailer-2, .slideshow-buttons, .close').hide();
+              $('.scriptothek-slideshow-2, .close-wrapper, .slideshow2-buttons, .close2').show();
             });
 
             $('.close2').click(function(){
@@ -220,19 +216,13 @@
           
 //SLIDESHOW 3
             $('a[href*="Channeling_Listeners"]').click(function(){
+              $('.scriptothek-chapter, .scriptothek-slideshow-3').hide();
               $('.scriptothek-chapter-3').show();
-              $('.scriptothek-slideshow-3').hide();
-              $('.scriptothek-chapter-0, .scriptothek-chapter-1, .scriptothek-chapter-2, .scriptothek-chapter-4, .scriptothek-chapter-5').hide();
             });
 
-            $('.script-trailer-3').click(function(e) {
-              e.preventDefault();
-              $('.scriptothek-wrapper').css("width", "96.5%");
-
-              $('.script-trailer-3, .slideshow3-buttons, .close').hide();
-              $('.scriptothek-slideshow-3, .close-wrapper, .slideshow-buttons, .close3').show();
-
-              $('.chapter, .btn-wrapper').hide();
+            $('.script-trailer-3').click(function() {
+              $('.script-trailer-3, .slideshow-buttons, .close').hide();
+              $('.scriptothek-slideshow-3, .close-wrapper, .slideshow3-buttons, .close3').show();
             });
 
             $('.close3').click(function(){
@@ -241,19 +231,13 @@
 
 //SLIDESHOW 4
             $('a[href*="Learning_to_Experiment,_Sharing_Techniques"]').click(function(){
+              $('.scriptothek-chapter, .scriptothek-slideshow-4').hide();
               $('.scriptothek-chapter-4').show();
-              $('.scriptothek-slideshow-4').hide();
-              $('.scriptothek-chapter-0, .scriptothek-chapter-1, .scriptothek-chapter-2, .scriptothek-chapter-3, .scriptothek-chapter-5').hide();
             });
 
-            $('.script-trailer-4').click(function(e) {
-              e.preventDefault();
-              $('.scriptothek-wrapper').css("width", "96.5%");
-
-              $('.script-trailer-4, .slideshow4-buttons, .close').hide();
-              $('.scriptothek-slideshow-4, .close-wrapper, .slideshow-buttons, .close4').show();
-
-              $('.chapter, .btn-wrapper').hide();
+            $('.script-trailer-4').click(function() {
+              $('.script-trailer-4, .slideshow-buttons, .close').hide();
+              $('.scriptothek-slideshow-4, .close-wrapper, .slideshow4-buttons, .close4').show();
             });
 
             $('.close4').click(function(){
@@ -262,19 +246,13 @@
 
 //SLIDESHOW 5
             $('a[href*="Mud_Batteries"]').click(function(){
+              $('.scriptothek-chapter, .scriptothek-slideshow-5').hide();
               $('.scriptothek-chapter-5').show();
-              $('.scriptothek-slideshow-5').hide();
-              $('.scriptothek-chapter-0, .scriptothek-chapter-1, .scriptothek-chapter-2, .scriptothek-chapter-3, .scriptothek-chapter-4').hide();
             });
 
-            $('.script-trailer-5').click(function(e) {
-              e.preventDefault();
-              $('.scriptothek-wrapper').css("width", "96.5%");
-
-              $('.script-trailer-5, .slideshow5-buttons, .close').hide();
-              $('.scriptothek-slideshow-5, .close-wrapper, .slideshow-buttons, .close5').show();
-
-              $('.chapter, .btn-wrapper').hide();
+            $('.script-trailer-5').click(function() {
+              $('.script-trailer-5, .slideshow-buttons, .close').hide();
+              $('.scriptothek-slideshow-5, .close-wrapper, .slideshow5-buttons, .close5').show();
             });
 
             $('.close5').click(function(){
