@@ -20,8 +20,8 @@
   </div>
 
   <div class="slideshow-buttons">
-    <a class="prev" onclick="plusSlides(-1)">&#60;</a>
-    <a class="next" onclick="plusSlides(1)">&#62;</a>
+    <a class="prev" onclick="plusDivs(-1)">&#60;</a>
+    <a class="next" onclick="plusDivs(1)">&#62;</a>
   </div>
 
 
@@ -113,33 +113,20 @@
             });
 
 
+//SLIDESHOW 1
+            $('a[href*="Platframe_Postscript').click(function(){
+              $('.chapter-Platframe_Postscript').show();
+              $('.scriptothek-slideshow-1').hide();
+            });
 
-            // $('a[href*="Platframe_Postscript').click(function(){
-            //   $('.chapter-Platframe_Postscript').show();
-            // });
-
-            $('.script-trailer').click(function(e) {
+            $('.script-trailer-1').click(function(e) {
               e.preventDefault();
               $('.scriptothek-wrapper').css("width", "96.5%");
 
-              $('.script-trailer').hide();
-              $('.scriptothek-slideshow, .close-wrapper, .slideshow-buttons').show();
+              $('.script-trailer-1').hide();
+              $('.scriptothek-slideshow-1, .close-wrapper, .slideshow-buttons').show();
 
               $('.introduction, .setting-conditions, .how-tos, .prompts, .scripted-syllabi, .active-bibliographies, .btn-wrapper').hide();
-            });
-
-            var $gallery = $(".scriptothek-slideshow"),
-                tot = $("> *", $gallery).length,
-                counter = 0;
-
-            $(".prev, .next").on("click", function() {
-                counter = $(this).hasClass("next") ? ++counter : --counter;
-                counter = counter<0 ? tot-1 : counter%tot;
-
-                $gallery.css({
-                    transition: "0.5s",
-                    transform: "translateX(-"+  (100*counter)  +"%)"
-                });
             });
 
             $('.close').click(function(){
@@ -150,6 +137,24 @@
               $('.introduction, .setting-conditions, .how-tos, .prompts, .scripted-syllabi, .active-bibliographies, .btn-wrapper').show();
             });
     });
+
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+              showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+              var i;
+              var x = document.getElementsByClassName("script-image-1");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
 </script>
 </main>
 {% endblock %}
