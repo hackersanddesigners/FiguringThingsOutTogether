@@ -126,6 +126,11 @@ a.image {
 	break-inside: avoid;
 }
 
+.footnote {
+	break-inside: avoid;
+	// min-height: 5rem;
+}
+
 .thumbinner {
 	margin: 0 auto;
 	width: auto !important;
@@ -155,3 +160,12 @@ a.image {
 	font-size: 6pt;
 	font-weight: bold;
 }
+
+.pagedjs_footnote_inner_content {
+	// padding-left: 0 !important;
+	.footnote {
+		page-break-inside: avoid;
+		// margin-left: 2.5cm;
+	}
+}
+
