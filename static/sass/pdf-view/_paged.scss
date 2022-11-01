@@ -150,6 +150,9 @@ span.footnote {
   float: footnote;
 }
 
+.article h3 {
+	counter-set: footnote-marker 0 footnote 0;
+}
 
 
 /* PAGE NUMBERS */
