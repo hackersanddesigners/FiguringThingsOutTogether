@@ -16,14 +16,43 @@
   </div>
 
   <div class="close-wrapper">
-    <button class="close">&#215;</button>
+    <button class="close close0">&#215;</button>
+    <button class="close close1">&#215;</button>
+    <button class="close close2">&#215;</button>
+    <button class="close close3">&#215;</button>
+    <button class="close close4">&#215;</button>
+    <button class="close close5">&#215;</button>
   </div>
 
-  <div class="slideshow-buttons">
-    <a class="prev" onclick="plusSlides(-1)">&#60;</a>
-    <a class="next" onclick="plusSlides(1)">&#62;</a>
+  <div class="slideshow-buttons slideshow0-buttons">
+    <a class="prev" onclick="plusScripts0(-1)">&#60;</a>
+    <a class="next" onclick="plusScripts0(1)">&#62;</a>
   </div>
 
+  <div class="slideshow-buttons slideshow1-buttons">
+    <a class="prev" onclick="plusScripts1(-1)">&#60;</a>
+    <a class="next" onclick="plusScripts1(1)">&#62;</a>
+  </div>
+
+  <div class="slideshow-buttons slideshow2-buttons">
+    <a class="prev" onclick="plusScripts2(-1)">&#60;</a>
+    <a class="next" onclick="plusScripts2(1)">&#62;</a>
+  </div>
+
+  <div class="slideshow-buttons slideshow3-buttons">
+    <a class="prev" onclick="plusScripts3(-1)">&#60;</a>
+    <a class="next" onclick="plusScripts3(1)">&#62;</a>
+  </div>
+
+  <div class="slideshow-buttons slideshow4-buttons">
+    <a class="prev" onclick="plusScripts4(-1)">&#60;</a>
+    <a class="next" onclick="plusScripts4(1)">&#62;</a>
+  </div>
+
+  <div class="slideshow-buttons slideshow5-buttons">
+    <a class="prev" onclick="plusScripts5(-1)">&#60;</a>
+    <a class="next" onclick="plusScripts5(1)">&#62;</a>
+  </div>
 
   <!-- ARTICLES + CONTENTS -->
     <div class="content">
@@ -40,15 +69,11 @@
                 $('.content, .btn-wrapper').animate({"left":"20%"},700);
                 $('.content, .btn-wrapper').attr("trigger","1");
                 $('.change-behind').text("←" == $(this).text() ? "→" : "←");
-
-                $('.Demo-script').css("z-index", "-1");
             }
             else{
                 $('.content, .btn-wrapper').animate({"left":"50px"},700);
                 $('.content, .btn-wrapper').attr("trigger","0");
                 $('.change-behind').text("&larr;" == $(this).text() ? "&larr;" : "→");
-
-                $('.Demo-script').delay(3000).css("z-index", "2");
             }
           });
 
@@ -110,46 +135,242 @@
               $('a[href*="Did_video_kill_the_radio_(star)?"]').toggle();
               $('a[href*="Solarpunk_Postscript"]').toggle();
               $('a[href*="Workshop_Matters_and_Materials"]').toggle();
+              $('a[href*="A_Note_on_the_design_of_this_publication"]').toggle();
+              $('a[href*="Colophon"]').toggle();
+            });
+
+            //universal close (rewrite more of those)
+            $('.close').click(function(){
+              $('.scriptothek-wrapper').css("width", "21.5%");
+              $('.scriptothek-slideshow, .close-wrapper, .slideshow-buttons').hide();
+              $('.chapter, .btn-wrapper').show();
+
+              if($('.content, .btn-wrapper').attr("trigger")==="0"){
+                $('.content, .btn-wrapper').animate({"left":"20%"},700);
+                $('.content, .btn-wrapper').attr("trigger","1");
+                $('.change-behind').text("←" == $(this).text() ? "→" : "←");
+              }
+              else{
+                  $('.content, .btn-wrapper').animate({"left":"50px"},700);
+                  $('.content, .btn-wrapper').attr("trigger","0");
+                  $('.change-behind').text("&larr;" == $(this).text() ? "&larr;" : "→");
+              }
             });
 
 
-
-            // $('a[href*="Platframe_Postscript').click(function(){
-            //   $('.chapter-Platframe_Postscript').show();
-            // });
-
+            //prevent default on script-trailer
             $('.script-trailer').click(function(e) {
               e.preventDefault();
               $('.scriptothek-wrapper').css("width", "96.5%");
+              $('.chapter, .btn-wrapper').hide();
+            }); 
 
-              $('.script-trailer').hide();
-              $('.scriptothek-slideshow, .close-wrapper, .slideshow-buttons').show();
+            // $('.toclevel-2').click(function() {
+            //   $('.scriptothek-chapter').hide()
+            // }); 
 
-              $('.introduction, .setting-conditions, .how-tos, .prompts, .scripted-syllabi, .active-bibliographies, .btn-wrapper').hide();
+//SLIDESHOW 0
+            $('a[href*="Open-source_Parenting').click(function(){
+              $('.scriptothek-chapter, .scriptothek-slideshow-0').hide();
+              $('.scriptothek-chapter-0').show();
             });
 
-            var $gallery = $(".scriptothek-slideshow"),
-                tot = $("> *", $gallery).length,
-                counter = 0;
-
-            $(".prev, .next").on("click", function() {
-                counter = $(this).hasClass("next") ? ++counter : --counter;
-                counter = counter<0 ? tot-1 : counter%tot;
-
-                $gallery.css({
-                    transition: "0.5s",
-                    transform: "translateX(-"+  (100*counter)  +"%)"
-                });
+            $('.script-trailer-0').click(function() {
+              $('.script-trailer-0, .slideshow-buttons, .close').hide();
+              $('.scriptothek-slideshow-0, .close-wrapper, .slideshow0-buttons, .close0').show();
             });
 
-            $('.close').click(function(){
-              $('.scriptothek-wrapper').css("width", "21.5%");
-              $('.script-trailer').show();
+            $('.close0').click(function(){
+              $('.script-trailer-0').show();
+            });
 
-              $('.scriptothek-slideshow, .close-wrapper, .slideshow-buttons').hide();
-              $('.introduction, .setting-conditions, .how-tos, .prompts, .scripted-syllabi, .active-bibliographies, .btn-wrapper').show();
+//SLIDESHOW 1
+            $('a[href*="Platframe_Postscript').click(function(){
+              $('.scriptothek-chapter, .scriptothek-slideshow-1').hide();
+              $('.scriptothek-chapter-1').show();
+            });
+
+            $('.script-trailer-1').click(function() {
+              $('.script-trailer-1, .slideshow-buttons, .close').hide();
+              $('.scriptothek-slideshow-1, .close-wrapper, .slideshow1-buttons, .close1').show();
+            });
+
+            $('.close1').click(function(){
+              $('.script-trailer-1').show();
+            });
+
+//SLIDESHOW 2
+            $('a[href*="Across_Distance_and_Difference"]').click(function(){
+              $('.scriptothek-chapter, .scriptothek-slideshow-2').hide();
+              $('.scriptothek-chapter-2').show();
+            });
+
+            $('.script-trailer-2').click(function() {
+              $('.script-trailer-2, .slideshow-buttons, .close').hide();
+              $('.scriptothek-slideshow-2, .close-wrapper, .slideshow2-buttons, .close2').show();
+            });
+
+            $('.close2').click(function(){
+              $('.script-trailer-2').show();
+            });
+          
+//SLIDESHOW 3
+            $('a[href*="Channeling_Listeners"]').click(function(){
+              $('.scriptothek-chapter, .scriptothek-slideshow-3').hide();
+              $('.scriptothek-chapter-3').show();
+            });
+
+            $('.script-trailer-3').click(function() {
+              $('.script-trailer-3, .slideshow-buttons, .close').hide();
+              $('.scriptothek-slideshow-3, .close-wrapper, .slideshow3-buttons, .close3').show();
+            });
+
+            $('.close3').click(function(){
+              $('.script-trailer-3').show();
+            });
+
+//SLIDESHOW 4
+            $('a[href*="Learning_to_Experiment,_Sharing_Techniques"]').click(function(){
+              $('.scriptothek-chapter, .scriptothek-slideshow-4').hide();
+              $('.scriptothek-chapter-4').show();
+            });
+
+            $('.script-trailer-4').click(function() {
+              $('.script-trailer-4, .slideshow-buttons, .close').hide();
+              $('.scriptothek-slideshow-4, .close-wrapper, .slideshow4-buttons, .close4').show();
+            });
+
+            $('.close4').click(function(){
+              $('.script-trailer-4').show();
+            });
+
+//SLIDESHOW 5
+            $('a[href*="Mud_Batteries"]').click(function(){
+              $('.scriptothek-chapter, .scriptothek-slideshow-5').hide();
+              $('.scriptothek-chapter-5').show();
+            });
+
+            $('.script-trailer-5').click(function() {
+              $('.script-trailer-5, .slideshow-buttons, .close').hide();
+              $('.scriptothek-slideshow-5, .close-wrapper, .slideshow5-buttons, .close5').show();
+            });
+
+            $('.close5').click(function(){
+              $('.script-trailer-5').show();
             });
     });
+
+  //SLIDESHOW 0
+            var slideIndex = 1;
+            showScripts0(slideIndex);
+
+            function plusScripts0(n) {
+              showScripts0(slideIndex += n);
+            }
+
+            function showScripts0(n) {
+              var i;
+              var x = document.getElementsByClassName("script-image-0");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
+
+  //SLIDESHOW 1
+            var slideIndex = 1;
+            showScripts1(slideIndex);
+
+            function plusScripts1(n) {
+              showScripts1(slideIndex += n);
+            }
+
+            function showScripts1(n) {
+              var i;
+              var x = document.getElementsByClassName("script-image-1");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
+  //SLIDESHOW 2
+            var slideIndex = 1;
+            showScripts2(slideIndex);
+
+            function plusScripts2(n) {
+              showScripts2(slideIndex += n);
+            }
+
+            function showScripts2(n) {
+              var i;
+              var x = document.getElementsByClassName("script-image-2");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
+
+  //SLIDESHOW 3 - doesn't need a slideshow but keep for now
+            var slideIndex = 1;
+            showScripts3(slideIndex);
+
+            function plusScripts3(n) {
+              showScripts3(slideIndex += n);
+            }
+
+            function showScripts3(n) {
+              var i;
+              var x = document.getElementsByClassName("script-image-3");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
+  //SLIDESHOW 4
+            var slideIndex = 1;
+            showScripts4(slideIndex);
+
+            function plusScripts4(n) {
+              showScripts4(slideIndex += n);
+            }
+
+            function showScripts4(n) {
+              var i;
+              var x = document.getElementsByClassName("script-image-4");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
+
+  //SLIDESHOW 5
+            var slideIndex = 1;
+            showScripts5(slideIndex);
+
+            function plusScripts5(n) {
+              showScripts5(slideIndex += n);
+            }
+
+            function showScripts5(n) {
+              var i;
+              var x = document.getElementsByClassName("script-image-5");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
 </script>
 </main>
 {% endblock %}

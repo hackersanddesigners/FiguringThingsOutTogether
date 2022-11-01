@@ -115,7 +115,8 @@ a[href*="Workshop_Histories_and_Practices"],
 a[href*="Did_video_kill_the_radio_(star)?"],
 a[href*="Solarpunk_Postscript"],
 a[href*="Workshop_Matters_and_Materials"],
-a[href*="Demo_Scriptotheek"]{
+a[href*="A_Note_on_the_design_of_this_publication"],
+a[href*="Colophon"]{
 	display: none;
 }
 
@@ -216,50 +217,20 @@ img {
 
 //hide all scriptotheeks
 .scriptothek-chapter{
-	// display: none;
-}
-
-.scriptothek-slideshow{
 	display: none;
-	display: -webkit-inline-box;
 }
 
-// .script-image{
-// 	width: 100%;
-// }
-
-.scriptothek-slideshow>* {
-	// display: inline-block; 
-	vertical-align:top;
-	overflow: hidden;
+.script-image{
+	width: 100%;
 }
 
 a.image{
 	width: 100%;
 }
 
-
-.test-area{
+.colophon-credits{
 	display: none;
 }
-
-// .scriptothek-slideshow > .script-image:nth-of-type(1){
-// 	display: block!important;
-// }
-
-// .script-image .thumbimage{
-// 	border: solid black;
-// 	width: 10%;
-// }
-
-// .thumb .tright{
-// 	margin-bottom: 5%;
-// }
-
-// .hide-from-book{
-// 	display: none;
-// 	position: relative;
-// }
 
 .slideshow-buttons{
 	width: 96.5%;
@@ -301,15 +272,11 @@ a.image{
 .prev{
 	position:absolute;
 	left:0%;
-	// transform:translate(0%,-50%);
-	// -ms-transform:translate(-0%,-50%)
 }
 
 .next{
 	position:absolute;
 	right:0%;
-	// transform:translate(0%,-50%);
-	// -ms-transform:translate(-0%,-50%)
 }
 
 //trying to show one chapter at a time
