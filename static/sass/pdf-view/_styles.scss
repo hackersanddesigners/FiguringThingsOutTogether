@@ -47,6 +47,12 @@ ul {
 	}
 }
 
+.continued-footnote {
+	// counter-increment:revert;
+}
+.continued-footnote[data-footnote-marker]::marker {
+	content: '';
+}
 
 
 .empty-page {
@@ -164,7 +170,7 @@ a.image {
 .pagedjs_footnote_inner_content {
 	// padding-left: 0 !important;
 	.footnote {
-		page-break-inside: avoid;
+		break-inside: avoid;
 		// margin-left: 2.5cm;
 	}
 }

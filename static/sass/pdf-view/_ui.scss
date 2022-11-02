@@ -64,8 +64,7 @@ $icon_size: 3em;
 		width: $icon_size;
 		height: $icon_size;
 		box-sizing: border-box;
-		// transition: border 0.6s ease, transform 0.6s ease, background-col;
-		transition: all 0.6s ease;
+		transition: border 0.3s ease, color 0.3s ease , transform 0.3s ease;
 		z-index: 1;
 
 		span {
@@ -77,8 +76,7 @@ $icon_size: 3em;
 			height: 60%;
 			transform: translate(-50%, -50%);
 			border-radius: 50%;
-			// transition: all 0.6s ease;
-			transition: border 0.6s, background 0.6s, transform 0.6s;
+			transition: border 0.6s cubic-bezier(.38,1.08,.66,1.1), background 0.6s, transform 0.6s;
 			border: calc($icon_size/5) solid blue;
 		}
 
