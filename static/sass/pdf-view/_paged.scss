@@ -129,10 +129,14 @@ h2,
 	string-set: chapterTitle content(text);
 }
 
-h3 {
+h3,
+.article-title {
 	string-set: articleTitle content(text);
 }
 
+.article-title{ 
+	display: none;
+}
 
 h2 {
   counter-increment: countChapter;

@@ -83,7 +83,7 @@ def filtered_html(pagename):
     STYLES_NS,
     pagename,
   )
-  return web_filter(flask.render_template(
+  return filter(flask.render_template(
     'inspect.html', 
     title = pagename,
     html  = publication['html'],
@@ -258,6 +258,17 @@ def wrapTitleImages(soup):
     # image.wrap(bg)
     wrap = image.find_parent("div", class_="thumb")
     wrap['class'] = wrap.get('class', []) + ['title-image-wrap']
+    if('title_image' in  image.attrs['class']):
+      # find the chapter title?
+      article = image.find_parent('div', class_="article")
+      h3 = article.find('h3')
+      # create element to set margin content string
+      title = soup.new_tag('div', **{"class": 'article-title'})
+      clone = copy.copy(h3)
+      clone.name = 'div'
+      title.append(clone)
+      # insert it before the wrap
+      wrap.insert(0,title)
     # image.parent['class'] = image.parent.get('class', []) + ['bg'] # add bg class for showing/hiding fore/background
   return soup
 
