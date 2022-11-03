@@ -168,7 +168,7 @@ span.footnote {
 			width: 100pt !important;
 			// @include font-louise-regular(); // moved to typography
 		
-			padding: 0 20pt;
+			// padding: 0 20pt;
 			line-height: 1.7; // any lower and descenders go off the page, but high and the it goes over the title image
 			background-color: transparent;
 			font-size: 40pt;
@@ -179,6 +179,7 @@ span.footnote {
 		.pagedjs_margin-content {
 			left: 0;
 			text-align: left;
+			padding: 0 0 0 15pt;
 		}
 	}
 
@@ -186,6 +187,7 @@ span.footnote {
 		.pagedjs_margin-content {
 			right: 0;
 			text-align: right;
+			padding: 0 15pt 0 0;
 		}
 	}
 }
