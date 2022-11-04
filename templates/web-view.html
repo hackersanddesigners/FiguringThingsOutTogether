@@ -86,12 +86,19 @@
               $('#Workshop_scripts_in_practice').show();
             });
 
+          //on chapter click open first article
+          // $('.toclevel-1').click(function(){
+          //   $('.setting-conditions .article:first-child').css("background", "red");
+          // });
+
           //TOC links toggle
             $('a[href*="First,_Then…_Repeat."]').click(function(){
               $('a[href*="Workshop_scripts_in_practice"]').toggle();
             });
 
             $('a[href*="Setting_conditions"]').click(function(){
+              event.preventDefault();
+
               $('a[href*="Workshop_Histories_and_Practices"]').toggle();
               $('a[href*="Open-source_Parenting"]').toggle();
               $('a[href*="Platframe_Postscript"]').toggle();
@@ -100,9 +107,13 @@
               $('a[href*="Re-_and_Un-_Defining_Tools"]').toggle();
               $('a[href*="Mycelines:_A_Sympoetic_Imagination"]').toggle();
               $('a[href*="fileSHA_as_protocol"]').toggle();
+
+              // $('.introduction, .prompts, .how-tos, .scripted-syllabi, .active-bibliographies, .colophon-credits').hide();
             });
 
             $('a[href*="Prompts"]').click(function(){
+              event.preventDefault();
+
               $('a[href*="Relearning_Food"]').toggle();
               $('a[href*="Across_Distance_and_Difference"]').toggle();
               $('a[href*="Roleplaying_in_Etherpad"]').toggle();
@@ -110,9 +121,13 @@
               $('a[href*="Channeling_Listeners"]').toggle();
               $('a[href*="Untitling"]').toggle();
               $('a[href*="Skinship"]').toggle();
+
+              $('#Workshop_scripts_in_practice').hide();
             });
 
             $('a[href*="How-tos"]').click(function(){
+              event.preventDefault();
+
               $('a[href*="Learning_to_Experiment,_Sharing_Techniques"]').toggle();
               $('a[href*="Scripts_from:_Learning_to_Experiment,_Sharing_Techniques_(ed._Julia_Bee_and_Gerko_Egert)"]').toggle();
               $('a[href*="Give_and_Take"]').toggle();
@@ -123,18 +138,26 @@
               $('a[href*="Mud_Batteries"]').toggle();
               $('a[href*="#The_Indonesian_Women&#39;s_Movement_GERWANI"]').toggle();
               $('a[href*="Display(ing)"]').toggle();
+
+              $('#Workshop_scripts_in_practice').hide();
             });
 
             $('a[href*="Distributed_Curricula"]').click(function(){
+              event.preventDefault();
+
               $('a[href*="Cooperative_gaming"]').toggle();
               $('a[href*="Interfacial-Workout"]').toggle();
               $('a[href*="Am_I_a_hacker_now?"]').toggle();
               $('a[href*="wiki_reflections"]').toggle();
               $('a[href*="ChattyPub"]').toggle();
               $('a[href*="Scripting_Workshops"]').toggle();
+
+              $('#Workshop_scripts_in_practice').hide();
             });
 
             $('a[href*="Active_bibliographies"]').click(function(){
+              event.preventDefault();
+
               $('a[href*="Critical_Coding_Cookbook"]').toggle();
               $('a[href*="Did_video_kill_the_radio_(star)?"]').toggle();
               $('a[href*="A_case_of_mistaken_identity"]').toggle();
