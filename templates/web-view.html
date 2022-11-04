@@ -22,6 +22,9 @@
     <button class="close close3">&#215;</button>
     <button class="close close4">&#215;</button>
     <button class="close close5">&#215;</button>
+    <button class="close close6">&#215;</button>
+    <button class="close close7">&#215;</button>
+    <button class="close close8">&#215;</button>
   </div>
 
   <div class="slideshow-buttons slideshow0-buttons">
@@ -52,6 +55,21 @@
   <div class="slideshow-buttons slideshow5-buttons">
     <a class="prev" onclick="plusScripts5(-1)">&#60;</a>
     <a class="next" onclick="plusScripts5(1)">&#62;</a>
+  </div>
+
+  <div class="slideshow-buttons slideshow6-buttons">
+    <a class="prev" onclick="plusScripts6(-1)">&#60;</a>
+    <a class="next" onclick="plusScripts6(1)">&#62;</a>
+  </div>
+
+  <div class="slideshow-buttons slideshow7-buttons">
+    <a class="prev" onclick="plusScripts7(-1)">&#60;</a>
+    <a class="next" onclick="plusScripts7(1)">&#62;</a>
+  </div>
+
+  <div class="slideshow-buttons slideshow8-buttons">
+    <a class="prev" onclick="plusScripts8(-1)">&#60;</a>
+    <a class="next" onclick="plusScripts8(1)">&#62;</a>
   </div>
 
   <!-- ARTICLES + CONTENTS -->
@@ -259,7 +277,7 @@
             });
 
 //SLIDESHOW 4
-            $('a[href*="Learning_to_Experiment,_Sharing_Techniques"]').click(function(){
+            $('a[href*="Skinship"]').click(function(){
               $('.scriptothek-chapter, .scriptothek-slideshow-4').hide();
               $('.scriptothek-chapter-4').show();
             });
@@ -274,18 +292,63 @@
             });
 
 //SLIDESHOW 5
-            $('a[href*="Mud_Batteries"]').click(function(){
+            $('a[href*="Learning_to_Experiment,_Sharing_Techniques"]').click(function(){
               $('.scriptothek-chapter, .scriptothek-slideshow-5').hide();
               $('.scriptothek-chapter-5').show();
             });
 
             $('.script-trailer-5').click(function() {
               $('.script-trailer-5, .slideshow-buttons, .close').hide();
-              $('.scriptothek-slideshow-5, .close-wrapper, .slideshow5-buttons, .close5').show();
+              $('.scriptothek-slideshow-5, .close-wrapper, .slideshow4-buttons, .close5').show();
             });
 
             $('.close5').click(function(){
               $('.script-trailer-5').show();
+            });
+
+// SLIDESHOW 6
+            $('a[href*="Mud_Batteries"]').click(function(){
+              $('.scriptothek-chapter, .scriptothek-slideshow-6').hide();
+              $('.scriptothek-chapter-6').show();
+            });
+
+            $('.script-trailer-6').click(function() {
+              $('.script-trailer-6, .slideshow-buttons, .close').hide();
+              $('.scriptothek-slideshow-6, .close-wrapper, .slideshow6-buttons, .close6').show();
+            });
+
+            $('.close6').click(function(){
+              $('.script-trailer-6').show();
+            });
+
+// SLIDESHOW 6
+            $('a[href*="Am_I_a_hacker_now?"]').click(function(){
+              $('.scriptothek-chapter, .scriptothek-slideshow-7').hide();
+              $('.scriptothek-chapter-7').show();
+            });
+
+            $('.script-trailer-7').click(function() {
+              $('.script-trailer-7, .slideshow-buttons, .close').hide();
+              $('.scriptothek-slideshow-7, .close-wrapper, .slideshow7-buttons, .close7').show();
+            });
+
+            $('.close7').click(function(){
+              $('.script-trailer-7').show();
+            });
+
+// SLIDESHOW 8
+            $('a[href*="Critical_Coding_Cookbook"]').click(function(){
+              $('.scriptothek-chapter, .scriptothek-slideshow-8').hide();
+              $('.scriptothek-chapter-8').show();
+            });
+
+            $('.script-trailer-8').click(function() {
+              $('.script-trailer-8, .slideshow-buttons, .close').hide();
+              $('.scriptothek-slideshow-8, .close-wrapper, .slideshow8-buttons, .close8').show();
+            });
+
+            $('.close8').click(function(){
+              $('.script-trailer-8').show();
             });
     });
 
@@ -345,7 +408,7 @@
               x[slideIndex-1].style.display = "block";  
             }
 
-  //SLIDESHOW 3 - doesn't need a slideshow but keep for now
+  //SLIDESHOW 3 
             var slideIndex = 1;
             showScripts3(slideIndex);
 
@@ -363,6 +426,7 @@
               }
               x[slideIndex-1].style.display = "block";  
             }
+
   //SLIDESHOW 4
             var slideIndex = 1;
             showScripts4(slideIndex);
@@ -393,6 +457,63 @@
             function showScripts5(n) {
               var i;
               var x = document.getElementsByClassName("script-image-5");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
+
+  //SLIDESHOW 6
+            var slideIndex = 1;
+            showScripts6(slideIndex);
+
+            function plusScripts6(n) {
+              showScripts6(slideIndex += n);
+            }
+
+            function showScripts6(n) {
+              var i;
+              var x = document.getElementsByClassName("script-image-6");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
+
+  //SLIDESHOW 7
+            var slideIndex = 1;
+            showScripts7(slideIndex);
+
+            function plusScripts7(n) {
+              showScripts7(slideIndex += n);
+            }
+
+            function showScripts7(n) {
+              var i;
+              var x = document.getElementsByClassName("script-image-7");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
+
+  //SLIDESHOW 8
+            var slideIndex = 1;
+            showScripts8(slideIndex);
+
+            function plusScripts8(n) {
+              showScripts8(slideIndex += n);
+            }
+
+            function showScripts8(n) {
+              var i;
+              var x = document.getElementsByClassName("script-image-8");
               if (n > x.length) {slideIndex = 1}
               if (n < 1) {slideIndex = x.length}
               for (i = 0; i < x.length; i++) {
