@@ -212,12 +212,12 @@
             }); 
 
             //every 
-            $('.toclevel-2').click(function() {
-              $('.scriptothek-chapter-0').hide()
-            }); 
+            // $('.toclevel-2').click(function() {
+            //   $('.scriptothek-chapter-0').hide()
+            // }); 
 
 //SLIDESHOW 0
-            $('a[href*="Open-source_Parenting').click(function(){
+            $('a[href*="Open-source_Parenting"]').click(function(){
               $('.scriptothek-chapter, .scriptothek-slideshow-0').hide();
               $('.scriptothek-chapter-0').show();
             });
@@ -231,8 +231,8 @@
               $('.script-trailer-0').show();
             });
 
-//SLIDESHOW 1
-            $('a[href*="Platframe_Postscript').click(function(){
+// SLIDESHOW 1
+            $('a[href*="Platframe_Postscript"]').click(function(){
               $('.scriptothek-chapter, .scriptothek-slideshow-1').hide();
               $('.scriptothek-chapter-1').show();
             });
@@ -261,7 +261,7 @@
               $('.script-trailer-2').show();
             });
           
-//SLIDESHOW 3
+// //SLIDESHOW 3
             $('a[href*="Channeling_Listeners"]').click(function(){
               $('.scriptothek-chapter, .scriptothek-slideshow-3').hide();
               $('.scriptothek-chapter-3').show();
@@ -276,7 +276,7 @@
               $('.script-trailer-3').show();
             });
 
-//SLIDESHOW 4
+// //SLIDESHOW 4
             $('a[href*="Skinship"]').click(function(){
               $('.scriptothek-chapter, .scriptothek-slideshow-4').hide();
               $('.scriptothek-chapter-4').show();
@@ -291,7 +291,7 @@
               $('.script-trailer-4').show();
             });
 
-//SLIDESHOW 5
+// //SLIDESHOW 5
             $('a[href*="Learning_to_Experiment,_Sharing_Techniques"]').click(function(){
               $('.scriptothek-chapter, .scriptothek-slideshow-5').hide();
               $('.scriptothek-chapter-5').show();
@@ -299,14 +299,14 @@
 
             $('.script-trailer-5').click(function() {
               $('.script-trailer-5, .slideshow-buttons, .close').hide();
-              $('.scriptothek-slideshow-5, .close-wrapper, .slideshow4-buttons, .close5').show();
+              $('.scriptothek-slideshow-5, .close-wrapper, .slideshow5-buttons, .close5').show();
             });
 
             $('.close5').click(function(){
               $('.script-trailer-5').show();
             });
 
-// SLIDESHOW 6
+// // SLIDESHOW 6
             $('a[href*="Mud_Batteries"]').click(function(){
               $('.scriptothek-chapter, .scriptothek-slideshow-6').hide();
               $('.scriptothek-chapter-6').show();
@@ -321,7 +321,7 @@
               $('.script-trailer-6').show();
             });
 
-// SLIDESHOW 6
+// SLIDESHOW 7
             $('a[href*="Am_I_a_hacker_now?"]').click(function(){
               $('.scriptothek-chapter, .scriptothek-slideshow-7').hide();
               $('.scriptothek-chapter-7').show();
@@ -336,20 +336,20 @@
               $('.script-trailer-7').show();
             });
 
-// SLIDESHOW 8
-            $('a[href*="Critical_Coding_Cookbook"]').click(function(){
-              $('.scriptothek-chapter, .scriptothek-slideshow-8').hide();
-              $('.scriptothek-chapter-8').show();
-            });
+// // SLIDESHOW 8
+//             $('a[href*="Critical_Coding_Cookbook"]').click(function(){
+//               $('.scriptothek-chapter, .scriptothek-slideshow-8').hide();
+//               $('.scriptothek-chapter-8').show();
+//             });
 
-            $('.script-trailer-8').click(function() {
-              $('.script-trailer-8, .slideshow-buttons, .close').hide();
-              $('.scriptothek-slideshow-8, .close-wrapper, .slideshow8-buttons, .close8').show();
-            });
+//             $('.script-trailer-8').click(function() {
+//               $('.script-trailer-8, .slideshow-buttons, .close').hide();
+//               $('.scriptothek-slideshow-8, .close-wrapper, .slideshow8-buttons, .close8').show();
+//             });
 
-            $('.close8').click(function(){
-              $('.script-trailer-8').show();
-            });
+//             $('.close8').click(function(){
+//               $('.script-trailer-8').show();
+//             });
     });
 
   //SLIDESHOW 0
@@ -427,24 +427,24 @@
               x[slideIndex-1].style.display = "block";  
             }
 
-  //SLIDESHOW 4
-            var slideIndex = 1;
-            showScripts4(slideIndex);
+  //SLIDESHOW 4 - missing images
+            // var slideIndex = 1;
+            // showScripts4(slideIndex);
 
-            function plusScripts4(n) {
-              showScripts4(slideIndex += n);
-            }
+            // function plusScripts4(n) {
+            //   showScripts4(slideIndex += n);
+            // }
 
-            function showScripts4(n) {
-              var i;
-              var x = document.getElementsByClassName("script-image-4");
-              if (n > x.length) {slideIndex = 1}
-              if (n < 1) {slideIndex = x.length}
-              for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";  
-              }
-              x[slideIndex-1].style.display = "block";  
-            }
+            // function showScripts4(n) {
+            //   var i;
+            //   var x = document.getElementsByClassName("script-image-4");
+            //   if (n > x.length) {slideIndex = 1}
+            //   if (n < 1) {slideIndex = x.length}
+            //   for (i = 0; i < x.length; i++) {
+            //     x[i].style.display = "none";  
+            //   }
+            //   x[slideIndex-1].style.display = "block";  
+            // }
 
   //SLIDESHOW 5
             var slideIndex = 1;
@@ -484,43 +484,43 @@
               x[slideIndex-1].style.display = "block";  
             }
 
-  //SLIDESHOW 7
-            var slideIndex = 1;
-            showScripts7(slideIndex);
+  //SLIDESHOW 7 - missing images
+            // var slideIndex = 1;
+            // showScripts7(slideIndex);
 
-            function plusScripts7(n) {
-              showScripts7(slideIndex += n);
-            }
+            // function plusScripts7(n) {
+            //   showScripts7(slideIndex += n);
+            // }
 
-            function showScripts7(n) {
-              var i;
-              var x = document.getElementsByClassName("script-image-7");
-              if (n > x.length) {slideIndex = 1}
-              if (n < 1) {slideIndex = x.length}
-              for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";  
-              }
-              x[slideIndex-1].style.display = "block";  
-            }
+            // function showScripts7(n) {
+            //   var i;
+            //   var x = document.getElementsByClassName("script-image-7");
+            //   if (n > x.length) {slideIndex = 1}
+            //   if (n < 1) {slideIndex = x.length}
+            //   for (i = 0; i < x.length; i++) {
+            //     x[i].style.display = "none";  
+            //   }
+            //   x[slideIndex-1].style.display = "block";  
+            // }
 
-  //SLIDESHOW 8
-            var slideIndex = 1;
-            showScripts8(slideIndex);
+  // //SLIDESHOW 8 - missing images
+  //           var slideIndex = 1;
+  //           showScripts8(slideIndex);
 
-            function plusScripts8(n) {
-              showScripts8(slideIndex += n);
-            }
+  //           function plusScripts8(n) {
+  //             showScripts8(slideIndex += n);
+  //           }
 
-            function showScripts8(n) {
-              var i;
-              var x = document.getElementsByClassName("script-image-8");
-              if (n > x.length) {slideIndex = 1}
-              if (n < 1) {slideIndex = x.length}
-              for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";  
-              }
-              x[slideIndex-1].style.display = "block";  
-            }
+  //           function showScripts8(n) {
+  //             var i;
+  //             var x = document.getElementsByClassName("script-image-8");
+  //             if (n > x.length) {slideIndex = 1}
+  //             if (n < 1) {slideIndex = x.length}
+  //             for (i = 0; i < x.length; i++) {
+  //               x[i].style.display = "none";  
+  //             }
+  //             x[slideIndex-1].style.display = "block";  
+  //           }
 </script>
 </main>
 {% endblock %}
