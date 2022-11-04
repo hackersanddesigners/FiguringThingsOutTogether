@@ -55,66 +55,73 @@ input:checked ~ .ui {
 
 $icon_size: 3em;
 
-.show_hide ~ label .menu__icon {
-	pointer-events: all;
-  display: inline-block;
-  position: relative;
-  margin: calc( 1rem + calc( $icon_size / 5 ));
-  width: $icon_size;
-  height: $icon_size;
-  background: whitesmoke;
-  border-radius: 50%;
-  border: calc($icon_size/5) solid blue;
-  box-sizing: border-box;
-	// transition: border 0.6s ease, transform 0.6s ease, background-col;
-	transition: all 0.6s ease;
-  
-  &:before,
-  &:after {
-    content: '×';
-    position: absolute;
-    z-index: -1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    font-family: "times new roman";
-    font-weight: bold;
-    font-size: $icon_size*2.2;
-    color: blue;
+.show_hide {
+	& ~ label .menu__icon {
+		pointer-events: all;
+		display: inline-block;
+		position: relative;
+		margin: calc( 1rem + calc( $icon_size / 5 ));
+		width: $icon_size;
+		height: $icon_size;
+		box-sizing: border-box;
 		transition: border 0.3s ease, color 0.3s ease , transform 0.3s ease;
 		z-index: 1;
-  }
-  
-  &:after {
-    transform: translate(-50%,-50%) rotate(45deg);
-  }
+
+		span {
+			background-color: whitesmoke;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 60%;
+			height: 60%;
+			transform: translate(-50%, -50%);
+			border-radius: 50%;
+			transition: border 0.6s cubic-bezier(.38,1.08,.66,1.1), background 0.6s, transform 0.6s;
+			border: calc($icon_size/5) solid blue;
+		}
+
+		&:before,
+		&:after {
+			content: '×';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			font-family: "times new roman";
+			font-weight: bold;
+			font-size: $icon_size*2.2;
+			color: blue;
+			transition: border 0.3s ease, color 0.3s ease , transform 0.3s ease;
+			z-index: -1;
+		}
+		
+		&:after {
+			transform: translate(-50%,-50%) rotate(45deg);
+		}
+	}
+
+	&:checked ~ label .menu__icon {
+		border-width: 0px;
+		background-color: transparent;
+		transform: rotateZ(45deg);
+		span {
+			background-color: blue;
+			width: 0px;
+			height: 0px;
+			border-width: 0;
+		}
+		&:after{
+		}
+		&:before{
+			color: transparent;
+			font-size: 1px;
+		}
+	}
 }
 
-	
 .show_hide {
 	display: none;
 }	
-
-.show_hide:checked ~ label .menu__icon {
-	// border-color: transparent;
-	// background-color: transparent;
-	border-width: 0px;
-	// transition: border 0.6s ease, transform 0.6s ease;
-	background-color: transparent;
-	transform: rotateZ(45deg);
-	// &:after{
-	// 	color: transparent;
-	// }
-	// &:before{
-	// 	z-index: 1;
-	// }
-	&:after{
-		
-	}
-	&:before{
-		color: transparent;
-	}
-}
 
 .toc-link {
 	font-size: 4rem;
@@ -123,9 +130,10 @@ $icon_size: 3em;
 	font-size: 2rem;
 	color: blue;
 	text-decoration: none;
+	font-weight: bold;
 
 	&::before {
-    border: 3px solid blue;
+    border: 6px solid blue;
     border-bottom: none;
     border-left: none;
     content: "";

@@ -18,6 +18,13 @@ class MM_Handler extends Paged.Handler {
 
 	afterPageLayout(pageElement, page, breakTokenage) {
 		// return this.alignImagesToBaseline(pageElement, 12);
+
+		const el = page.element.querySelector('.pagedjs_footnote_inner_content .footnote[data-split-from]');
+		if( el ){
+			el.removeAttribute('data-split-from')
+			el.classList.add('continued-footnote');
+			el.style.counterIncrement = 'revert';
+		}
 	}
 
 	afterPreview(pages) {

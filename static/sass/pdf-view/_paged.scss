@@ -129,10 +129,14 @@ h2,
 	string-set: chapterTitle content(text);
 }
 
-h3 {
+h3,
+.article-title {
 	string-set: articleTitle content(text);
 }
 
+.article-title{ 
+	display: none;
+}
 
 h2 {
   counter-increment: countChapter;
@@ -150,6 +154,9 @@ span.footnote {
   float: footnote;
 }
 
+.article h3 {
+	counter-set: footnote-marker 0 footnote 0;
+}
 
 
 /* PAGE NUMBERS */
@@ -165,7 +172,7 @@ span.footnote {
 			width: 100pt !important;
 			// @include font-louise-regular(); // moved to typography
 		
-			padding: 0 20pt;
+			// padding: 0 20pt;
 			line-height: 1.7; // any lower and descenders go off the page, but high and the it goes over the title image
 			background-color: transparent;
 			font-size: 40pt;
@@ -176,6 +183,7 @@ span.footnote {
 		.pagedjs_margin-content {
 			left: 0;
 			text-align: left;
+			padding: 0 0 0 15pt;
 		}
 	}
 
@@ -183,6 +191,7 @@ span.footnote {
 		.pagedjs_margin-content {
 			right: 0;
 			text-align: right;
+			padding: 0 15pt 0 0;
 		}
 	}
 }
