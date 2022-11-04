@@ -144,11 +144,19 @@ p a{
 	-moz-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
 }
 
+// .Workshop_scripts_in_practice{
+// 	display: block!important;
+// }
+
 // all chapters
 .article{
 	position: relative;
 	display: none;
-	padding: 1%;
+	padding: 3%;
+}
+
+#Workshop_scripts_in_practice{
+	display: block;
 }
 
 // .chapter:target,
@@ -156,9 +164,10 @@ p a{
 	display: block;
 }
 
-.Introduction-Figuring-Things{
-	padding: 1%;
-}
+// h2 .mw-headline{
+// 	position: fixed;
+//     rotate: -90deg;
+// }
 
 .btn-wrapper{
 	position: fixed;
