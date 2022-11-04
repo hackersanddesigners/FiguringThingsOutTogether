@@ -10,6 +10,8 @@
 
 {% block content %}
 <main id="webview">
+
+  <button class="show-all-scripts">SHOW THEM</button>
   <!-- BUTTON -->
   <div class="btn-wrapper">
     <button class="change-behind">&larr;</button>
@@ -203,7 +205,12 @@
               }
             });
 
-
+            //show all scripts on button
+            $('.show-all-scripts').click(function() {
+              $('.scriptothek-chapter').toggle();
+              $('.scriptothek-slideshow').hide();
+            }); 
+          
             //prevent default on script-trailer
             $('.script-trailer').click(function(e) {
               e.preventDefault();
@@ -223,12 +230,12 @@
             });
 
             $('.script-trailer-0').click(function() {
-              $('.script-trailer-0, .slideshow-buttons, .close').hide();
+              $('.script-trailer-0, .script-trailer, .slideshow-buttons, .close').hide();
               $('.scriptothek-slideshow-0, .close-wrapper, .slideshow0-buttons, .close0').show();
             });
 
             $('.close0').click(function(){
-              $('.script-trailer-0').show();
+              $('.script-trailer-0, .script-trailer').show();
             });
 
 // SLIDESHOW 1
@@ -238,12 +245,12 @@
             });
 
             $('.script-trailer-1').click(function() {
-              $('.script-trailer-1, .slideshow-buttons, .close').hide();
+              $('.script-trailer-1,  .script-trailer, .slideshow-buttons, .close').hide();
               $('.scriptothek-slideshow-1, .close-wrapper, .slideshow1-buttons, .close1').show();
             });
 
             $('.close1').click(function(){
-              $('.script-trailer-1').show();
+              $('.script-trailer-1, .script-trailer').show();
             });
 
 //SLIDESHOW 2
@@ -253,12 +260,12 @@
             });
 
             $('.script-trailer-2').click(function() {
-              $('.script-trailer-2, .slideshow-buttons, .close').hide();
+              $('.script-trailer-2, .script-trailer, .slideshow-buttons, .close').hide();
               $('.scriptothek-slideshow-2, .close-wrapper, .slideshow2-buttons, .close2').show();
             });
 
             $('.close2').click(function(){
-              $('.script-trailer-2').show();
+              $('.script-trailer-2, .script-trailer').show();
             });
           
 // //SLIDESHOW 3
@@ -268,12 +275,12 @@
             });
 
             $('.script-trailer-3').click(function() {
-              $('.script-trailer-3, .slideshow-buttons, .close').hide();
+              $('.script-trailer-3, .script-trailer, .slideshow-buttons, .close').hide();
               $('.scriptothek-slideshow-3, .close-wrapper, .slideshow3-buttons, .close3').show();
             });
 
             $('.close3').click(function(){
-              $('.script-trailer-3').show();
+              $('.script-trailer-3, .script-trailer').show();
             });
 
 // //SLIDESHOW 4
@@ -283,12 +290,12 @@
             });
 
             $('.script-trailer-4').click(function() {
-              $('.script-trailer-4, .slideshow-buttons, .close').hide();
+              $('.script-trailer-4, .script-trailer, .slideshow-buttons, .close').hide();
               $('.scriptothek-slideshow-4, .close-wrapper, .slideshow4-buttons, .close4').show();
             });
 
             $('.close4').click(function(){
-              $('.script-trailer-4').show();
+              $('.script-trailer-4, .script-trailer').show();
             });
 
 // //SLIDESHOW 5
@@ -298,12 +305,12 @@
             });
 
             $('.script-trailer-5').click(function() {
-              $('.script-trailer-5, .slideshow-buttons, .close').hide();
+              $('.script-trailer-5, .script-trailer, .slideshow-buttons, .close').hide();
               $('.scriptothek-slideshow-5, .close-wrapper, .slideshow5-buttons, .close5').show();
             });
 
             $('.close5').click(function(){
-              $('.script-trailer-5').show();
+              $('.script-trailer-5, .script-trailer').show();
             });
 
 // // SLIDESHOW 6
@@ -313,12 +320,12 @@
             });
 
             $('.script-trailer-6').click(function() {
-              $('.script-trailer-6, .slideshow-buttons, .close').hide();
+              $('.script-trailer-6, .script-trailer, .slideshow-buttons, .close').hide();
               $('.scriptothek-slideshow-6, .close-wrapper, .slideshow6-buttons, .close6').show();
             });
 
             $('.close6').click(function(){
-              $('.script-trailer-6').show();
+              $('.script-trailer-6, .script-trailer').show();
             });
 
 // SLIDESHOW 7
@@ -328,28 +335,28 @@
             });
 
             $('.script-trailer-7').click(function() {
-              $('.script-trailer-7, .slideshow-buttons, .close').hide();
+              $('.script-trailer-7, .script-trailer, .slideshow-buttons, .close').hide();
               $('.scriptothek-slideshow-7, .close-wrapper, .slideshow7-buttons, .close7').show();
             });
 
             $('.close7').click(function(){
-              $('.script-trailer-7').show();
+              $('.script-trailer-7, .script-trailer').show();
             });
 
-// // SLIDESHOW 8
-//             $('a[href*="Critical_Coding_Cookbook"]').click(function(){
-//               $('.scriptothek-chapter, .scriptothek-slideshow-8').hide();
-//               $('.scriptothek-chapter-8').show();
-//             });
+// SLIDESHOW 8
+            $('a[href*="Critical_Coding_Cookbook"]').click(function(){
+              $('.scriptothek-chapter, .scriptothek-slideshow-8').hide();
+              $('.scriptothek-chapter-8').show();
+            });
 
-//             $('.script-trailer-8').click(function() {
-//               $('.script-trailer-8, .slideshow-buttons, .close').hide();
-//               $('.scriptothek-slideshow-8, .close-wrapper, .slideshow8-buttons, .close8').show();
-//             });
+            $('.script-trailer-8').click(function() {
+              $('.script-trailer-8, .script-trailer, .slideshow-buttons, .close').hide();
+              $('.scriptothek-slideshow-8, .close-wrapper, .slideshow8-buttons, .close8').show();
+            });
 
-//             $('.close8').click(function(){
-//               $('.script-trailer-8').show();
-//             });
+            $('.close8').click(function(){
+              $('.script-trailer-8, .script-trailer').show();
+            });
     });
 
   //SLIDESHOW 0
