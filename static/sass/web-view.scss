@@ -78,15 +78,16 @@ a[href*="On_consensus,_in_two_parts"],
 a[href*="#Re-_and_Un-_Defining_Tools"],
 a[href*="Mycelines:_A_Sympoetic_Imagination"],
 a[href*="fileSHA_as_protocol"],
-a[href*="Skinship"],
 
 //chapter Prompts
+a[href*="Workshop_Histories_and_Practices"],
 a[href*="Relearning_Food"],
 a[href*="Across_Distance_and_Difference"],
 a[href*="Roleplaying_in_Etherpad"],
 a[href*="Spreadsheet_Routines"],
 a[href*="Channeling_Listeners"],
 a[href*="Untitling"],
+a[href*="Skinship"],
 
 //chapter How-to's
 a[href*="Learning_to_Experiment,_Sharing_Techniques"],
@@ -97,27 +98,30 @@ a[href*="Conceptual_Speed_Dating"],
 a[href*="Bodystrike"],
 a[href*="The_Button_Saga"],
 a[href*="Mud_Batteries"],
-a[href*="Gerwani_and_Api_Kartini._Indonesian_Womens_Movement"],
+a[href*="The_Indonesian_Women's_Movement_GERWANI"],
 a[href*="Display(ing)"],
 
 //chapter Distributed_Curricula
 a[href*="Cooperative_gaming"],
-a[href*="A_case_of_mistaken_identity"],
-a[href*="Interfacial-Workouts"],
+a[href*="Interfacial-Workout"],
 a[href*="Am_I_a_hacker_now?"],
 a[href*="wiki_reflections"],
-a[href*="Critical_Coding_Cookbook"],
 a[href*="ChattyPub"],
 a[href*="Scripting_Workshops"],
 
 //chapter Active Bibliographies
-a[href*="Workshop_Histories_and_Practices"],
+a[href*="Critical_Coding_Cookbook"],
 a[href*="Did_video_kill_the_radio_(star)?"],
+a[href*="A_case_of_mistaken_identity"],
 a[href*="Solarpunk_Postscript"],
 a[href*="Workshop_Matters_and_Materials"],
 a[href*="A_Note_on_the_design_of_this_publication"],
 a[href*="Colophon"]{
 	display: none;
+}
+
+p a{
+	display: block!important;
 }
 
 .content{
@@ -190,6 +194,10 @@ img {
 
 .pagedjs_pages .two-columns {
     columns: 2;
+}
+
+.hide-from-book{
+	display: none;
 }
 
 //scriptothek
