@@ -134,14 +134,14 @@ p a{
 
 .chapter{
 	position: relative;
-	background-color: white;
 	top: 0;
-
-	height: auto;
+	background-color: white;
 
 	box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
 	-webkit-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
 	-moz-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+
+	height: auto;
 }
 
 // .Workshop_scripts_in_practice{
@@ -162,6 +162,7 @@ p a{
 // .chapter:target,
 .article:target{
 	display: block;
+	top: 0;
 }
 
 // h2 .mw-headline{
