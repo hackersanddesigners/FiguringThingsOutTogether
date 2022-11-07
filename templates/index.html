@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="index">
+	<br>
+	<h1>{{ title }}</h1>
+	<p>Publications are in namespaces <em>{{ subject_ns["name"] }}</em> and <em>{{ styles_ns["name"] }}</em>.</p>
+	<table>
+		<tr>
+			<th>
+				title
+			</th>
+			<th colspan="6">
+				actions
+			</th>
+			<th>
+				last updated
+			</th>
+		</th>
+		<tr {% for page in pages %}>
+			<td>{{ page.title }}</td>
+			<td>
+				<a
+					title="Edit in MediaWiki"
+					target="_blank"
+					href="{{ wiki + '/../' + subject_ns['name'] + ':' + page.slug }}"
+				>
+					wiki
+				</a>
+			</td>
+			<td>
+				<a
+					title="Inspect HTML & CSS"
+					target="_blank"
+					href="{{ '/html/'+ page.slug }}"
+				>
+					html
+				</a>
+			</td>
+			<td>
+				<a
+					title="Inspect CSS"
+					target="_blank"
+					href="{{ '/css/'+ page.slug +'.css' }}"
+				>
+					css
+				</a>
+			</td>
+			<td>
+				<a
+					title="View PDF with PagedJS"
+					target="_blank"
+					href="{{ '/pdf/'+ page.slug }}"
+				>
+					pdf
+				</a>
+			</td>
+			<td>
+				<a
+					title="Update publication"
+					href="{{ '/update/'+ page.slug }}"
+				>
+					update
+				</a>
+			</td>
+			<td>
+				<a
+					title="Full update"
+					href="{{ '/update/'+ page.slug + '?full=true'}}"
+					onclick="return confirm('This will redownload all images from the wiki. This will take a while. Are you sure?')"
+				>
+					full update
+				</a>
+			</td>
+			<td>
+				<span class="updated">
+					{{ page.updated }}
+				</span>
+			</td>
+		</tr {% endfor %}>
+	</table>
+	<br><br>
+	<p>Index was last updated on
+		<span class="updated">{{ updated }}</span>
+		<a
+			id="update"
+			href="/update/index"
+			title="Update index of publications"
+		>update</a>.
+	</p>
+	<br><br>
+	<br><br>
+	<h4>Network of Wiki-Publishing Experiments</h4>
+	<p>This project's code is published on <a href="https://github.com/hackersanddesigners/wiki2print">Github</a> under the <a href="https://constantvzw.org/wefts/cc4r.en.html">CC4r</a> license.</p>
+	<p>This project is inspired by and builds upon several previous iterations of and experiments with mediawiki-to-pdf workflows:
+		<uL>
+			<li>
+				<a href="http://titipi.org/">TiTiPi</a>'s <a href="http://titipi.org/wiki-to-pdf/unfold/Infrastructural_Interactions">Infrastructural Interactions</a>
+			</li>
+			<li>
+				<a href="https://git.vvvvvvaria.org/mb">Manetta</a>'s work on <a href="https://volumetricregimes.xyz/index.php?title=Volumetric_Regimes">Volumetric Regimes</a>
+			</li>
+			<li>
+				<a href="https://constantvzw.org/site/">Constant</a>'s <a href="https://diversions.constantvzw.org/wiki/index.php?title=Main_Page">Diversions</a>
+			</li>
+			<li>
+				<a href="https://constantvzw.org/wefts/webpublications.en.html">many more...</a>
+			</li>
+		</uL>
+
+	</p>
+{% endblock %}
