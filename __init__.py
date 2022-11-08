@@ -83,7 +83,7 @@ def filtered_html(pagename):
     STYLES_NS,
     pagename,
   )
-  return filter(flask.render_template(
+  return web_filter(flask.render_template(
     'inspect.html', 
     title = pagename,
     html  = publication['html'],
@@ -117,12 +117,14 @@ def web_filter(html):
   return html
 
 def scriptothek(soup):
-  scriptothek = soup.new_tag('div', **{"class": 'scriptothek-wrapper'})
   content = soup.select('.content')
   # search for nodes with class scriptothek
-  els = soup.select('.scriptothek')
+  # els = soup.select('.scriptothek')
+  els = soup.select('img.scriptothek, .scriptothek img')
   last_id = ""
   cnt = 0
+  # create initial elements
+  scriptothek = soup.new_tag('div', **{"class": 'scriptothek-wrapper'})
   container = soup.new_tag('div')
   slideshow = soup.new_tag('div', **{"class":"scriptothek-slideshow scriptothek-slideshow-"+ str(cnt) , "data-slideshow": cnt})
   container.append(slideshow)
@@ -130,42 +132,40 @@ def scriptothek(soup):
     # try to find chapter
     article = el.find_parent('div', class_="article")
     id = article['id']
+    # print(el.prettify())
     if( id != last_id ):
       # if new chapter, new div. Append the old div if it has content
-      if( len(container.contents) > 1 ):
-        container["class"] = 'scriptothek-chapter scriptothek-chapter-' + str(cnt) + ' chapter-' + last_id
-        container["data-slideshow"] = cnt
-        scriptothek.append(container)
-        cnt += 1
+      # print("---------------------")
+      # # print(len(container.contents))
+      # print(container.prettify())
+      # print("---------------------")
+      # if( len(container.contents) > 1 ):
+        # print(container.prettify())
+      container["class"] = 'scriptothek-chapter scriptothek-chapter-' + str(cnt) + ' chapter-' + last_id
+      container["data-slideshow"] = cnt
+      scriptothek.append(container)
+      cnt += 1
+      # create elements for next chapter
       container = soup.new_tag('div')
       slideshow = soup.new_tag('div', **{"class":"scriptothek-slideshow scriptothek-slideshow-"+ str(cnt), "data-slideshow": cnt})
       container.append(slideshow)
       last_id = id
-    if( el.name == 'img'):
-      if("title_image" in el['class']):
-        # directly add to scriptothek
-        thumb = el.find_parent(class_="thumb")
-        el.parent["class"] += ["script-trailer", "script-trailer-" + str( cnt ) ]
-        el.parent["data-slideshow"] = cnt
-        del el["srcset"]
-        container.insert(0, el.parent)
-        thumb.decompose() #remove the surrounding html
-      else:
-        el["class"] += ["script-image", "script-image-" + str( cnt ) ]
-        del el["srcset"]
-        el["data-slideshow"] = cnt
-        slideshow.append(img.parent)
-    elif ( el.name == 'div' ):
-      # search for images
-      imgs = el.find_all("img")
-      for img in imgs:
-        # add images to scriptothek
-        img["class"] += ["script-image", "script-image-" + str( cnt ) ]
-        img["data-slideshow"] = cnt
-        del img["srcset"]
-        slideshow.append(img.parent)
-      el.decompose() # remove div.scriptothek
-  # pprint(scriptothek.prettify())
+
+    if("title_image" in el['class']):
+      # directly add to scriptothek
+      thumb = el.find_parent(class_="thumb")
+      el.parent["class"] += ["script-trailer", "script-trailer-" + str( cnt ) ]
+      el.parent["data-slideshow"] = cnt
+      del el["srcset"]
+      container.insert(0, el.parent)
+      thumb.decompose() #remove the surrounding html
+    else:
+      el["class"] += ["script-image", "script-image-" + str( cnt ) ]
+      del el["srcset"]
+      el["data-slideshow"] = cnt
+      # print(el)
+      slideshow.append(el.parent)
+  # print(scriptothek.prettify())
   content[0].insert_after(scriptothek)
   return soup
 
