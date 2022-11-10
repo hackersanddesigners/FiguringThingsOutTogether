@@ -151,7 +151,9 @@ a[href*="License"]{
 
 
 p a{
-	display: block!important;
+	display: inline-block!important;
+	text-decoration: underline;
+	text-indent: 0;
 }
 
 .content{
@@ -181,7 +183,7 @@ p a{
 .article{
 	position: relative;
 	display: none;
-	padding: 3%;
+	padding: 1%;
 }
 
 #Workshop_scripts_in_practice{
@@ -194,10 +196,26 @@ p a{
 	top: 0;
 }
 
-// h2 .mw-headline{
-// 	position: fixed;
-//     rotate: -90deg;
-// }
+h1,p,h2{
+	padding: 10px;
+}
+
+.author-wrap{
+	text-align: right;
+}
+
+.layout-1 .author,
+.layout-2 .author{
+	// margin-left: 50%;
+	margin-left: calc(50% - 30px);
+	margin: 0 -20mm 0 0;
+}
+
+h2{
+	font-family: Authentic,sans-serif;
+	font-size: 20pt;
+    line-height: 1em;
+}
 
 .btn-wrapper{
 	position: fixed;
@@ -334,14 +352,6 @@ img {
 // 		text-indent: 0 !important;
 // 	}
 // }
-
-h1,p,h2{
-	padding: 10px;
-}
-
-h2{
-	font-size: inherit;
-}
 
 /*
 Setting named-pages
