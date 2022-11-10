@@ -1,0 +1,70 @@
+/* General styling */
+// html {
+// 	font-size: 62.5%;
+// 	width: 100vw;
+// 	height: 100%;
+// }
+
+body {
+	color: var(--color-main);
+	margin: 0;
+	padding: 0;
+
+	position: relative;
+	overflow-x: hidden;
+}
+
+#webview{
+	display: flex;
+}
+
+p{
+	font-size: 14pt;
+}
+
+p a{
+	display: inline-block!important;
+	text-decoration: underline;
+	text-indent: 0;
+}
+
+h1,p,h2, h4{
+	padding: 10px;
+}
+
+
+
+h2{
+	font-family: Authentic,sans-serif;
+	font-size: 20pt;
+    line-height: 1em;
+}
+
+.btn-wrapper{
+	position: fixed;
+	width: 75%;
+	left: 20%;
+	top: 0;
+	background-color: transparent;
+
+    // box-shadow: 0 15px 15px -5px white;
+	z-index: 8934239;
+	text-align: right;
+}
+
+.change-behind{
+	font-size: 50px;
+	padding: 10px;
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+}
+
+img {
+	width: auto; // height is set with javascript
+	height: auto;
+	max-width: 50%;
+	max-height: 80%;
+	display: block;
+	margin: 12pt auto;
+}

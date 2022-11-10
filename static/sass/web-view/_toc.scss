@@ -1,0 +1,103 @@
+.toc-wrap{
+	width: 20%;
+	height: 100%;
+	background-color: lightgray;
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	z-index: -1;
+	overflow: scroll;
+}
+
+.toclimit-3 ul{
+	padding-left: 10px;
+	margin-left: 12px;
+	border-left: solid 0.5px;
+	list-style: none!important;
+}
+
+li.tocsection-1,
+li.toclevel-1{
+	margin-bottom: 15px;
+	margin-right: 5px;
+}
+
+.toctext{
+	hyphens: auto;
+}
+
+li.toclevel-1,
+li.toclevel-2 {
+	list-style: none!important;
+}
+
+li.toclevel-3,
+li.toclevel-4{
+	display: none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+.active{
+	text-decoration: underline;
+}
+
+//Picking links on the field 
+//chapter First,_Then…_Repeat.
+// a[href*="Workshop_scripts_in_practice"],
+
+//chapter Setting_conditions
+a[href*="Open-source_Parenting"],
+a[href*="Platframe_Postscript"],
+a[href*="WINWIN"],
+a[href*="On_consensus,_in_two_parts"],
+a[href*="#Re-_and_Un-_Defining_Tools"],
+a[href*="Mycelines:_A_Sympoetic_Imagination"],
+a[href*="fileSHA_as_protocol"],
+
+//chapter Prompts
+a[href*="Workshop_Histories_and_Practices"],
+a[href*="Relearning_Food"],
+a[href*="Across_Distance_and_Difference"],
+a[href*="Roleplaying_in_Etherpad"],
+a[href*="Spreadsheet_Routines"],
+a[href*="Channeling_Listeners"],
+a[href*="Untitling"],
+a[href*="Skinship"],
+
+//chapter How-to's
+a[href*="Learning_to_Experiment,_Sharing_Techniques"],
+a[href*="The_perfect_robbery"],
+a[href*="Scripts_from:_Learning_to_Experiment,_Sharing_Techniques_(ed._Julia_Bee_and_Gerko_Egert)"],
+a[href*="Give_and_Take"],
+a[href*="Bodystrike"],
+a[href*="The_perfect_robbery"],
+a[href*="Conceptual_Speed_Dating"],
+a[href*="The_Button_Saga"],
+a[href*="Mud_Batteries"],
+a[href*="The_Indonesian_Women_Movement_GERWANI"],
+a[href*="Display(ing)"],
+
+//chapter Distributed_Curricula
+a[href*="Cooperative_gaming"],
+a[href*="Interfacial-Workout"],
+a[href*="Am_I_a_hacker_now?"],
+a[href*="wiki_reflections"],
+a[href*="ChattyPub"],
+a[href*="Scripting_Workshops"],
+
+//chapter Active Bibliographies
+a[href*="Critical_Coding_Cookbook"],
+a[href*="Did_video_kill_the_radio_(star)?"],
+a[href*="A_case_of_mistaken_identity"],
+a[href*="Solarpunk_Postscript"],
+a[href*="Workshop_Matters_and_Materials"],
+
+//chapter Colophon
+a[href*="A_Note_on_the_design_of_this_publication"],
+a[href*="License"]{
+	display: none;
+}

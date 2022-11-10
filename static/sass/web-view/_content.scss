@@ -1,0 +1,56 @@
+.content{
+	position: absolute;
+
+	width: 75%;
+	left: 20%;
+}
+
+.hide-from-book,
+.hide-from-website{
+	display: none;
+}
+
+.chapter{
+	position: relative;
+	top: 0;
+	background-color: white;
+
+	box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+	-webkit-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+	-moz-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+
+	height: auto;
+}
+
+.article li::marker {
+	// content: "○";
+	font-size: 300%;
+	color: black;
+	line-height: 0.5;
+}
+
+.article{
+	position: relative;
+	display: none;
+	padding: 1%;
+}
+
+#Workshop_scripts_in_practice{
+	display: block;
+}
+
+.article:target{
+	display: block;
+	top: 0;
+}
+
+.author-wrap{
+	text-align: right;
+}
+
+.layout-1 .author,
+.layout-2 .author{
+	// margin-left: 50%;
+	margin-left: calc(50% - 30px);
+	margin: 0 -20mm 0 0;
+}
