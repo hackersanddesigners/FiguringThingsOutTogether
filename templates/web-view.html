@@ -6,6 +6,7 @@
 <link href="{{ url_for('static', filename=title + '.css') }}" rel="stylesheet" type="text/css" media="screen">
 <link href="{{ url_for('.static', filename='css/web-view.css') }}" rel="stylesheet" type="text/css" media="screen">
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
 {% endblock %}
 
 {% block content %}
@@ -106,10 +107,13 @@
               $('#Workshop_scripts_in_practice').show();
             });
 
-          //on chapter click open first article
-          // $('.toclevel-1').click(function(){
-          //   $('.setting-conditions .article:first-child').css("background", "red");
-          // });
+
+          //active link text-decoration underline
+          var links = $("li.toclevel-2"); 
+          $(links).click(function() {
+              $(links).removeClass('active');
+              $(this).addClass('active');
+          });
 
           //TOC links toggle
             $('a[href*="First,_Then…_Repeat."]').click(function(){
@@ -264,6 +268,15 @@
               }
               x[slideIndex-1].style.display = "block";  
             }
+
+            var underlineMenuItems = document.querySelectorAll(".toclevel-2");
+            underlineMenuItems[0].classList.add("active");
+            underlineMenuItems.forEach(function (item) {
+                item.addEventListener("click", function () {
+                    underlineMenuItems.forEach(function (item) { return item.classList.remove("active"); });
+                    item.classList.add("active");
+                });
+            });
 
 </script>
 </main>
