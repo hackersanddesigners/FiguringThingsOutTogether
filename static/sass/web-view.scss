@@ -116,10 +116,14 @@ a[href*="Did_video_kill_the_radio_(star)?"],
 a[href*="A_case_of_mistaken_identity"],
 a[href*="Solarpunk_Postscript"],
 a[href*="Workshop_Matters_and_Materials"],
+
+//chapter Colophon
 a[href*="A_Note_on_the_design_of_this_publication"],
-a[href*="Colophon"]{
+a[href*="License"]{
 	display: none;
 }
+
+
 
 p a{
 	display: block!important;

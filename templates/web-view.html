@@ -183,9 +183,16 @@
               $('a[href*="A_case_of_mistaken_identity"]').toggle();
               $('a[href*="Solarpunk_Postscript"]').toggle();
               $('a[href*="Workshop_Matters_and_Materials"]').toggle();
-              $('a[href*="A_Note_on_the_design_of_this_publication"]').toggle();
-              $('a[href*="Colophon"]').toggle();
             });
+
+            $('a[href*="Colophon"]').click(function(){
+              // event.preventDefault();
+              $('.Colophon').toggle();
+
+              $('a[href*="A_Note_on_the_design_of_this_publication"]').toggle();
+              $('a[href*="License"]').toggle();
+            });
+
 
             //universal close (rewrite more of those)
             $('.close').click(function(){
