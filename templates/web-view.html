@@ -212,7 +212,7 @@
             }); 
           
             //prevent default on script-trailer
-            $('.script-trailer').click(function(e) {
+            $('.script-image').click(function(e) {
               e.preventDefault();
               $('.scriptothek-wrapper').css("width", "96.5%");
               $('.chapter, .btn-wrapper').hide();
@@ -223,160 +223,21 @@
             //   $('.scriptothek-chapter-0').hide()
             // }); 
 
-//SLIDESHOW 0
-            $('a[href*="Open-source_Parenting"]').click(function(){
-              $('.scriptothek-chapter, .scriptothek-slideshow-0').hide();
-              $('.scriptothek-chapter-0').show();
-            });
-
-            $('.script-trailer-0').click(function() {
-              $('.script-trailer-0, .script-trailer, .slideshow-buttons, .close').hide();
-              $('.scriptothek-slideshow-0, .close-wrapper, .slideshow0-buttons, .close0').show();
-            });
-
-            $('.close0').click(function(){
-              $('.script-trailer-0, .script-trailer').show();
-            });
-
 // SLIDESHOW 1
-            $('a[href*="Platframe_Postscript"]').click(function(){
-              $('.scriptothek-chapter, .scriptothek-slideshow-1').hide();
+            $('a[href*="Open-source_Parenting"]').click(function(){
+              // $('.scriptothek-chapter, .scriptothek-slideshow-1').hide();
               $('.scriptothek-chapter-1').show();
             });
 
-            $('.script-trailer-1').click(function() {
-              $('.script-trailer-1,  .script-trailer, .slideshow-buttons, .close').hide();
-              $('.scriptothek-slideshow-1, .close-wrapper, .slideshow1-buttons, .close1').show();
+            $('.script-image-1').click(function() {
+              $('.slideshow-buttons, .close').hide();
+              $('.script-image-1, .scriptothek-slideshow-1, .close-wrapper, .slideshow1-buttons, .close1').show();
             });
 
             $('.close1').click(function(){
-              $('.script-trailer-1, .script-trailer').show();
-            });
-
-//SLIDESHOW 2
-            $('a[href*="Across_Distance_and_Difference"]').click(function(){
-              $('.scriptothek-chapter, .scriptothek-slideshow-2').hide();
-              $('.scriptothek-chapter-2').show();
-            });
-
-            $('.script-trailer-2').click(function() {
-              $('.script-trailer-2, .script-trailer, .slideshow-buttons, .close').hide();
-              $('.scriptothek-slideshow-2, .close-wrapper, .slideshow2-buttons, .close2').show();
-            });
-
-            $('.close2').click(function(){
-              $('.script-trailer-2, .script-trailer').show();
-            });
-          
-// //SLIDESHOW 3
-            $('a[href*="Channeling_Listeners"]').click(function(){
-              $('.scriptothek-chapter, .scriptothek-slideshow-3').hide();
-              $('.scriptothek-chapter-3').show();
-            });
-
-            $('.script-trailer-3').click(function() {
-              $('.script-trailer-3, .script-trailer, .slideshow-buttons, .close').hide();
-              $('.scriptothek-slideshow-3, .close-wrapper, .slideshow3-buttons, .close3').show();
-            });
-
-            $('.close3').click(function(){
-              $('.script-trailer-3, .script-trailer').show();
-            });
-
-// //SLIDESHOW 4
-            $('a[href*="Skinship"]').click(function(){
-              $('.scriptothek-chapter, .scriptothek-slideshow-4').hide();
-              $('.scriptothek-chapter-4').show();
-            });
-
-            $('.script-trailer-4').click(function() {
-              $('.script-trailer-4, .script-trailer, .slideshow-buttons, .close').hide();
-              $('.scriptothek-slideshow-4, .close-wrapper, .slideshow4-buttons, .close4').show();
-            });
-
-            $('.close4').click(function(){
-              $('.script-trailer-4, .script-trailer').show();
-            });
-
-// //SLIDESHOW 5
-            $('a[href*="Learning_to_Experiment,_Sharing_Techniques"]').click(function(){
-              $('.scriptothek-chapter, .scriptothek-slideshow-5').hide();
-              $('.scriptothek-chapter-5').show();
-            });
-
-            $('.script-trailer-5').click(function() {
-              $('.script-trailer-5, .script-trailer, .slideshow-buttons, .close').hide();
-              $('.scriptothek-slideshow-5, .close-wrapper, .slideshow5-buttons, .close5').show();
-            });
-
-            $('.close5').click(function(){
-              $('.script-trailer-5, .script-trailer').show();
-            });
-
-// // SLIDESHOW 6
-            $('a[href*="Mud_Batteries"]').click(function(){
-              $('.scriptothek-chapter, .scriptothek-slideshow-6').hide();
-              $('.scriptothek-chapter-6').show();
-            });
-
-            $('.script-trailer-6').click(function() {
-              $('.script-trailer-6, .script-trailer, .slideshow-buttons, .close').hide();
-              $('.scriptothek-slideshow-6, .close-wrapper, .slideshow6-buttons, .close6').show();
-            });
-
-            $('.close6').click(function(){
-              $('.script-trailer-6, .script-trailer').show();
-            });
-
-// SLIDESHOW 7
-            $('a[href*="Am_I_a_hacker_now?"]').click(function(){
-              $('.scriptothek-chapter, .scriptothek-slideshow-7').hide();
-              $('.scriptothek-chapter-7').show();
-            });
-
-            $('.script-trailer-7').click(function() {
-              $('.script-trailer-7, .script-trailer, .slideshow-buttons, .close').hide();
-              $('.scriptothek-slideshow-7, .close-wrapper, .slideshow7-buttons, .close7').show();
-            });
-
-            $('.close7').click(function(){
-              $('.script-trailer-7, .script-trailer').show();
-            });
-
-// SLIDESHOW 8
-            $('a[href*="Critical_Coding_Cookbook"]').click(function(){
-              $('.scriptothek-chapter, .scriptothek-slideshow-8').hide();
-              $('.scriptothek-chapter-8').show();
-            });
-
-            $('.script-trailer-8').click(function() {
-              $('.script-trailer-8, .script-trailer, .slideshow-buttons, .close').hide();
-              $('.scriptothek-slideshow-8, .close-wrapper, .slideshow8-buttons, .close8').show();
-            });
-
-            $('.close8').click(function(){
-              $('.script-trailer-8, .script-trailer').show();
+              $('.script-image-1').show();
             });
     });
-
-  //SLIDESHOW 0
-            var slideIndex = 1;
-            showScripts0(slideIndex);
-
-            function plusScripts0(n) {
-              showScripts0(slideIndex += n);
-            }
-
-            function showScripts0(n) {
-              var i;
-              var x = document.getElementsByClassName("script-image-0");
-              if (n > x.length) {slideIndex = 1}
-              if (n < 1) {slideIndex = x.length}
-              for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";  
-              }
-              x[slideIndex-1].style.display = "block";  
-            }
 
   //SLIDESHOW 1
             var slideIndex = 1;
@@ -396,138 +257,7 @@
               }
               x[slideIndex-1].style.display = "block";  
             }
-  //SLIDESHOW 2
-            var slideIndex = 1;
-            showScripts2(slideIndex);
 
-            function plusScripts2(n) {
-              showScripts2(slideIndex += n);
-            }
-
-            function showScripts2(n) {
-              var i;
-              var x = document.getElementsByClassName("script-image-2");
-              if (n > x.length) {slideIndex = 1}
-              if (n < 1) {slideIndex = x.length}
-              for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";  
-              }
-              x[slideIndex-1].style.display = "block";  
-            }
-
-  //SLIDESHOW 3 
-            var slideIndex = 1;
-            showScripts3(slideIndex);
-
-            function plusScripts3(n) {
-              showScripts3(slideIndex += n);
-            }
-
-            function showScripts3(n) {
-              var i;
-              var x = document.getElementsByClassName("script-image-3");
-              if (n > x.length) {slideIndex = 1}
-              if (n < 1) {slideIndex = x.length}
-              for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";  
-              }
-              x[slideIndex-1].style.display = "block";  
-            }
-
-  //SLIDESHOW 4 - missing images
-            // var slideIndex = 1;
-            // showScripts4(slideIndex);
-
-            // function plusScripts4(n) {
-            //   showScripts4(slideIndex += n);
-            // }
-
-            // function showScripts4(n) {
-            //   var i;
-            //   var x = document.getElementsByClassName("script-image-4");
-            //   if (n > x.length) {slideIndex = 1}
-            //   if (n < 1) {slideIndex = x.length}
-            //   for (i = 0; i < x.length; i++) {
-            //     x[i].style.display = "none";  
-            //   }
-            //   x[slideIndex-1].style.display = "block";  
-            // }
-
-  //SLIDESHOW 5
-            var slideIndex = 1;
-            showScripts5(slideIndex);
-
-            function plusScripts5(n) {
-              showScripts5(slideIndex += n);
-            }
-
-            function showScripts5(n) {
-              var i;
-              var x = document.getElementsByClassName("script-image-5");
-              if (n > x.length) {slideIndex = 1}
-              if (n < 1) {slideIndex = x.length}
-              for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";  
-              }
-              x[slideIndex-1].style.display = "block";  
-            }
-
-  //SLIDESHOW 6
-            var slideIndex = 1;
-            showScripts6(slideIndex);
-
-            function plusScripts6(n) {
-              showScripts6(slideIndex += n);
-            }
-
-            function showScripts6(n) {
-              var i;
-              var x = document.getElementsByClassName("script-image-6");
-              if (n > x.length) {slideIndex = 1}
-              if (n < 1) {slideIndex = x.length}
-              for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";  
-              }
-              x[slideIndex-1].style.display = "block";  
-            }
-
-  //SLIDESHOW 7 - missing images
-            // var slideIndex = 1;
-            // showScripts7(slideIndex);
-
-            // function plusScripts7(n) {
-            //   showScripts7(slideIndex += n);
-            // }
-
-            // function showScripts7(n) {
-            //   var i;
-            //   var x = document.getElementsByClassName("script-image-7");
-            //   if (n > x.length) {slideIndex = 1}
-            //   if (n < 1) {slideIndex = x.length}
-            //   for (i = 0; i < x.length; i++) {
-            //     x[i].style.display = "none";  
-            //   }
-            //   x[slideIndex-1].style.display = "block";  
-            // }
-
-  // //SLIDESHOW 8 - missing images
-  //           var slideIndex = 1;
-  //           showScripts8(slideIndex);
-
-  //           function plusScripts8(n) {
-  //             showScripts8(slideIndex += n);
-  //           }
-
-  //           function showScripts8(n) {
-  //             var i;
-  //             var x = document.getElementsByClassName("script-image-8");
-  //             if (n > x.length) {slideIndex = 1}
-  //             if (n < 1) {slideIndex = x.length}
-  //             for (i = 0; i < x.length; i++) {
-  //               x[i].style.display = "none";  
-  //             }
-  //             x[slideIndex-1].style.display = "block";  
-  //           }
 </script>
 </main>
 {% endblock %}
