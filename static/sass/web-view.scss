@@ -40,7 +40,9 @@ a:hover{
 	text-decoration: underline;
 }
 
-
+p{
+	font-size: 14pt;
+}
 
 //Table of Contents
 .toc-wrap{
@@ -59,6 +61,7 @@ a:hover{
 	padding-left: 10px;
 	margin-left: 12px;
 	border-left: solid 0.5px;
+	list-style: none!important;
 }
 
 li.tocsection-1,
@@ -73,12 +76,19 @@ li.toclevel-1{
 
 li.toclevel-1,
 li.toclevel-2 {
-	list-style: none;
+	list-style: none!important;
 }
 
 li.toclevel-3,
 li.toclevel-4{
 	display: none;
+}
+
+.article li::marker {
+	// content: "○";
+	font-size: 300%;
+	color: black;
+	line-height: 0.5;
 }
 
 //Picking links on the field 
