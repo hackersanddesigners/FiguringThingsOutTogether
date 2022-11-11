@@ -100,16 +100,21 @@
 	position: absolute;
 }
 
-$finalHeight: 250px;
-$finalWidth: 3 * $finalHeight;
-$scrollBarHeight: 1px;
-
-::-webkit-scrollbar {
-  width: $scrollBarHeight;
-  height: $scrollBarHeight;
+.layout-1 .block {
+    border: none;
+    padding: 0 3mm !important;
 }
 
-::-webkit-scrollbar-button {
-  width: $scrollBarHeight;
-  height: $scrollBarHeight;
-}
+// $finalHeight: 250px;
+// $finalWidth: 3 * $finalHeight;
+// $scrollBarHeight: 1px;
+
+// ::-webkit-scrollbar {
+//   width: $scrollBarHeight;
+//   height: $scrollBarHeight;
+// }
+
+// ::-webkit-scrollbar-button {
+//   width: $scrollBarHeight;
+//   height: $scrollBarHeight;
+// }
