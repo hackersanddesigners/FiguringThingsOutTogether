@@ -11,15 +11,19 @@
 }
 
 .chapter{
-	position: relative;
+	position: absolute;
 	top: 0;
-	background-color: white;
 
-	box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
-	-webkit-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
-	-moz-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+	min-height: 100%;
+	width: 100%;
+}
 
-	height: auto;
+.chapter h2{
+	display: none;
+}
+
+.colophon-credits{
+	display: none;
 }
 
 .article li::marker {
@@ -30,18 +34,33 @@
 }
 
 .article{
-	position: relative;
+	position: absolute;
 	display: none;
 	padding: 1%;
+	padding-top: 5%;
+
+	min-height: 100vh;
+
+	background-color: white;
+	box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+	-webkit-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+	-moz-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
 }
 
 #Workshop_scripts_in_practice{
 	display: block;
+	top: 0;
 }
 
 .article:target{
 	display: block;
 	top: 0;
+}
+
+@mixin hide-chapter() {
+	.chapter{
+		display: none;
+	}
 }
 
 .author-wrap{

@@ -12,7 +12,7 @@
 {% block content %}
 <main id="webview">
 
-  <button class="show-all-scripts">SHOW THEM</button>
+  <!-- <button class="show-all-scripts">SHOW THEM</button> -->
   <!-- BUTTON -->
   <div class="btn-wrapper">
     <button class="change-behind">&larr;</button>
@@ -107,7 +107,6 @@
               $('#Workshop_scripts_in_practice').show();
             });
 
-
           //active link text-decoration underline
           var links = $("li.toclevel-2"); 
           $(links).click(function() {
@@ -115,9 +114,17 @@
               $(this).addClass('active');
           });
 
+          
+
+
+
           //TOC links toggle
             $('a[href*="First,_Then…_Repeat."]').click(function(){
+
               $('a[href*="Workshop_scripts_in_practice"]').toggle();
+
+              $('.introduction').show()
+              $('.setting-conditions, .prompts, .how-tos, .scripted-syllabi, .active-bibliographies, .colophon-credits').hide();
             });
 
             $('a[href*="Setting_conditions"]').click(function(){
@@ -132,6 +139,7 @@
               $('a[href*="Mycelines:_A_Sympoetic_Imagination"]').toggle();
               $('a[href*="fileSHA_as_protocol"]').toggle();
 
+              // $('.article.setting-conditions').show()
               // $('.introduction, .prompts, .how-tos, .scripted-syllabi, .active-bibliographies, .colophon-credits').hide();
             });
 
@@ -147,6 +155,8 @@
               $('a[href*="Skinship"]').toggle();
 
               $('#Workshop_scripts_in_practice').hide();
+              // $('.prompts').show()
+              // $('.introduction, .setting-conditions, .how-tos, .scripted-syllabi, .active-bibliographies, .colophon-credits').hide();
             });
 
             $('a[href*="How-tos"]').click(function(){
@@ -164,6 +174,8 @@
               $('a[href*="Display(ing)"]').toggle();
 
               $('#Workshop_scripts_in_practice').hide();
+              // $('.how-tos').show()
+              // $('.introduction, .setting-conditions, .prompts, .scripted-syllabi, .active-bibliographies, .colophon-credits').hide();
             });
 
             $('a[href*="Distributed_Curricula"]').click(function(){
@@ -177,6 +189,8 @@
               $('a[href*="Scripting_Workshops"]').toggle();
 
               $('#Workshop_scripts_in_practice').hide();
+              // $('.scripted-syllabi').show()
+              // $('.introduction, .setting-conditions, .prompts, .how-tos, .active-bibliographies, .colophon-credits').hide();
             });
 
             $('a[href*="Active_bibliographies"]').click(function(){
@@ -215,12 +229,6 @@
                   $('.change-behind').text("&larr;" == $(this).text() ? "&larr;" : "→");
               }
             });
-
-            //show all scripts on button
-            $('.show-all-scripts').click(function() {
-              $('.scriptothek-chapter').toggle();
-              $('.scriptothek-slideshow').hide();
-            }); 
           
             //prevent default on script-trailer
             $('.script-image').click(function(e) {
@@ -230,28 +238,32 @@
             }); 
 
             //every 
-            // $('.toclevel-2').click(function() {
-            //   $('.scriptothek-chapter-0').hide()
+            // $('.active').click(function() {
+            //   $('.chapter').hide()
             // }); 
+
+            //show all scripts on button
+            // $('.show-all-scripts').click(function() {
+            //   $('.scriptothek-chapter').toggle();
+            // });             
 
 // SLIDESHOW 1
             $('a[href*="Open-source_Parenting"]').click(function(){
-              // $('.scriptothek-chapter, .scriptothek-slideshow-1').hide();
+              $('.scriptothek-chapter').hide();
               $('.scriptothek-chapter-1').show();
             });
 
-            $('.script-image-1').click(function() {
+            $('.scriptothek-slideshow-1').click(function() {
               $('.slideshow-buttons, .close').hide();
-              $('.script-image-1, .scriptothek-slideshow-1, .close-wrapper, .slideshow1-buttons, .close1').show();
+              $('.close-wrapper, .slideshow1-buttons, .close1').show();
             });
 
             $('.close1').click(function(){
-              $('.script-image-1').show();
+              $('.scriptothek-slideshow-1').show();
             });
-    });
 
   //SLIDESHOW 1
-            var slideIndex = 1;
+  var slideIndex = 1;
             showScripts1(slideIndex);
 
             function plusScripts1(n) {
@@ -269,14 +281,47 @@
               x[slideIndex-1].style.display = "block";  
             }
 
-            var underlineMenuItems = document.querySelectorAll(".toclevel-2");
-            underlineMenuItems[0].classList.add("active");
-            underlineMenuItems.forEach(function (item) {
-                item.addEventListener("click", function () {
-                    underlineMenuItems.forEach(function (item) { return item.classList.remove("active"); });
-                    item.classList.add("active");
-                });
+// SLIDESHOW 2
+            $('a[href*="Platframe_Postscript"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-2').show();
             });
+
+            $('.scriptothek-slideshow-2').click(function() {
+
+              $('.script-image-2').css({"width": "200px"});
+              $('.scriptothek-slideshow').css({"display":"inline-flex", "padding-top":"2%", "position":"fixed", "overflow-x":"scroll", "width": "100%"});
+
+              $('.slideshow-buttons, .close').hide();
+              $('.close-wrapper, .close2').show();
+            });
+
+            $('.close2').click(function(){
+              $('.scriptothek-slideshow-2').show().css({"display":"block", "padding":"10%", "position":"relative"});
+            });
+
+// SLIDESHOW 3
+            $('a[href*="On_consensus,_in_two_parts"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-3').show();
+            });
+
+            $('.scriptothek-slideshow-3').click(function() {
+
+              $('.script-image-3').css({"width": "500px"});
+              $('.scriptothek-slideshow').css({"display":"inline-flex", "padding-top":"0", "position":"fixed", "overflow-x":"scroll", "width": "100%"});
+
+              $('.slideshow-buttons, .close').hide();
+              $('.close-wrapper, .close3').show();
+            });
+
+            $('.close3').click(function(){
+              $('.scriptothek-slideshow-3').show().css({"display":"block", "padding":"10%", "position":"relative", "width":"90%"});
+              $('.script-image-3').css({"width": "90%"});
+            });
+    });
+
+
 
 </script>
 </main>
