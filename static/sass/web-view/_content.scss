@@ -27,10 +27,15 @@
 }
 
 .article li::marker {
-	// content: "○";
 	font-size: 300%;
 	color: black;
 	line-height: 0.5;
+}
+
+.article ol li::marker {
+    /* color: #000; */
+    font-size: inherit;
+    line-height: .5;
 }
 
 .article{
@@ -90,6 +95,8 @@
 }
 
 .hilight-h5{
-	display: none;
+	// visibility: hidden;
+	width: 100%;
+	position: absolute;
 }
 
