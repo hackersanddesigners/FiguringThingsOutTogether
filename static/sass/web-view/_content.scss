@@ -95,8 +95,21 @@
 }
 
 .hilight-h5{
-	// visibility: hidden;
+	visibility: hidden;
 	width: 100%;
 	position: absolute;
 }
 
+$finalHeight: 250px;
+$finalWidth: 3 * $finalHeight;
+$scrollBarHeight: 1px;
+
+::-webkit-scrollbar {
+  width: $scrollBarHeight;
+  height: $scrollBarHeight;
+}
+
+::-webkit-scrollbar-button {
+  width: $scrollBarHeight;
+  height: $scrollBarHeight;
+}

@@ -6,7 +6,7 @@
 <link href="{{ url_for('static', filename=title + '.css') }}" rel="stylesheet" type="text/css" media="screen">
 <link href="{{ url_for('.static', filename='css/web-view.css') }}" rel="stylesheet" type="text/css" media="screen">
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -23,11 +23,6 @@
     <button class="close close1">&#215;</button>
     <button class="close close2">&#215;</button>
     <button class="close close3">&#215;</button>
-    <button class="close close4">&#215;</button>
-    <button class="close close5">&#215;</button>
-    <button class="close close6">&#215;</button>
-    <button class="close close7">&#215;</button>
-    <button class="close close8">&#215;</button>
   </div>
 
   <div class="slideshow-buttons slideshow0-buttons">
@@ -50,36 +45,10 @@
     <a class="next" onclick="plusScripts3(1)">&#62;</a>
   </div>
 
-  <div class="slideshow-buttons slideshow4-buttons">
-    <a class="prev" onclick="plusScripts4(-1)">&#60;</a>
-    <a class="next" onclick="plusScripts4(1)">&#62;</a>
-  </div>
-
-  <div class="slideshow-buttons slideshow5-buttons">
-    <a class="prev" onclick="plusScripts5(-1)">&#60;</a>
-    <a class="next" onclick="plusScripts5(1)">&#62;</a>
-  </div>
-
-  <div class="slideshow-buttons slideshow6-buttons">
-    <a class="prev" onclick="plusScripts6(-1)">&#60;</a>
-    <a class="next" onclick="plusScripts6(1)">&#62;</a>
-  </div>
-
-  <div class="slideshow-buttons slideshow7-buttons">
-    <a class="prev" onclick="plusScripts7(-1)">&#60;</a>
-    <a class="next" onclick="plusScripts7(1)">&#62;</a>
-  </div>
-
-  <div class="slideshow-buttons slideshow8-buttons">
-    <a class="prev" onclick="plusScripts8(-1)">&#60;</a>
-    <a class="next" onclick="plusScripts8(1)">&#62;</a>
-  </div>
-
   <!-- ARTICLES + CONTENTS -->
     <div class="content">
       {{ html | safe }}
     </div>
-
 
     <script>
       $(document).ready(function(){
@@ -113,10 +82,6 @@
               $(links).removeClass('active');
               $(this).addClass('active');
           });
-
-          
-
-
 
           //TOC links toggle
             $('a[href*="First,_Then…_Repeat."]').click(function(){
@@ -230,7 +195,7 @@
               }
             });
           
-            //prevent default on script-trailer
+            // prevent default on script-trailer
             $('.script-image').click(function(e) {
               e.preventDefault();
               $('.scriptothek-wrapper').css("width", "96.5%");
@@ -263,7 +228,7 @@
             });
 
   //SLIDESHOW 1
-  var slideIndex = 1;
+            var slideIndex = 1;
             showScripts1(slideIndex);
 
             function plusScripts1(n) {
@@ -282,23 +247,23 @@
             }
 
 // SLIDESHOW 2
-            $('a[href*="Platframe_Postscript"]').click(function(){
-              $('.scriptothek-chapter').hide();
-              $('.scriptothek-chapter-2').show();
-            });
+            // $('a[href*="Platframe_Postscript"]').click(function(){
+            //   $('.scriptothek-chapter').hide();
+            //   $('.scriptothek-chapter-2').show();
+            // });
 
-            $('.scriptothek-slideshow-2').click(function() {
+            // $('.scriptothek-slideshow-2').click(function() {
 
-              $('.script-image-2').css({"width": "200px"});
-              $('.scriptothek-slideshow').css({"display":"inline-flex", "padding-top":"2%", "position":"fixed", "overflow-x":"scroll", "width": "100%"});
+            //   $('.script-image-2').css({"width": "200px"});
+            //   $('.scriptothek-slideshow').css({"display":"inline-flex", "padding-top":"2%", "position":"fixed", "overflow-x":"scroll", "width": "100%"});
 
-              $('.slideshow-buttons, .close').hide();
-              $('.close-wrapper, .close2').show();
-            });
+            //   $('.slideshow-buttons, .close').hide();
+            //   $('.close-wrapper, .close2').show();
+            // });
 
-            $('.close2').click(function(){
-              $('.scriptothek-slideshow-2').show().css({"display":"block", "padding":"10%", "position":"relative"});
-            });
+            // $('.close2').click(function(){
+            //   $('.scriptothek-slideshow-2').show().css({"display":"block", "padding":"10%", "position":"relative"});
+            // });
 
 // SLIDESHOW 3
             $('a[href*="On_consensus,_in_two_parts"]').click(function(){
