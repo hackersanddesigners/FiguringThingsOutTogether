@@ -22,33 +22,11 @@
 
 .scriptothek-slideshow{
 	padding: 10%;
+	padding-top: 10px;
 }
 
 // hide all scriptotheeks
 .scriptothek-chapter{
-	display: none;
-}
-
-// .script-image-2{
-// 	width: 400px!important;
-// 	height: auto;
-// }
-
-// .script-image{
-// 	width: 100%;
-// }
-
-// a.image{
-// 	width: 100%;
-// }
-
-.slideshow-buttons{
-	width: 96.5%;
-	position: fixed;
-	// background-color: #b19cd9;
-	right: 0;
-	z-index: 5;
-	top:50%;
 	display: none;
 }
 
@@ -62,39 +40,12 @@
 	display: none;
 }
 
-.prev,
-.next,
-.close{
-	border:none;
-	display:inline-block;
-	padding:8px 16px;
-	vertical-align:middle;
-	overflow:hidden;
-	text-decoration:none;
-	color:inherit;
-	background-color:inherit;
-	text-align:center;
-	cursor:pointer;
-	white-space:nowrap;
-	font-size: 50px;
-}
-
-.prev{
-	position:absolute;
-	left:0%;
-}
-
-.next{
-	position:absolute;
-	right:0%;
-}
-
-a.image{
+.scriptothek-chapter a.image{
 	margin: auto;
 	margin-right: 5%;
 }
 
-// TRYOUT
+// TRYOUT- horizontal scroll
 
 // $finalHeight: 500px;
 // $finalWidth: 3 * $finalHeight;

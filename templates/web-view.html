@@ -25,26 +25,6 @@
     <button class="close close3">&#215;</button>
   </div>
 
-  <div class="slideshow-buttons slideshow0-buttons">
-    <a class="prev" onclick="plusScripts0(-1)">&#60;</a>
-    <a class="next" onclick="plusScripts0(1)">&#62;</a>
-  </div>
-
-  <div class="slideshow-buttons slideshow1-buttons">
-    <a class="prev" onclick="plusScripts1(-1)">&#60;</a>
-    <a class="next" onclick="plusScripts1(1)">&#62;</a>
-  </div>
-
-  <div class="slideshow-buttons slideshow2-buttons">
-    <a class="prev" onclick="plusScripts2(-1)">&#60;</a>
-    <a class="next" onclick="plusScripts2(1)">&#62;</a>
-  </div>
-
-  <div class="slideshow-buttons slideshow3-buttons">
-    <a class="prev" onclick="plusScripts3(-1)">&#60;</a>
-    <a class="next" onclick="plusScripts3(1)">&#62;</a>
-  </div>
-
   <!-- ARTICLES + CONTENTS -->
     <div class="content">
       {{ html | safe }}
@@ -210,8 +190,8 @@
 
             $('.scriptothek-slideshow-3').click(function() {
 
-              $('.script-image-3').css({"width": "500px"});
-              $('.scriptothek-slideshow').css({"display":"inline-flex", "padding-top":"0", "position":"fixed", "overflow-x":"scroll", "width": "100%"});
+              $('.script-image-3').css({"width": "400px"});
+              $('.scriptothek-slideshow').css({"display":"inline-flex", "padding-top":"10px", "position":"fixed", "overflow-x":"scroll", "width": "100%"});
 
               $('.slideshow-buttons, .close').hide();
               $('.close-wrapper, .close3').show();
