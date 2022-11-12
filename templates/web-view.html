@@ -103,9 +103,6 @@
               $('a[href*="Re-_and_Un-_Defining_Tools"]').toggle();
               $('a[href*="Mycelines:_A_Sympoetic_Imagination"]').toggle();
               $('a[href*="fileSHA_as_protocol"]').toggle();
-
-              // $('.article.setting-conditions').show()
-              // $('.introduction, .prompts, .how-tos, .scripted-syllabi, .active-bibliographies, .colophon-credits').hide();
             });
 
             $('a[href*="Prompts"]').click(function(){
@@ -120,8 +117,6 @@
               $('a[href*="Skinship"]').toggle();
 
               $('#Workshop_scripts_in_practice').hide();
-              // $('.prompts').show()
-              // $('.introduction, .setting-conditions, .how-tos, .scripted-syllabi, .active-bibliographies, .colophon-credits').hide();
             });
 
             $('a[href*="How-tos"]').click(function(){
@@ -169,13 +164,13 @@
             });
 
             $('a[href*="Colophon"]').click(function(){
-              // event.preventDefault();
+              event.preventDefault();
               $('.Colophon').toggle();
 
+              $('a[href*="Colophon-names"]').toggle();
               $('a[href*="A_Note_on_the_design_of_this_publication"]').toggle();
               $('a[href*="License"]').toggle();
             });
-
 
             //universal close (rewrite more of those)
             $('.close').click(function(){
@@ -202,68 +197,10 @@
               $('.chapter, .btn-wrapper').hide();
             }); 
 
-            //every 
-            // $('.active').click(function() {
-            //   $('.chapter').hide()
-            // }); 
-
             //show all scripts on button
             // $('.show-all-scripts').click(function() {
             //   $('.scriptothek-chapter').toggle();
             // });             
-
-// SLIDESHOW 1
-            $('a[href*="Open-source_Parenting"]').click(function(){
-              $('.scriptothek-chapter').hide();
-              $('.scriptothek-chapter-1').show();
-            });
-
-            $('.scriptothek-slideshow-1').click(function() {
-              $('.slideshow-buttons, .close').hide();
-              $('.close-wrapper, .slideshow1-buttons, .close1').show();
-            });
-
-            $('.close1').click(function(){
-              $('.scriptothek-slideshow-1').show();
-            });
-
-  //SLIDESHOW 1
-            var slideIndex = 1;
-            showScripts1(slideIndex);
-
-            function plusScripts1(n) {
-              showScripts1(slideIndex += n);
-            }
-
-            function showScripts1(n) {
-              var i;
-              var x = document.getElementsByClassName("script-image-1");
-              if (n > x.length) {slideIndex = 1}
-              if (n < 1) {slideIndex = x.length}
-              for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";  
-              }
-              x[slideIndex-1].style.display = "block";  
-            }
-
-// SLIDESHOW 2
-            // $('a[href*="Platframe_Postscript"]').click(function(){
-            //   $('.scriptothek-chapter').hide();
-            //   $('.scriptothek-chapter-2').show();
-            // });
-
-            // $('.scriptothek-slideshow-2').click(function() {
-
-            //   $('.script-image-2').css({"width": "200px"});
-            //   $('.scriptothek-slideshow').css({"display":"inline-flex", "padding-top":"2%", "position":"fixed", "overflow-x":"scroll", "width": "100%"});
-
-            //   $('.slideshow-buttons, .close').hide();
-            //   $('.close-wrapper, .close2').show();
-            // });
-
-            // $('.close2').click(function(){
-            //   $('.scriptothek-slideshow-2').show().css({"display":"block", "padding":"10%", "position":"relative"});
-            // });
 
 // SLIDESHOW 3
             $('a[href*="On_consensus,_in_two_parts"]').click(function(){

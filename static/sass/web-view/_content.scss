@@ -22,10 +22,6 @@
 	display: none;
 }
 
-.colophon-credits{
-	display: none;
-}
-
 .article li::marker {
 	font-size: 300%;
 	color: black;
@@ -43,6 +39,8 @@
 	display: none;
 	padding: 1%;
 	padding-top: 5%;
+
+	font-size: 14pt;
 
 	min-height: 100vh;
 
@@ -62,26 +60,14 @@
 	top: 0;
 }
 
-@mixin hide-chapter() {
-	.chapter{
-		display: none;
-	}
-}
-
 .author-wrap{
 	text-align: right;
 }
 
 .layout-1 .author,
 .layout-2 .author{
-	// margin-left: 50%;
-	// margin-left: calc(50% - 30px);
 	margin: 0 0 0 0;
 }
-
-// .layout-2 {
-//     columns: 2;
-// }
 
 .layout-1 blockquote{
 	font-size: 15pt;
@@ -94,15 +80,13 @@
 	background-color: yellow;
 }
 
-.hilight-h5{
-	visibility: hidden;
-	width: 100%;
-	position: absolute;
-}
-
 .layout-1 .block {
     border: none;
     padding: 0 3mm !important;
+}
+
+.spread{
+	display: none;
 }
 
 // $finalHeight: 250px;
