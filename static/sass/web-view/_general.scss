@@ -61,6 +61,8 @@ h2{
 /* thumbnails, keep caption and image on same page */
 .thumb {
 	break-inside: avoid;
+	margin-top: 1%;
+	margin-bottom: 1%;
 }
 
 .thumbinner {
