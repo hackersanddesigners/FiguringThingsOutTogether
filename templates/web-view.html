@@ -23,6 +23,31 @@
     <button class="close close1">&#215;</button>
     <button class="close close2">&#215;</button>
     <button class="close close3">&#215;</button>
+    <button class="close close4">&#215;</button>
+    <button class="close close5">&#215;</button>
+    <button class="close close6">&#215;</button>
+    <button class="close close7">&#215;</button>
+    <button class="close close8">&#215;</button>
+    <button class="close close9">&#215;</button>
+    <button class="close close10">&#215;</button>
+    <button class="close close11">&#215;</button>
+    <button class="close close12">&#215;</button>
+    <button class="close close13">&#215;</button>
+    <button class="close close14">&#215;</button>
+    <button class="close close15">&#215;</button>
+    <button class="close close16">&#215;</button>
+    <button class="close close17">&#215;</button>
+    <button class="close close18">&#215;</button>
+    <button class="close close19">&#215;</button>
+    <button class="close close20">&#215;</button>
+    <button class="close close21">&#215;</button>
+    <button class="close close22">&#215;</button>
+    <button class="close close23">&#215;</button>
+    <button class="close close24">&#215;</button>
+    <button class="close close25">&#215;</button>
+    <button class="close close26">&#215;</button>
+    <button class="close close27">&#215;</button>
+    <button class="close close28">&#215;</button>
   </div>
 
   <!-- ARTICLES + CONTENTS -->
@@ -155,8 +180,11 @@
             //universal close (rewrite more of those)
             $('.close').click(function(){
               $('.scriptothek-wrapper').css("width", "21.5%");
-              $('.scriptothek-slideshow, .close-wrapper, .slideshow-buttons').hide();
+              $('.close-wrapper').hide();
               $('.chapter, .btn-wrapper').show();
+
+              $('.scriptothek-slideshow').css({"display":"block", "padding":"1%", "position":"relative"});
+              $('.script-image').css({"width": "90%"});
 
               if($('.content, .btn-wrapper').attr("trigger")==="0"){
                 $('.content, .btn-wrapper').animate({"left":"20%"},700);
@@ -177,10 +205,39 @@
               $('.chapter, .btn-wrapper').hide();
             }); 
 
+            //universal scriptoteehk slideshow click
+            $('.scriptothek-slideshow').click(function() {
+              $('.script-image').css({"width": "400px"});
+              $('.scriptothek-slideshow').css({"display":"inline-flex", "padding":"1%", "position":"fixed", "overflow-x":"scroll", "width": "100%"});
+
+              $('.close').hide();
+            });
+
             //show all scripts on button
             // $('.show-all-scripts').click(function() {
             //   $('.scriptothek-chapter').toggle();
-            // });             
+            // });    
+
+//all acriptotheks here we go
+// SLIDESHOW 1
+            $('a[href*="Open-source_Parenting"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-1').show();
+            });
+
+            $('.scriptothek-slideshow-1').click(function() {
+              $('.close-wrapper, .close1').show();
+            });
+
+// SLIDESHOW 2
+            $('a[href*="Platframe_Postscript"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-2').show();
+            });
+
+            $('.scriptothek-slideshow-2').click(function() {
+              $('.close-wrapper, .close2').show();
+            });
 
 // SLIDESHOW 3
             $('a[href*="On_consensus,_in_two_parts"]').click(function(){
@@ -189,18 +246,257 @@
             });
 
             $('.scriptothek-slideshow-3').click(function() {
-
-              $('.script-image-3').css({"width": "400px"});
-              $('.scriptothek-slideshow').css({"display":"inline-flex", "padding-top":"10px", "position":"fixed", "overflow-x":"scroll", "width": "100%"});
-
-              $('.slideshow-buttons, .close').hide();
               $('.close-wrapper, .close3').show();
             });
 
-            $('.close3').click(function(){
-              $('.scriptothek-slideshow-3').show().css({"display":"block", "padding":"10%", "position":"relative", "width":"90%"});
-              $('.script-image-3').css({"width": "90%"});
-              $('.colophon-credits').css({"display": "none"})
+// SLIDESHOW 4
+            $('a[href*="WINWIN"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-4').show();
+            });
+
+            $('.scriptothek-slideshow-4').click(function() {
+              $('.close-wrapper, .close4').show();
+            });
+
+// SLIDESHOW 5
+            $('a[href*="Re-_and_Un-_Defining_Tools"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-5').show();
+            });
+
+            $('.scriptothek-slideshow-5').click(function() {
+              $('.close-wrapper, .close5').show();
+            });
+
+// SLIDESHOW 6
+            $('a[href*="Mycelines:_A_Sympoetic_Imagination"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-6').show();
+            });
+
+            $('.scriptothek-slideshow-6').click(function() {
+              $('.close-wrapper, .close6').show();
+            });
+
+// SLIDESHOW 7
+            $('a[href*="fileSHA_as_protocol"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-7').show();
+            });
+
+            $('.scriptothek-slideshow-7').click(function() {
+              $('.close-wrapper, .close7').show();
+            });
+
+// SLIDESHOW 8
+            $('a[href*="Across_Distance_and_Difference"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-8').show();
+            });
+
+            $('.scriptothek-slideshow-8').click(function() {
+              $('.close-wrapper, .close8').show();
+            });
+
+// SLIDESHOW 9
+            $('a[href*="Channeling_Listeners"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-9').show();
+            });
+
+            $('.scriptothek-slideshow-9').click(function() {
+              $('.close-wrapper, .close9').show();
+            });
+
+// SLIDESHOW 10
+            $('a[href*="Roleplaying_in_Etherpad"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-10').show();
+            });
+
+            $('.scriptothek-slideshow-10').click(function() {
+              $('.close-wrapper, .close10').show();
+            });
+
+// SLIDESHOW 11
+            $('a[href*="Spreadsheet_Routines"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-11').show();
+            });
+
+            $('.scriptothek-slideshow-11').click(function() {
+              $('.close-wrapper, .close11').show();
+            });
+
+// SLIDESHOW 12
+            $('a[href*="Learning_to_Experiment,_Sharing_Techniques"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-12').show();
+            });
+
+            $('.scriptothek-slideshow-12').click(function() {
+              $('.close-wrapper, .close12').show();
+            });
+
+// SLIDESHOW 13
+            $('a[href*="Give_and_Take"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-13').show();
+            });
+
+            $('.scriptothek-slideshow-13').click(function() {
+              $('.close-wrapper, .close13').show();
+            });
+
+// SLIDESHOW 14
+            $('a[href*="Bodystrike"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-14').show();
+            });
+
+            $('.scriptothek-slideshow-14').click(function() {
+              $('.close-wrapper, .close14').show();
+            });
+
+// SLIDESHOW 15
+            $('a[href*="Conceptual_Speed_Dating"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-15').show();
+            });
+
+            $('.scriptothek-slideshow-15').click(function() {
+              $('.close-wrapper, .close15').show();
+            });
+
+// SLIDESHOW 16
+            $('a[href*="The_perfect_robbery"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-16').show();
+            });
+
+            $('.scriptothek-slideshow-16').click(function() {
+              $('.close-wrapper, .close16').show();
+            });
+
+// SLIDESHOW 17
+            $('a[href*="The_Indonesian_Women_Movement_GERWANI"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-17').show();
+            });
+
+            $('.scriptothek-slideshow-17').click(function() {
+              $('.close-wrapper, .close17').show();
+            });
+
+// SLIDESHOW 18
+            $('a[href*="Mud_Batteries"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-18').show();
+            });
+
+            $('.scriptothek-slideshow-18').click(function() {
+              $('.close-wrapper, .close18').show();
+            });
+
+// SLIDESHOW 19
+            $('a[href*="The_Button_Saga"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-19').show();
+            });
+
+            $('.scriptothek-slideshow-19').click(function() {
+              $('.close-wrapper, .close19').show();
+            });
+
+// SLIDESHOW 20
+            $('a[href*="Display(ing)"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-20').show();
+            });
+
+            $('.scriptothek-slideshow-20').click(function() {
+              $('.close-wrapper, .close20').show();
+            });
+
+// SLIDESHOW 21
+            $('a[href*="Cooperative_gaming"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-21').show();
+            });
+
+            $('.scriptothek-slideshow-21').click(function() {
+              $('.close-wrapper, .close21').show();
+            });
+
+// SLIDESHOW 22
+            $('a[href*="Interfacial-Workout"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-22').show();
+            });
+
+            $('.scriptothek-slideshow-22').click(function() {
+              $('.close-wrapper, .close22').show();
+            });
+
+// SLIDESHOW 23
+            $('a[href*="Scripting_Workshops"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-23').show();
+            });
+
+            $('.scriptothek-slideshow-23').click(function() {
+              $('.close-wrapper, .close23').show();
+            });
+
+// SLIDESHOW 24
+            $('a[href*="Am_I_a_hacker_now?"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-24').show();
+            });
+
+            $('.scriptothek-slideshow-24').click(function() {
+              $('.close-wrapper, .close24').show();
+            });
+
+// SLIDESHOW 25
+            $('a[href*="ChattyPub"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-25').show();
+            });
+
+            $('.scriptothek-slideshow-25').click(function() {
+              $('.close-wrapper, .close25').show();
+            });
+
+// SLIDESHOW 26
+            $('a[href*="Did_video_kill_the_radio_(star)?"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-26').show();
+            });
+
+            $('.scriptothek-slideshow-26').click(function() {
+              $('.close-wrapper, .close26').show();
+            });
+
+// SLIDESHOW 27
+            $('a[href*="A_case_of_mistaken_identity"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-27').show();
+            });
+
+            $('.scriptothek-slideshow-27').click(function() {
+              $('.close-wrapper, .close27').show();
+            });
+
+// SLIDESHOW 28
+            $('a[href*="Solarpunk_Postscript"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-28').show();
+            });
+
+            $('.scriptothek-slideshow-28').click(function() {
+              $('.close-wrapper, .close28').show();
             });
     });
 
