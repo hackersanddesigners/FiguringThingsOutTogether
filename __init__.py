@@ -163,21 +163,21 @@ def scriptothek(soup):
             container.append(slideshow)
             last_id = id
 
-        if ("title_image" in el['class']):
-            # directly add to scriptothek
-            thumb = el.find_parent(class_="thumb")
-            el.parent["class"] += ["script-trailer",
-                                   "script-trailer-" + str(cnt)]
-            el.parent["data-slideshow"] = cnt
-            del el["srcset"]
-            container.insert(0, el.parent)
-            thumb.decompose()  # remove the surrounding html
-        else:
-            el["class"] += ["script-image", "script-image-" + str(cnt)]
-            del el["srcset"]
-            el["data-slideshow"] = cnt
-            # print(el)
-            slideshow.append(el.parent)
+        # if ("title_image" in el['class']):
+        #     # directly add to scriptothek
+        #     thumb = el.find_parent(class_="thumb")
+        #     el.parent["class"] += ["script-trailer",
+        #                            "script-trailer-" + str(cnt)]
+        #     el.parent["data-slideshow"] = cnt
+        #     del el["srcset"]
+        #     container.insert(0, el.parent)
+        #     thumb.decompose()  # remove the surrounding html
+        # else:
+        el["class"] += ["script-image", "script-image-" + str(cnt)]
+        del el["srcset"]
+        el["data-slideshow"] = cnt
+        # print(el)
+        slideshow.append(el.parent)
     # print(scriptothek.prettify())
     content[0].insert_after(scriptothek)
     return soup
