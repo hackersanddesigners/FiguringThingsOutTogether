@@ -94,7 +94,7 @@
               $('a[href*="Workshop_scripts_in_practice"]').toggle();
 
               $('.introduction').show()
-              $('.setting-conditions, .prompts, .how-tos, .scripted-syllabi, .active-bibliographies, .colophon-credits').hide();
+              $('.setting-conditions, .prompts, .how-tos, .scripted-syllabi, .active-bibliographies, .colophon').hide();
             });
 
             $('a[href*="Setting_conditions"]').click(function(){
@@ -170,8 +170,7 @@
 
             $('a[href*="Colophon"]').click(function(){
               event.preventDefault();
-              $('.Colophon').toggle();
-
+              
               $('a[href*="Credits"]').toggle();
               $('a[href*="A_Note_on_the_design_of_this_publication"]').toggle();
               $('a[href*="License"]').toggle();
