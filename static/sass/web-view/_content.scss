@@ -79,9 +79,15 @@
     text-indent: 50mm;
 }
 
+// #star{
+// 	display: block;
+// 	font-size: 10px;
+// }
+
 .footnote{
 	position: relative;
 	background-color: yellow;
+	visibility: hidden;
 }
 
 .layout-1 .block {
@@ -103,6 +109,7 @@
 .embedvideowrap{
 	padding: 1%;
 }
+
 
 // $finalHeight: 250px;
 // $finalWidth: 3 * $finalHeight;

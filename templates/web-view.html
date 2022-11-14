@@ -220,6 +220,31 @@
             //   $('.scriptothek-chapter').toggle();
             // });    
 
+            
+            // $('.footnote').prepend('<span class="star">&#x2731;</span>');
+
+            var $n = $('<span />', {
+            'class' : 'star',
+            'text' : '*'
+            });
+
+            $('.footnote').before($n);
+
+            // $('div.footnote').each(function(i) {
+            //     var num = zeroPad(i + 1, 3);
+            //     $(this).prepend($('<span/>', {
+            //         'class': 'index',
+            //         'text': num
+            //     }));
+            // });
+
+            //finish this! Next step: for each star with id #, show footnote with the same number
+            const paragraphs = document.getElementsByClassName('footnote');
+            for (let i = 0; i < paragraphs.length; i++) paragraphs[i].setAttribute('id', i + 1);
+
+            const stars = document.getElementsByClassName('star');
+            for (let i = 0; i < stars.length; i++) stars[i].setAttribute('id', i + 1);
+
             //add title to scriptotheek
             $('.scriptothek-wrapper').prepend('<h2 class="scriptothek-title">Scriptothek</h2>');
             //demo for scrolling title
