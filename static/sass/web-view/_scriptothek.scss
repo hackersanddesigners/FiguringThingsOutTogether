@@ -37,8 +37,6 @@
 // hide all scriptotheeks
 .scriptothek-chapter{
 	display: none;
-	height: 100%;
-	overflow-y: hidden;
 }
 
 .close-wrapper{
@@ -53,28 +51,6 @@
 
 .scriptothek-chapter a.image{
 	padding: 5%;
-}
-
-
-::-webkit-scrollbar{
-    width: 12px;
-    height: 12px;
-    }
-
-::-webkit-scrollbar-thumb:horizontal {
-    background-color:#5B0B2B;
-}
-::-webkit-scrollbar-thumb:horizontal:hover{
-    background-color:#B31252;
-    border: solid 1px #5B0B2B;
-}
-
-::-webkit-scrollbar-thumb:vertical {
-    background-color:transparent;
-}
-
-::-webkit-scrollbar-track-piece:vertical {
-    background-color:transparent;
 }
 
 
