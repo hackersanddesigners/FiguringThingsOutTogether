@@ -18,6 +18,19 @@
     <button class="change-behind">&larr;</button>
   </div>
 
+  <div id="b">
+    <div class="img_holder">
+        <img/>
+        <img/>
+        <img/>
+        <img/>
+        <img/>
+        <img/>
+        <img/>
+        <img/>
+    </div>
+</div>
+
   <div class="close-wrapper">
     <button class="close close0">&#215;</button>
     <button class="close close1">&#215;</button>
@@ -184,7 +197,7 @@
               $('.chapter, .btn-wrapper').show();
 
               $('.scriptothek-slideshow').css({"display":"block", "padding":"1%", "position":"relative"});
-              $('.script-image').css({"width": "90%"});
+              $('.script-image').css({"width": "100%", "height":"auto"});
 
               if($('.content, .btn-wrapper').attr("trigger")==="0"){
                 $('.content, .btn-wrapper').animate({"left":"20%"},700);
@@ -207,8 +220,12 @@
 
             //universal scriptoteehk slideshow click
             $('.scriptothek-slideshow').click(function() {
-              $('.script-image').css({"width": "400px"});
-              $('.scriptothek-slideshow').css({"display":"inline-flex", "padding":"1%", "position":"fixed", "overflow-x":"scroll", "width": "100%"});
+              // $('.scriptothek-wrapper').css({"overflow":"hidden"});
+              // $('.scriptothek-chapter').css({"position":"fixed"})
+              $('.scriptothek-slideshow').css({"display":"inline-flex", "padding":"1%", "overflow-x":"scroll", "width": "100%", "position":"fixed"});
+              // $('.script-image').css({"width": "400px"});
+              $('.scriptothek-chapter a.image').css({"padding":"0px 5% 0px 5%"})
+              $('.script-image').css({"height": "500px", "width":"auto"});
 
               $('.close').hide();
             });
@@ -218,14 +235,16 @@
             //   $('.scriptothek-chapter').toggle();
             // });    
 
+            //add title to scriptotheek
             $('.scriptothek-wrapper').prepend('<h2 class="scriptothek-title">Scriptothek</h2>');
+            //demo for scrolling title
             $('.Cooperative_gaming, .Interfacial-workout, .Scripting_Workshops, .Am_I_a_hacker_now?, .chattypub, .FREE-Wiki').prepend('<marquee width="100%" direction="right" height="100px">Distributed Curricula</marquee>');
             
+// SCRIPTOTHEK
 //on articles that don't have scriptotheks, show none
             $('a[href*="Workshop_scripts_in_practice"], a[href*="Workshop_Histories_and_Practices"], a[href*="Relearning_Food"], a[href*="Untitling"], a[href*="Skinship"], a[href*="wiki_reflections"], a[href*="Critical_Coding_Cookbook"], a[href*="Workshop_Matters_and_Materials"], a[href*="Credits"], a[href*="A_Note_on_the_design_of_this_publication"], a[href*="License"]').click(function(){
               $('.scriptothek-chapter').hide();
             });
-
 
 //all acriptotheks here we go
 // SLIDESHOW 1
@@ -276,6 +295,7 @@
 
             $('.scriptothek-slideshow-5').click(function() {
               $('.close-wrapper, .close5').show();
+              $('.script-image-5').css({"width": "400px"});
             });
 
 // SLIDESHOW 6
@@ -286,6 +306,9 @@
 
             $('.scriptothek-slideshow-6').click(function() {
               $('.close-wrapper, .close6').show();
+
+              //unique features
+              $('.scriptothek-slideshow-6').css({"display":"block"});
             });
 
 // SLIDESHOW 7
@@ -326,6 +349,8 @@
 
             $('.scriptothek-slideshow-10').click(function() {
               $('.close-wrapper, .close10').show();
+              //unique features
+              $('.scriptothek-slideshow-10').css({"display":"block"});
             });
 
 // SLIDESHOW 11
@@ -334,8 +359,15 @@
               $('.scriptothek-chapter-11').show();
             });
 
+
+            // Spreadsheet_Routines
             $('.scriptothek-slideshow-11').click(function() {
               $('.close-wrapper, .close11').show();
+              $('.Spreadsheet_Routines').css({"z-index":"-1"});
+            });
+
+            $('.close11').click(function(){
+              $('.Spreadsheet_Routines').css({"z-index":"0"});
             });
 
 // SLIDESHOW 12
@@ -356,6 +388,8 @@
 
             $('.scriptothek-slideshow-13').click(function() {
               $('.close-wrapper, .close13').show();
+              //unique features
+              $('.scriptothek-slideshow-13').css({"display":"block"});
             });
 
 // SLIDESHOW 14
@@ -376,6 +410,8 @@
 
             $('.scriptothek-slideshow-15').click(function() {
               $('.close-wrapper, .close15').show();
+              //unique features
+              $('.scriptothek-slideshow-15').css({"display":"block"});
             });
 
 // SLIDESHOW 16
@@ -386,6 +422,8 @@
 
             $('.scriptothek-slideshow-16').click(function() {
               $('.close-wrapper, .close16').show();
+              //unique features
+              $('.scriptothek-slideshow-16').css({"display":"block"});
             });
 
 // SLIDESHOW 17
@@ -426,6 +464,8 @@
 
             $('.scriptothek-slideshow-20').click(function() {
               $('.close-wrapper, .close20').show();
+              //unique features
+              $('.scriptothek-slideshow-20').css({"display":"block"});
             });
 
 // SLIDESHOW 21
@@ -446,6 +486,8 @@
 
             $('.scriptothek-slideshow-22').click(function() {
               $('.close-wrapper, .close22').show();
+              //unique features
+              $('.scriptothek-slideshow-22').css({"display":"block"});
             });
 
 // SLIDESHOW 23
@@ -506,10 +548,40 @@
 
             $('.scriptothek-slideshow-28').click(function() {
               $('.close-wrapper, .close28').show();
+              //unique features
+              $('.scriptothek-slideshow-20').css({"display":"block"});
             });
+
+
+//ON VERTICAL SCROLL HORIZONTAL
     });
 
+    var scroller = {};
+    scroller.e = document.getElementsByClassName("scriptothek-wrapper");
 
+    if (scroller.e.addEventListener) {
+        scroller.e.addEventListener("mousewheel", MouseWheelHandler, false);
+        scroller.e.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
+    } else scroller.e.attachEvent("onmousewheel", MouseWheelHandler);
+
+    function MouseWheelHandler(e) {
+
+        // cross-browser wheel delta
+        var e = window.event || e;
+        var delta = - 20 * (Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail))));
+
+        var pst = $('.scriptothek-wrapper').scrollLeft() + delta;
+
+        if (pst < 0) {
+            pst = 0;
+        } else if (pst > $('.scriptothek-slideshow').width()) {
+            pst = $('.scriptothek-slideshow').width();
+        }
+
+        $('.scriptothek-chapter').scrollLeft(pst);
+
+        return false;
+    }
 
 </script>
 </main>

@@ -11,7 +11,8 @@
 	background-color: yellow!important;
 
 	z-index: -1;
-	overflow: scroll!important;
+	overflow: scroll;
+	// overflow-y: hidden!important;
 
 	visibility: visible;
 
@@ -36,6 +37,8 @@
 // hide all scriptotheeks
 .scriptothek-chapter{
 	display: none;
+	height: 100%;
+	overflow-y: hidden;
 }
 
 .close-wrapper{
@@ -49,62 +52,52 @@
 }
 
 .scriptothek-chapter a.image{
-	margin: auto;
-	margin-right: 5%;
+	padding: 5%;
 }
 
+
+::-webkit-scrollbar{
+    width: 12px;
+    height: 12px;
+    }
+
+::-webkit-scrollbar-thumb:horizontal {
+    background-color:#5B0B2B;
+}
+::-webkit-scrollbar-thumb:horizontal:hover{
+    background-color:#B31252;
+    border: solid 1px #5B0B2B;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    background-color:transparent;
+}
+
+::-webkit-scrollbar-track-piece:vertical {
+    background-color:transparent;
+}
+
+
 // TRYOUT- horizontal scroll
-
-// $finalHeight: 500px;
-// $finalWidth: 3 * $finalHeight;
-// $scrollBarHeight: 1px;
-
-// ::-webkit-scrollbar {
-//   width: $scrollBarHeight;
-//   height: $scrollBarHeight;
+// .scriptothek-chapter {
+//     width: 400px;
+//     border: 1px solid #111;
+//     padding: 0px;
+//     margin: 0px;
+//     overflow-x: scroll;
+//     overflow-y: hidden;
 // }
-
-// ::-webkit-scrollbar-button {
-//   width: $scrollBarHeight;
-//   height: $scrollBarHeight;
+// .scriptothek-slideshow {
+//     padding: 0px;
+//     margin: 0px;
+//     height: 100px;
+//     width: 910px;
 // }
-
-// div {
-//   box-sizing: border-box;
-// }
-
-// .scriptothek-wrapper {
-//   position: fixed;
-//   display: block;
-//   top: 0;
-//   left: 0;
-//   width: calc(#{$finalHeight} + #{$scrollBarHeight});
-//   max-height: $finalWidth;
-//   margin: 0;
-//   padding-top: $scrollBarHeight;
-//   background: #abc;
-//   overflow-y: auto;
-//   overflow-x: hidden;
-//   transform: rotate(-90deg) translateY(-$finalHeight);
-//   transform-origin: right top;
-//   & > div {
-//     display: block;
+// img {
+//     height: 90px;
+//     width: 100px;
 //     padding: 5px;
-//     background: #cab;
-//     transform: rotate(90deg);
-//     transform-origin: right top;
-//   }
+//     background: #123;
+//     display: inline-block;
 // }
-
-// .element_size {
-//   padding: $finalHeight 0 0 0;
-//   & > div {
-//     width: $finalHeight;
-//     height: $finalHeight;
-//     margin: 10px 0;
-//   }
-// }
-
-// .scriptothek-slideshow{
-// 	display: inline-flex;
-// }
+  
