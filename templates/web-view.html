@@ -18,19 +18,6 @@
     <button class="change-behind">&larr;</button>
   </div>
 
-  <div id="b">
-    <div class="img_holder">
-        <img/>
-        <img/>
-        <img/>
-        <img/>
-        <img/>
-        <img/>
-        <img/>
-        <img/>
-    </div>
-</div>
-
   <div class="close-wrapper">
     <button class="close close0">&#215;</button>
     <button class="close close1">&#215;</button>
@@ -221,17 +208,14 @@
 
             //universal scriptoteehk slideshow click
             $('.scriptothek-slideshow').click(function() {
-              // $('.scriptothek-wrapper').css({"overflow":"hidden"});
-              // $('.scriptothek-chapter').css({"position":"fixed"})
               $('.scriptothek-slideshow').css({"display":"inline-flex", "padding":"1%", "overflow-x":"scroll", "width": "100%", "position":"fixed"});
-              // $('.script-image').css({"width": "400px"});
               $('.scriptothek-chapter a.image').css({"padding":"0px 5% 0px 5%"})
               $('.script-image').css({"height": "500px", "width":"auto"});
 
               $('.close').hide();
             });
 
-            //show all scripts on button
+            // show all scripts on button
             // $('.show-all-scripts').click(function() {
             //   $('.scriptothek-chapter').toggle();
             // });    

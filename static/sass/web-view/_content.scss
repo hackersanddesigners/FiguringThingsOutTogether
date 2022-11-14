@@ -93,6 +93,17 @@
 	display: none;
 }
 
+.embedvideo{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	width: 100%!important;
+}
+
+.embedvideowrap{
+	padding: 1%;
+}
+
 // $finalHeight: 250px;
 // $finalWidth: 3 * $finalHeight;
 // $scrollBarHeight: 1px;
