@@ -81,9 +81,24 @@
 
 .footnote{
 	position: relative;
-	background-color: yellow;
-	visibility: hidden;
+	display: none;
 }
+
+.star{
+	background-color: yellow;
+	cursor: pointer;
+}
+
+//finish footnote
+#footnote0,
+#footnote1{
+	display: none;
+}
+
+#star0:hover + #footnote0,
+#star1:hover + #footnote1 {
+	display: block;
+ }
 
 .layout-1 .block {
     border: none;

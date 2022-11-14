@@ -239,10 +239,10 @@
 
             //finish this! Next step: for each star with id #, show footnote with the same number
             const paragraphs = document.getElementsByClassName('footnote');
-            for (let i = 0; i < paragraphs.length; i++) paragraphs[i].setAttribute('id', i + 1);
+            for (let i = 0; i < paragraphs.length; i++) paragraphs[i].setAttribute('id', 'footnote' + i);
 
             const stars = document.getElementsByClassName('star');
-            for (let i = 0; i < stars.length; i++) stars[i].setAttribute('id', i + 1);
+            for (let i = 0; i < stars.length; i++) stars[i].setAttribute('id', 'star' + i);
 
             //add title to scriptotheek
             $('.scriptothek-wrapper').prepend('<h2 class="scriptothek-title">Scriptothek</h2>');
