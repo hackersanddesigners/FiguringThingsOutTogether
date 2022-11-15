@@ -85,24 +85,13 @@
 }
 
 .star{
-	background-color: yellow;
+	// background-color: yellow;
 	cursor: pointer;
 }
 
-//finish footnote
-// #footnote0,
-// #footnote1{
-// 	display: none;
-// }
-
 .star:hover + .footnote{
-	display: inline-block;
+	display: initial;
 }
-
-// #star0:hover + #footnote0,
-// #star1:hover + #footnote1 {
-// 	display: block;
-//  }
 
 .layout-1 .block {
     border: none;
