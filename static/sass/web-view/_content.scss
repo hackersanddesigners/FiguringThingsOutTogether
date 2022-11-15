@@ -90,15 +90,19 @@
 }
 
 //finish footnote
-#footnote0,
-#footnote1{
-	display: none;
+// #footnote0,
+// #footnote1{
+// 	display: none;
+// }
+
+.star:hover + .footnote{
+	display: inline-block;
 }
 
-#star0:hover + #footnote0,
-#star1:hover + #footnote1 {
-	display: block;
- }
+// #star0:hover + #footnote0,
+// #star1:hover + #footnote1 {
+// 	display: block;
+//  }
 
 .layout-1 .block {
     border: none;
