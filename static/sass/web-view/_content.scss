@@ -27,10 +27,26 @@
 	text-align: center;
 }
 
-.article li::marker {
-	font-size: 300%;
-	color: black;
-	line-height: 0.5;
+ul{
+	list-style: none;
+}
+
+.article ul li::before {
+	list-style-type: none;
+
+	content: "";
+    background: white;
+    border: black solid 0.5px;
+    border-radius: 50%;
+    color: #fff;
+    content: "";
+    display: inline-block;
+    height: 15px;
+    line-height: 0;
+    list-style-type: none;
+    margin-right: 0.5rem;
+    text-align: center;
+    width: 15px;
 }
 
 .article ol li::marker {
