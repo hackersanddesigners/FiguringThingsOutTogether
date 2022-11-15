@@ -359,7 +359,7 @@ def removeSrcSets(html):
     """
       html = string (HTML)
     """
-    html = re.sub(r"srcset=", "xsrcset=", html)
+    html = re.sub(r"srcset=", "loading=\"lazy\" xsrcset=", html)
     return html
 
 
