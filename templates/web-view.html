@@ -229,15 +229,7 @@
 
             $('.footnote').before($n);
 
-            // $('div.footnote').each(function(i) {
-            //     var num = zeroPad(i + 1, 3);
-            //     $(this).prepend($('<span/>', {
-            //         'class': 'index',
-            //         'text': num
-            //     }));
-            // });
-
-            //finish this! Next step: for each star with id #, show footnote with the same number
+            //add numbers to footnotes and stars
             const paragraphs = document.getElementsByClassName('footnote');
             for (let i = 0; i < paragraphs.length; i++) paragraphs[i].setAttribute('id', 'footnote' + i);
 
@@ -562,6 +554,31 @@
             });
 
 
+//mobile demo
+
+            // if ( window.innerWidth = 375) {     
+            //   $('.toclevel-2').click(function(){
+            //     $('.toc-wrap').css({"width":"50px"});
+            //   });
+            // }
+
+            function checkWidth() {
+                var windowSize = $(window).width();
+
+                if (windowSize < 414) {
+                    // alert("this function is still working on mobile");
+                    $('.toclevel-2').click(function(){
+                      $('.toc-wrap').css({"width":"50px"});
+                    });
+                }
+            }
+
+            // Execute on load
+            checkWidth();
+            // Bind event listener
+            $(window).resize(checkWidth);
+
+
 //ON VERTICAL SCROLL HORIZONTAL
     });
 
@@ -591,6 +608,7 @@
 
         return false;
     }
+
 
 </script>
 </main>

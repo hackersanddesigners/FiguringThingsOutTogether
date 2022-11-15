@@ -1,0 +1,23 @@
+@media (max-width: 416px) {
+    .change-behind{
+        display: none;
+    }
+
+    body{
+        display: flex;
+        justify-content: center;
+    }
+
+    .toc-wrap{
+        width: 90%;
+        z-index: 98765;
+    }
+
+    .content{
+        width: 96%;
+    }
+
+    .article{
+        position: relative;
+    }
+}
