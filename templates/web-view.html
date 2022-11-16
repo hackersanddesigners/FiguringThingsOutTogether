@@ -219,7 +219,6 @@
             //   $('.scriptothek-chapter').toggle();
             // });    
 
-            
             // $('.footnote').prepend('<span class="star">&#x2731;</span>');
 
             var $n = $('<span />', {
@@ -567,9 +566,34 @@
 
                 if (windowSize < 414) {
                     // alert("this function is still working on mobile");
+                    $( ".article" ).prepend( '<button class="mobile-arrow-right">→</button>' );
+                    $( ".article" ).prepend( '<button class="mobile-arrow-left">&larr;</button>' );
+                    $( ".scriptothek-wrapper" ).prepend( '<button class="close-script">X</button>' );
+
                     $('.toclevel-2').click(function(){
-                      $('.toc-wrap').css({"width":"50px"});
+                      $('.mobile-arrow-right, .mobile-arrow-left').css({"z-index":"1"});
+
+                      $('.toc-wrap').css({"z-index":"-1"});
                     });
+
+                    $('.mobile-arrow-right').click(function(){
+                      $('.mobile-arrow-right').css({"z-index":"-1"});
+
+                      $('.toc-wrap').css({"z-index":"1"});
+                    });
+
+                    $('.mobile-arrow-left').click(function(){
+                      $('.mobile-arrow-left').css({"z-index":"-1"});
+
+                      $('.scriptothek-wrapper').css({"z-index":"1"});
+                      $('.close-script').css({"z-index":"1"});
+                    });
+
+                    $('.close-script').click(function(){
+                      $('.scriptothek-wrapper').css({"z-index":"-1"});
+                      $('.mobile-arrow-left').css({"z-index":"1"});
+                    });
+
                 }
             }
 
@@ -582,32 +606,32 @@
 //ON VERTICAL SCROLL HORIZONTAL
     });
 
-    var scroller = {};
-    scroller.e = document.getElementsByClassName("scriptothek-wrapper");
+    // var scroller = {};
+    // scroller.e = document.getElementsByClassName("scriptothek-wrapper");
 
-    if (scroller.e.addEventListener) {
-        scroller.e.addEventListener("mousewheel", MouseWheelHandler, false);
-        scroller.e.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
-    } else scroller.e.attachEvent("onmousewheel", MouseWheelHandler);
+    // if (scroller.e.addEventListener) {
+    //     scroller.e.addEventListener("mousewheel", MouseWheelHandler, false);
+    //     scroller.e.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
+    // } else scroller.e.attachEvent("onmousewheel", MouseWheelHandler);
 
-    function MouseWheelHandler(e) {
+    // function MouseWheelHandler(e) {
 
-        // cross-browser wheel delta
-        var e = window.event || e;
-        var delta = - 20 * (Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail))));
+    //     // cross-browser wheel delta
+    //     var e = window.event || e;
+    //     var delta = - 20 * (Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail))));
 
-        var pst = $('.scriptothek-wrapper').scrollLeft() + delta;
+    //     var pst = $('.scriptothek-wrapper').scrollLeft() + delta;
 
-        if (pst < 0) {
-            pst = 0;
-        } else if (pst > $('.scriptothek-slideshow').width()) {
-            pst = $('.scriptothek-slideshow').width();
-        }
+    //     if (pst < 0) {
+    //         pst = 0;
+    //     } else if (pst > $('.scriptothek-slideshow').width()) {
+    //         pst = $('.scriptothek-slideshow').width();
+    //     }
 
-        $('.scriptothek-chapter').scrollLeft(pst);
+    //     $('.scriptothek-chapter').scrollLeft(pst);
 
-        return false;
-    }
+    //     return false;
+    // }
 
 
 </script>
