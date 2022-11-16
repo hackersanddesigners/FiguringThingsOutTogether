@@ -6,6 +6,12 @@
     body{
         display: flex;
         justify-content: center;
+        font-size: 15pt;
+    }
+
+    .layout-1 h3,
+    .layout-2 h3{
+        font-size: 32pt;
     }
 
     .toc-wrap{
