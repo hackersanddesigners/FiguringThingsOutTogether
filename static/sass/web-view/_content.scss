@@ -105,15 +105,20 @@ marquee{
 .footnote{
 	position: relative;
 	display: none;
+	background-color: yellow;
+	font-size: 14px;
+	transition: all 0s ease 1s; /*delay 1s*/
 }
 
 .star{
-	// background-color: yellow;
+	background-color: yellow;
 	cursor: pointer;
+
 }
 
 .star:hover + .footnote{
 	display: initial;
+    transition:5s;
 }
 
 .layout-1 .block {
@@ -136,6 +141,19 @@ marquee{
 	padding: 1%;
 }
 
+.visual-footnote{
+	width: 100%;
+	justify-content: center;
+	display: flex;
+}
+
+.visual-footnote .thumb .thumbinner{
+	width: 30%!important;
+}
+
+.visual-footnote img{
+	border-radius: 20px;
+}
 
 // $finalHeight: 250px;
 // $finalWidth: 3 * $finalHeight;
