@@ -1,0 +1,57 @@
+@media (max-width: 416px) {
+    .change-behind{
+        display: none;
+    }
+
+    body{
+        display: flex;
+        justify-content: center;
+        font-size: 15pt;
+    }
+
+    .layout-1 h3,
+    .layout-2 h3{
+        font-size: 32pt;
+    }
+
+    .toc-wrap{
+        width: 80%;
+        z-index: 98765;
+
+        box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+        -webkit-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+        -moz-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+    }
+
+    .content{
+        position: relative;
+        left: 0;
+        width: 330px;
+    }
+
+    .article{
+        width: 100%;
+    }
+
+    .scriptothek-slideshow{
+        display: none;
+    }
+
+    .mobile-arrow-right,
+    .mobile-arrow-left,
+    .close-script{
+        background-color: transparent;
+        border: none;
+        font-size: 50px;
+        position: fixed;
+    }
+
+    .mobile-arrow-left{
+        right: 40px;
+        position: fixed;
+    }
+
+    .scriptothek-wrapper{
+        width: 80%;
+    }
+}

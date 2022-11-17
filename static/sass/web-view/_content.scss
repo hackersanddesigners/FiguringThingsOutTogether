@@ -27,10 +27,26 @@
 	text-align: center;
 }
 
-.article li::marker {
-	font-size: 300%;
-	color: black;
-	line-height: 0.5;
+ul{
+	list-style: none;
+}
+
+.article ul li::before {
+	list-style-type: none;
+
+	content: "";
+    background: white;
+    border: black solid 0.5px;
+    border-radius: 50%;
+    color: #fff;
+    content: "";
+    display: inline-block;
+    height: 15px;
+    line-height: 0;
+    list-style-type: none;
+    margin-right: 0.5rem;
+    text-align: center;
+    width: 15px;
 }
 
 .article ol li::marker {
@@ -52,6 +68,13 @@
 	box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
 	-webkit-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
 	-moz-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
+}
+
+marquee{
+	font-family: inherit;
+    font-size: 20pt;
+    line-height: 1em;
+	font-weight: 900;
 }
 
 #Workshop_scripts_in_practice{
@@ -85,24 +108,13 @@
 }
 
 .star{
-	background-color: yellow;
+	// background-color: yellow;
 	cursor: pointer;
 }
 
-//finish footnote
-// #footnote0,
-// #footnote1{
-// 	display: none;
-// }
-
 .star:hover + .footnote{
-	display: inline-block;
+	display: initial;
 }
-
-// #star0:hover + #footnote0,
-// #star1:hover + #footnote1 {
-// 	display: block;
-//  }
 
 .layout-1 .block {
     border: none;

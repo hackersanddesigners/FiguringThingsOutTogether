@@ -45,7 +45,6 @@ h2{
 	top: 0;
 	background-color: transparent;
 
-    // box-shadow: 0 15px 15px -5px white;
 	z-index: 8934239;
 	text-align: right;
 }
@@ -84,7 +83,7 @@ img.thumbimage{
 }
 
 .thumbinner .thumbcaption{
-	font-size: 9px!important;
+	font-size: 14px!important;
 }
 
 blockquote p{
@@ -108,3 +107,9 @@ blockquote p{
 // .thumbinner.image-container {
 // 	width: auto !important;
 // }
+
+// @media (min-width: 576px) {  
+// 	.change-behind {
+// 		background-color:#f00;
+// 	}
+//   }
