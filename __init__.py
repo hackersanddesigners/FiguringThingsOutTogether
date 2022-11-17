@@ -146,11 +146,8 @@ def scriptothek(soup):
         # try to find chapter
         article = el.find_parent('div', class_="article")
         id = article['id']
-        # print(el.prettify())
         if (id != last_id):
             # if new chapter, new div. Append the old div if it has content
-            # print(container.prettify())
-            # if( len(container.contents) > 1 ):
             container["class"] = 'scriptothek-chapter scriptothek-chapter-' + \
                 str(cnt) + ' chapter-' + last_id
             container["data-slideshow"] = cnt
@@ -162,23 +159,23 @@ def scriptothek(soup):
                 'div', **{"class": "scriptothek-slideshow scriptothek-slideshow-" + str(cnt), "data-slideshow": cnt})
             container.append(slideshow)
             last_id = id
-
-        # if ("title_image" in el['class']):
-        #     # directly add to scriptothek
-        #     thumb = el.find_parent(class_="thumb")
-        #     el.parent["class"] += ["script-trailer",
-        #                            "script-trailer-" + str(cnt)]
-        #     el.parent["data-slideshow"] = cnt
-        #     del el["srcset"]
-        #     container.insert(0, el.parent)
-        #     thumb.decompose()  # remove the surrounding html
-        # else:
         el["class"] += ["script-image", "script-image-" + str(cnt)]
         del el["srcset"]
         el["data-slideshow"] = cnt
-        # print(el)
+        thumb = el.find_parent('div', class_="thumb")
+        if (thumb):
+          caption = thumb.find(class_="thumbcaption")
+          if (caption):
+            mag = caption.find(class_=".magnify")
+            if( mag ):
+              mag.decompose()
+            cap = caption
+          else:
+            pprint("no caption")
+            cap = soup.new_tag('div')
         slideshow.append(el.parent)
-    # print(scriptothek.prettify())
+        slideshow.append(cap)
+
     content[0].insert_after(scriptothek)
     return soup
 
