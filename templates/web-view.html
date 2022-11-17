@@ -48,6 +48,9 @@
     <button class="close close26">&#215;</button>
     <button class="close close27">&#215;</button>
     <button class="close close28">&#215;</button>
+    <button class="close close29">&#215;</button>
+    <button class="close close30">&#215;</button>
+    <button class="close close31">&#215;</button>
   </div>
 
   <!-- ARTICLES + CONTENTS -->
@@ -238,7 +241,7 @@
             // ADDING titles and what not
             //add title to scriptotheek
             $('.scriptothek-wrapper').prepend('<h2 class="scriptothek-title">Scriptothek</h2>');
-            //demo for scrolling title
+            //add scrolling title
             $('.Workshop_scripts_in_practice').prepend('<marquee width="100%" direction="right" height="100px">First, Then… Repeat.</marquee>');
             $('.Workshop-Histories-and-Practices, .open-source-parenting, .platframe-postscript, .add-chaptertitle, .WINWIN, .Re-_and_Un-_Defining_Tools, .Myclines, .fileSHA_as_protocol').prepend('<marquee width="100%" direction="right" height="100px">Setting conditions</marquee>');
             $('.Across_Distance_and_Difference, .Channeling_Listeners, .Relearning_Food, .Untitling, .Roleplaying_in_Etherpad, .Skinship, .Spreadsheet_Routines').prepend('<marquee width="100%" direction="right" height="100px">Prompts</marquee>');
@@ -249,13 +252,13 @@
 
 // SCRIPTOTHEK
 //on articles that don't have scriptotheks, show none
-            $('a[href*="Workshop_scripts_in_practice"], a[href*="Workshop_Histories_and_Practices"], a[href*="Relearning_Food"], a[href*="Untitling"], a[href*="Skinship"], a[href*="wiki_reflections"], a[href*="Critical_Coding_Cookbook"], a[href*="Workshop_Matters_and_Materials"], a[href*="Credits"], a[href*="A_Note_on_the_design_of_this_publication"], a[href*="License"]').click(function(){
+            $('a[href*="Workshop_scripts_in_practice"], a[href*="Relearning_Food"], a[href*="Untitling"], a[href*="Skinship"], a[href*="Critical_Coding_Cookbook"], a[href*="Workshop_Matters_and_Materials"], a[href*="Credits"], a[href*="A_Note_on_the_design_of_this_publication"], a[href*="License"]').click(function(){
               $('.scriptothek-chapter').hide();
             });
 
 //all acriptotheks here we go
 // SLIDESHOW 1 - NEW
-            // $('a[href*=""]').click(function(){
+            // $('a[href*="href*="Workshop_scripts_in_practice"]').click(function(){
             //   $('.scriptothek-chapter').hide();
             //   $('.scriptothek-chapter-1').show();
             // });
@@ -265,14 +268,14 @@
             // });
 
 // SLIDESHOW 2 - NEW
-            // $('a[href*=""]').click(function(){
-            //   $('.scriptothek-chapter').hide();
-            //   $('.scriptothek-chapter-2').show();
-            // });
+            $('a[href*="Workshop_Histories_and_Practices"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-2').show();
+            });
 
-            // $('.scriptothek-slideshow-2').click(function() {
-            //   $('.close-wrapper, .close2').show();
-            // });
+            $('.scriptothek-slideshow-2').click(function() {
+              $('.close-wrapper, .close2').show();
+            });
 
 // SLIDESHOW 3
             $('a[href*="Open-source_Parenting"]').click(function(){
@@ -547,14 +550,16 @@
             });
 
 // SLIDESHOW 28 - check this one its new
-            // $('a[href*=""]').click(function(){
-            //   $('.scriptothek-chapter').hide();
-            //   $('.scriptothek-chapter-28').show();
-            // });
+            $('a[href*="wiki_reflections"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-28').show();
+            });
 
-            // $('.scriptothek-slideshow-28').click(function() {
-            //   $('.close-wrapper, .close28').show();
-            // });
+            $('.scriptothek-slideshow-28').click(function() {
+              $('.close-wrapper, .close28').show();
+            //unique features
+            $('.scriptothek-slideshow-28').css({"display":"block"});
+            });
 
 // SLIDESHOW 29
             $('a[href*="Did_video_kill_the_radio_(star)?"]').click(function(){
