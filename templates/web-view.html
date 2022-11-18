@@ -181,6 +181,8 @@
 
             //universal close (rewrite more of those)
             $('.close').click(function(){
+              // $('.scriptothek-chapter').scrollTop(0);
+
               $('.scriptothek-wrapper').css("width", "21.5%");
               $('.close-wrapper').hide();
               $('.chapter, .btn-wrapper').show();
@@ -210,7 +212,7 @@
 
             //universal scriptoteehk slideshow click
             $('.scriptothek-slideshow').click(function() {
-              $('.scriptothek-slideshow').css({"display":"inline-flex", "padding":"1%", "overflow-x":"scroll", "width": "100%", "position":"fixed"});
+              $('.scriptothek-slideshow').css({"display":"inline-flex", "padding":"1%", "overflow-x":"scroll", "width": "100%", "position":"relative"});
               $('.scriptothek-chapter a.image').css({"padding":"0px 5% 0px 5%"})
               $('.script-image').css({"height": "500px", "width":"auto"});
 
@@ -597,16 +599,10 @@
 
 
 //mobile demo
-            // if ( window.innerWidth = 375) {     
-            //   $('.toclevel-2').click(function(){
-            //     $('.toc-wrap').css({"width":"50px"});
-            //   });
-            // }
-
             function checkWidth() {
                 var windowSize = $(window).width();
 
-                if (windowSize < 414) {
+                if (windowSize < 420) {
                     // alert("this function is still working on mobile");
                     $( ".article" ).prepend( '<button class="mobile-arrow-right">→</button>' );
                     $( ".article" ).prepend( '<button class="mobile-arrow-left">&larr;</button>' );
@@ -633,9 +629,21 @@
                       $('.close-script').css({"z-index":"1"});
                     });
 
+                    // $('.scriptothek-slideshow').click(function() {  
+                    //   $('.scriptothek-wrapper').css({"width":"80%"});   
+                    //   $('.scriptothek-slideshow').css({"display":"block", "position":"relative", "padding":"1%", "height":"100%"});
+                    //   $('.scriptothek-chapter a.image').css({"padding":"5%"});
+                    //   $('.script-image').css({"height": "auto", "width":"98%"});
+                    //   $('.chapter').show();
+
+                    //   $('.close-script').css({"z-index":"5"});
+                    //   $('.close').hide();
+                    // });
+
                     $('.close-script').click(function(){
                       $('.scriptothek-wrapper').css({"z-index":"-1"});
                       $('.mobile-arrow-left').css({"z-index":"1"});
+                      // $('.scriptothek-chapter').scrollTop(0);
                     });
 
                 }
