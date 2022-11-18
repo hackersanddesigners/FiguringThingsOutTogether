@@ -55,6 +55,9 @@ h2{
 	cursor: pointer;
 	background-color: transparent;
 	border: none;
+
+	-webkit-text-stroke: 0.5px lightgrey;
+	text-stroke: 0.5px lightgrey;
 }
 
 /* thumbnails, keep caption and image on same page */

@@ -75,6 +75,13 @@ marquee{
     font-size: 20pt;
     line-height: 1em;
 	font-weight: 900;
+	margin-top: 0;
+	// margin-top: calc(15px + 30px);
+	width: 100%;
+	
+	position: relative;
+	// background-color: blue;
+	// top: 0!important;
 }
 
 #Workshop_scripts_in_practice{
@@ -105,15 +112,20 @@ marquee{
 .footnote{
 	position: relative;
 	display: none;
+	background-color: yellow;
+	font-size: 14px;
+	transition: all 0s ease 1s; /*delay 1s*/
 }
 
 .star{
-	// background-color: yellow;
+	background-color: yellow;
 	cursor: pointer;
+
 }
 
 .star:hover + .footnote{
 	display: initial;
+    transition:5s;
 }
 
 .layout-1 .block {
@@ -136,6 +148,24 @@ marquee{
 	padding: 1%;
 }
 
+.visual-footnote{
+	width: 100%;
+	justify-content: center;
+	display: flex;
+}
+
+.visual-footnote .thumb .thumbinner{
+	width: 30%!important;
+}
+
+.visual-footnote img{
+	border-radius: 20px;
+}
+
+.hilight-h5 h5{
+	font-size: 14pt;
+	padding: 10pt;
+}
 
 // $finalHeight: 250px;
 // $finalWidth: 3 * $finalHeight;
