@@ -94,6 +94,10 @@ marquee{
 	top: 0;
 }
 
+article:target ~ #Workshop_scripts_in_practice {
+	display: none ;
+}
+
 .author-wrap{
 	text-align: right;
 }
