@@ -192,10 +192,12 @@
 
             //universal scriptoteehk slideshow click
             $('.scriptothek-slideshow').click(function() {
-              $('.scriptothek-wrapper').css("width", "96.5%");
+              $('.scriptothek-wrapper').css({"width":"96.5%", "z-index":"1"});
               $('.chapter, .btn-wrapper').hide();
 
-              $('.scriptothek-slideshow').css({"display":"inline-flex", "overflow-x":"scroll", "width": "100%", "position":"relative"});
+              $('.scriptothek-slideshow').css({"display":"inline-flex", "overflow-x":"scroll", "width": "100%", "height":"auto", "position":"absolute", "bottom":"0"});
+              $('.scriptothek-chapter').css({"height":"auto"});
+
               $('.script-image-wrapper').css({"padding":"0 5% 0 5%"})
               $('.scriptothek-chapter a.image').css({"padding":"0"})
               $('.script-image').css({"height": "500px", "width":"auto"});
@@ -207,7 +209,8 @@
 
             //universal close behaviour
             $('.close').click(function(){
-              $('.scriptothek-wrapper').css("width", "21.5%");
+              $('.scriptothek-wrapper').css({"width":"21.5%", "z-index":"-1"});
+
               $('.close-wrapper').hide();
               $('.chapter, .btn-wrapper').show();
 
@@ -518,7 +521,7 @@
             $('.scriptothek-slideshow-24').click(function() {
               $('.close-wrapper, .close24').show();
               //unique features
-              $('.scriptothek-slideshow-24').css({"display":"block"});
+              // $('.scriptothek-slideshow-24').css({"display":"block"});
             });
 
 // SLIDESHOW 25
