@@ -61,11 +61,10 @@
 
     <script>
       $(document).ready(function(){
-
         //if article is open and page reloaded, make sure the intro is hidden
-        if ( $(".article").css('display') == 'block'){
-          $('#Workshop_scripts_in_practice').hide();
-        }
+        // if ( $(".article").css('display') == 'block'){
+        //   $('#Workshop_scripts_in_practice').css({"display":"none!important"});
+        // }
 
         // this one moves the page left and right
         $('.change-behind').click(function(){
@@ -204,8 +203,8 @@
               $('.scriptothek-slideshow').css({"display":"inline-flex", "overflow-x":"scroll", "width": "100%", "height":"auto", "position":"absolute", "bottom":"0"});
               $('.scriptothek-chapter').css({"height":"auto"});
 
-              $('.script-image-wrapper').css({"padding":"0 5% 0 5%"})
-              $('.scriptothek-chapter a.image').css({"padding":"0"})
+              $('.script-image-wrapper').css({"padding":"0 5% 0 5%"});
+              $('.scriptothek-chapter a.image').css({"padding":"0"});
               $('.script-image').css({"height": "500px", "width":"auto"});
 
               // $('.scriptothek-chapter .thumbcaption').css({"padding":"0", "margin": "30% 5% 5% -40%"});
@@ -277,6 +276,8 @@
 
             $('.scriptothek-slideshow-1').click(function() {
               $('.close-wrapper, .close1').show();
+              // unique image adjustments
+              $('.scriptothek-chapter-1 .script-image-wrapper').css({"min-width":"60%"});
             });
 
 // SLIDESHOW 2 - NEW
