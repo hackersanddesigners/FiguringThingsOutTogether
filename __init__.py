@@ -159,6 +159,7 @@ def scriptothek(soup):
                 'div', **{"class": "scriptothek-slideshow scriptothek-slideshow-" + str(cnt), "data-slideshow": cnt})
             container.append(slideshow)
             last_id = id
+        img_container = soup.new_tag('div', **{"class": 'script-image-wrapper'})
         el["class"] += ["script-image", "script-image-" + str(cnt)]
         del el["srcset"]
         el["data-slideshow"] = cnt
@@ -166,15 +167,16 @@ def scriptothek(soup):
         if (thumb):
           caption = thumb.find(class_="thumbcaption")
           if (caption):
-            mag = caption.find(class_=".magnify")
+            mag = caption.find(class_="magnify")
             if( mag ):
               mag.decompose()
             cap = caption
           else:
             pprint("no caption")
             cap = soup.new_tag('div')
-        slideshow.append(el.parent)
-        slideshow.append(cap)
+        img_container.append(el.parent)
+        img_container.append(cap)
+        slideshow.append(img_container)
 
     content[0].insert_after(scriptothek)
     return soup
