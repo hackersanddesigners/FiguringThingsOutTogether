@@ -179,16 +179,40 @@
               $('a[href*="License"]').toggle();
             });
 
-            //universal close (rewrite more of those)
-            $('.close').click(function(){
-              // $('.scriptothek-chapter').scrollTop(0);
+            $('.toclevel-2').click(function(){
+              $('.scriptothek-wrapper').scrollTop(0);
+            });
+          
+            // prevent default on script-trailer
+            $('.script-image').click(function(e) {
+              e.preventDefault();
+              // $('.scriptothek-wrapper').css("width", "96.5%");
+              // $('.chapter, .btn-wrapper').hide();
+            }); 
 
+            //universal scriptoteehk slideshow click
+            $('.scriptothek-slideshow').click(function() {
+              $('.scriptothek-wrapper').css("width", "96.5%");
+              $('.chapter, .btn-wrapper').hide();
+
+              $('.scriptothek-slideshow').css({"display":"inline-flex", "overflow-x":"scroll", "width": "100%", "position":"relative"});
+              $('.script-image-wrapper').css({"padding":"0 5% 0 5%"})
+              $('.scriptothek-chapter a.image').css({"padding":"0"})
+              $('.script-image').css({"height": "500px", "width":"auto"});
+
+              // $('.scriptothek-chapter .thumbcaption').css({"padding":"0", "margin": "30% 5% 5% -40%"});
+
+              $('.close').hide();
+            });
+
+            //universal close behaviour
+            $('.close').click(function(){
               $('.scriptothek-wrapper').css("width", "21.5%");
               $('.close-wrapper').hide();
               $('.chapter, .btn-wrapper').show();
 
-              $('.scriptothek-slideshow').css({"display":"block", "padding":"1%", "position":"relative"});
-              $('.scriptothek-chapter a.image').css({"padding":"5%"})
+              $('.scriptothek-slideshow').css({"display":"block", "padding":"1%", "width": "auto", "position":"relative"});
+              $('.script-image-wrapper').css({"padding":"5%"})
               $('.script-image').css({"width": "100%", "height":"auto"});
 
               if($('.content, .btn-wrapper').attr("trigger")==="0"){
@@ -202,31 +226,6 @@
                   $('.change-behind').text("&larr;" == $(this).text() ? "&larr;" : "→");
               }
             });
-          
-            // prevent default on script-trailer
-            $('.script-image').click(function(e) {
-              e.preventDefault();
-              $('.scriptothek-wrapper').css("width", "96.5%");
-              $('.chapter, .btn-wrapper').hide();
-            }); 
-
-            //universal scriptoteehk slideshow click
-            $('.scriptothek-slideshow').click(function() {
-              $('.scriptothek-slideshow').css({"display":"inline-flex", "padding":"1%", "overflow-x":"scroll", "width": "100%", "position":"relative"});
-              $('.scriptothek-chapter a.image').css({"padding":"0px 5% 0px 5%"})
-              $('.script-image').css({"height": "500px", "width":"auto"});
-
-              // $('.scriptothek-chapter .thumbcaption').css({"padding":"0", "margin": "30% 5% 5% -40%"});
-
-              $('.close').hide();
-            });
-
-            // show all scripts on button
-            // $('.show-all-scripts').click(function() {
-            //   $('.scriptothek-chapter').toggle();
-            // });    
-
-            // $('.footnote').prepend('<span class="star">&#x2731;</span>');
 
             var $n = $('<span />', {
             'class' : 'star',
@@ -256,20 +255,20 @@
 
 // SCRIPTOTHEK
 //on articles that don't have scriptotheks, show none
-            $('a[href*="Workshop_scripts_in_practice"], a[href*="Relearning_Food"], a[href*="Untitling"], a[href*="Skinship"], a[href*="Critical_Coding_Cookbook"], a[href*="Workshop_Matters_and_Materials"], a[href*="Credits"], a[href*="A_Note_on_the_design_of_this_publication"], a[href*="License"]').click(function(){
+            $('a[href*="Relearning_Food"], a[href*="Untitling"], a[href*="Skinship"], a[href*="Workshop_Matters_and_Materials"], a[href*="Credits"], a[href*="A_Note_on_the_design_of_this_publication"], a[href*="License"]').click(function(){
               $('.scriptothek-chapter').hide();
             });
 
 //all acriptotheks here we go
-// SLIDESHOW 1 - NEW
-            // $('a[href*="href*="Workshop_scripts_in_practice"]').click(function(){
-            //   $('.scriptothek-chapter').hide();
-            //   $('.scriptothek-chapter-1').show();
-            // });
+// SLIDESHOW 1 - NEW Workshop_scripts_in_practice
+            $('a[href*="Workshop_scripts_in_practice"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-1').show();
+            });
 
-            // $('.scriptothek-slideshow-1').click(function() {
-            //   $('.close-wrapper, .close1').show();
-            // });
+            $('.scriptothek-slideshow-1').click(function() {
+              $('.close-wrapper, .close1').show();
+            });
 
 // SLIDESHOW 2 - NEW
             $('a[href*="Workshop_Histories_and_Practices"]').click(function(){
@@ -383,8 +382,6 @@
 
             $('.scriptothek-slideshow-12').click(function() {
               $('.close-wrapper, .close12').show();
-              //unique features
-              $('.scriptothek-slideshow-12').css({"display":"block"});
             });
 
 // SLIDESHOW 13
@@ -393,7 +390,6 @@
               $('.scriptothek-chapter-13').show();
             });
 
-            // Spreadsheet_Routines
             $('.scriptothek-slideshow-13').click(function() {
               $('.close-wrapper, .close13').show();
               $('.Spreadsheet_Routines').css({"z-index":"-1"});
@@ -487,6 +483,8 @@
 
             $('.scriptothek-slideshow-21').click(function() {
               $('.close-wrapper, .close21').show();
+              //unique features
+              $('.scriptothek-slideshow-21').css({"display":"block"});
             });
 
 // SLIDESHOW 22
@@ -553,7 +551,7 @@
               $('.close-wrapper, .close27').show();
             });
 
-// SLIDESHOW 28 - check this one its new
+// SLIDESHOW 28 
             $('a[href*="wiki_reflections"]').click(function(){
               $('.scriptothek-chapter').hide();
               $('.scriptothek-chapter-28').show();
@@ -566,17 +564,19 @@
             });
 
 // SLIDESHOW 29
-            $('a[href*="Did_video_kill_the_radio_(star)?"]').click(function(){
+            $('a[href*="Critical_Coding_Cookbook"]').click(function(){
               $('.scriptothek-chapter').hide();
               $('.scriptothek-chapter-29').show();
             });
 
             $('.scriptothek-slideshow-29').click(function() {
               $('.close-wrapper, .close29').show();
+              // unique features
+              $('.scriptothek-slideshow-29').css({"display":"block"});
             });
 
 // SLIDESHOW 30
-            $('a[href*="A_case_of_mistaken_identity"]').click(function(){
+            $('a[href*="Did_video_kill_the_radio_(star)?"]').click(function(){
               $('.scriptothek-chapter').hide();
               $('.scriptothek-chapter-30').show();
             });
@@ -586,15 +586,25 @@
             });
 
 // SLIDESHOW 31
-            $('a[href*="Solarpunk_Postscript"]').click(function(){
+            $('a[href*="A_case_of_mistaken_identity"]').click(function(){
               $('.scriptothek-chapter').hide();
               $('.scriptothek-chapter-31').show();
             });
 
             $('.scriptothek-slideshow-31').click(function() {
               $('.close-wrapper, .close31').show();
+            });
+
+// SLIDESHOW 32
+            $('a[href*="Solarpunk_Postscript"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-32').show();
+            });
+
+            $('.scriptothek-slideshow-32').click(function() {
+              $('.close-wrapper, .close32').show();
               //unique features
-              $('.scriptothek-slideshow-31').css({"display":"block"});
+              $('.scriptothek-slideshow-32').css({"display":"block"});
             });
 
 

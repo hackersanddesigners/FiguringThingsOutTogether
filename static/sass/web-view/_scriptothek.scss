@@ -31,15 +31,15 @@
 }
 
 .scriptothek-slideshow{
-	padding: 10%;
 	height: 100%;
 	display: block;
 	padding: 1%;
 	position: relative;
+	// padding-bottom: 20%;
 }
 
 // hide all scriptotheeks
-.scriptothek-chapter{
+.scriptothek-chapter:not(.scriptothek-chapter-1){
 	display: none;
 }
 
@@ -61,8 +61,15 @@
 	border: none;
 }
 
-.scriptothek-slideshow a.image{
+.script-image-wrapper{
+	height: auto;
 	padding: 5%;
+	min-width: 60%;
+}
+
+.scriptothek-slideshow a.image{
+	width: 100%;
+	height: auto;
 }
 
 // .scriptothek-chapter .thumbcaption{
@@ -73,8 +80,7 @@
 // }
 
 .scriptothek-chapter .thumbcaption{
-	font-size: 14px;
-	padding: 0 5% 0 5%;
+	font-size: 10px;
 }
 
 
