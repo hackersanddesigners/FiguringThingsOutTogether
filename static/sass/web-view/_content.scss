@@ -94,9 +94,16 @@ marquee{
 	top: 0;
 }
 
-// .article:target + #Workshop_scripts_in_practice {
-// 	display: none ;
-// }
+.layout-1 h3,
+.layout-2 h3{
+	margin: 0;
+	padding-top: 20px!important;
+	padding-bottom: 20px!important;
+}
+
+.Workshop_Matters_and_Materials>:nth-child(3){
+	display: none;
+}
 
 .author-wrap{
 	text-align: right;
