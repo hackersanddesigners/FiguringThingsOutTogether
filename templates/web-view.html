@@ -5,63 +5,62 @@
 <link href="{{ url_for('static', filename='css/print.css') }}" rel="stylesheet" type="text/css" media="screen">
 <link href="{{ url_for('static', filename=title + '.css') }}" rel="stylesheet" type="text/css" media="screen">
 <link href="{{ url_for('.static', filename='css/web-view.css') }}" rel="stylesheet" type="text/css" media="screen">
+<script src="{{ url_for('static', filename='js/demo.js')}}" type="text/javascript"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+
+
 {% endblock %}
 
 {% block content %}
 <main id="webview">
+    <div class="btn-wrapper">
+      <button class="change-behind">&larr;</button>
+    </div>
 
-  <!-- <button class="show-all-scripts">SHOW THEM</button> -->
-  <!-- BUTTON -->
-  <div class="btn-wrapper">
-    <button class="change-behind">&larr;</button>
-  </div>
+    <div class="close-wrapper">
+      <button class="close close0">&#215;</button>
+      <button class="close close1">&#215;</button>
+      <button class="close close2">&#215;</button>
+      <button class="close close3">&#215;</button>
+      <button class="close close4">&#215;</button>
+      <button class="close close5">&#215;</button>
+      <button class="close close6">&#215;</button>
+      <button class="close close7">&#215;</button>
+      <button class="close close8">&#215;</button>
+      <button class="close close9">&#215;</button>
+      <button class="close close10">&#215;</button>
+      <button class="close close11">&#215;</button>
+      <button class="close close12">&#215;</button>
+      <button class="close close13">&#215;</button>
+      <button class="close close14">&#215;</button>
+      <button class="close close15">&#215;</button>
+      <button class="close close16">&#215;</button>
+      <button class="close close17">&#215;</button>
+      <button class="close close18">&#215;</button>
+      <button class="close close19">&#215;</button>
+      <button class="close close20">&#215;</button>
+      <button class="close close21">&#215;</button>
+      <button class="close close22">&#215;</button>
+      <button class="close close23">&#215;</button>
+      <button class="close close24">&#215;</button>
+      <button class="close close25">&#215;</button>
+      <button class="close close26">&#215;</button>
+      <button class="close close27">&#215;</button>
+      <button class="close close28">&#215;</button>
+      <button class="close close29">&#215;</button>
+      <button class="close close30">&#215;</button>
+      <button class="close close31">&#215;</button>
+      <button class="close close32">&#215;</button>
+    </div>
 
-  <div class="close-wrapper">
-    <button class="close close0">&#215;</button>
-    <button class="close close1">&#215;</button>
-    <button class="close close2">&#215;</button>
-    <button class="close close3">&#215;</button>
-    <button class="close close4">&#215;</button>
-    <button class="close close5">&#215;</button>
-    <button class="close close6">&#215;</button>
-    <button class="close close7">&#215;</button>
-    <button class="close close8">&#215;</button>
-    <button class="close close9">&#215;</button>
-    <button class="close close10">&#215;</button>
-    <button class="close close11">&#215;</button>
-    <button class="close close12">&#215;</button>
-    <button class="close close13">&#215;</button>
-    <button class="close close14">&#215;</button>
-    <button class="close close15">&#215;</button>
-    <button class="close close16">&#215;</button>
-    <button class="close close17">&#215;</button>
-    <button class="close close18">&#215;</button>
-    <button class="close close19">&#215;</button>
-    <button class="close close20">&#215;</button>
-    <button class="close close21">&#215;</button>
-    <button class="close close22">&#215;</button>
-    <button class="close close23">&#215;</button>
-    <button class="close close24">&#215;</button>
-    <button class="close close25">&#215;</button>
-    <button class="close close26">&#215;</button>
-    <button class="close close27">&#215;</button>
-    <button class="close close28">&#215;</button>
-    <button class="close close29">&#215;</button>
-    <button class="close close30">&#215;</button>
-    <button class="close close31">&#215;</button>
-    <button class="close close32">&#215;</button>
-  </div>
-
-  <!-- ARTICLES + CONTENTS -->
     <div class="content">
       {{ html | safe }}
     </div>
 
     <script>
       $(document).ready(function(){
-        //if article is open and page reloaded, make sure the intro is hidden
+        //if article is open and page reloaded, make sure the intro is hidden WORK THIS OUT
         // if ( $(".article").css('display') == 'block'){
         //   $('#Workshop_scripts_in_practice').css({"display":"none!important"});
         // }
@@ -80,15 +79,7 @@
             }
           });
 
-          // on article click hide intro == #TODO rename the class of #Workshop_scripts_in_practice from toclevel-2 to toclevel-special
-            $('a[href*="Workshop_Histories_and_Practices"], a[href*="Open-source_Parenting"], a[href*="Platframe_Postscript"], a[href*="WINWIN"], a[href*="On_consensus,_in_two_parts"], a[href*="#Re-_and_Un-_Defining_Tools"], a[href*="Mycelines:_A_Sympoetic_Imagination"], a[href*="fileSHA_as_protocol"], a[href*="Workshop_Histories_and_Practices"], a[href*="Relearning_Food"], a[href*="Across_Distance_and_Difference"], a[href*="Roleplaying_in_Etherpad"], a[href*="Spreadsheet_Routines"], a[href*="Channeling_Listeners"], a[href*="Untitling"], a[href*="Skinship"], a[href*="Learning_to_Experiment,_Sharing_Techniques"], a[href*="The_perfect_robbery"], a[href*="Scripts_from:_Learning_to_Experiment,_Sharing_Techniques_(ed._Julia_Bee_and_Gerko_Egert)"], a[href*="Give_and_Take"], a[href*="Bodystrike"], a[href*="The_perfect_robbery"], a[href*="Conceptual_Speed_Dating"], a[href*="The_Button_Saga"], a[href*="Mud_Batteries"], a[href*="Display(ing)"], a[href*="Cooperative_gaming"], a[href*="Interfacial-Workout"], a[href*="Am_I_a_hacker_now?"], a[href*="wiki_reflections"], a[href*="ChattyPub"], a[href*="Scripting_Workshops"],a[href*="Critical_Coding_Cookbook"], a[href*="Did_video_kill_the_radio_(star)?"], a[href*="A_case_of_mistaken_identity"], a[href*="Solarpunk_Postscript"], a[href*="Workshop_Matters_and_Materials"], a[href*="A_Note_on_the_design_of_this_publication"], a[href*="Colophon"]').click(function(){
-              $('#Workshop_scripts_in_practice').hide();
-            });
-
-            $('a[href*="Workshop_scripts_in_practice"]').click(function(){
-              $('#Workshop_scripts_in_practice').show();
-            });
-
+//TOC related
           //active link text-decoration underline
           var links = $("li.toclevel-2"); 
           $(links).click(function() {
@@ -96,15 +87,22 @@
               $(this).addClass('active');
           });
 
-          //TOC links toggle
-            $('a[href*="First,_Then…_Repeat."]').click(function(){
-
-              $('a[href*="Workshop_scripts_in_practice"]').toggle();
-
-              $('.introduction').show()
-              $('.setting-conditions, .prompts, .how-tos, .scripted-syllabi, .active-bibliographies, .colophon').hide();
+          // on article click hide intro == #TODO rename the class of #Workshop_scripts_in_practice from toclevel-2 to toclevel-special
+          $('a[href*="Workshop_Histories_and_Practices"], a[href*="Open-source_Parenting"], a[href*="Platframe_Postscript"], a[href*="WINWIN"], a[href*="On_consensus,_in_two_parts"], a[href*="#Re-_and_Un-_Defining_Tools"], a[href*="Mycelines:_A_Sympoetic_Imagination"], a[href*="fileSHA_as_protocol"], a[href*="Workshop_Histories_and_Practices"], a[href*="Relearning_Food"], a[href*="Across_Distance_and_Difference"], a[href*="Roleplaying_in_Etherpad"], a[href*="Spreadsheet_Routines"], a[href*="Channeling_Listeners"], a[href*="Untitling"], a[href*="Skinship"], a[href*="Learning_to_Experiment,_Sharing_Techniques"], a[href*="The_perfect_robbery"], a[href*="Scripts_from:_Learning_to_Experiment,_Sharing_Techniques_(ed._Julia_Bee_and_Gerko_Egert)"], a[href*="Give_and_Take"], a[href*="Bodystrike"], a[href*="The_perfect_robbery"], a[href*="Conceptual_Speed_Dating"], a[href*="The_Button_Saga"], a[href*="Mud_Batteries"], a[href*="Display(ing)"], a[href*="Cooperative_gaming"], a[href*="Interfacial-Workout"], a[href*="Am_I_a_hacker_now?"], a[href*="wiki_reflections"], a[href*="ChattyPub"], a[href*="Scripting_Workshops"],a[href*="Critical_Coding_Cookbook"], a[href*="Did_video_kill_the_radio_(star)?"], a[href*="A_case_of_mistaken_identity"], a[href*="Solarpunk_Postscript"], a[href*="Workshop_Matters_and_Materials"], a[href*="A_Note_on_the_design_of_this_publication"], a[href*="Colophon"]').click(function(){
+              $('#Workshop_scripts_in_practice').hide();
             });
 
+            $('a[href*="Workshop_scripts_in_practice"]').click(function(){
+              $('#Workshop_scripts_in_practice').show();
+            });
+
+            // $('a[href*="First,_Then…_Repeat."]').click(function(){
+            //   $('a[href*="Workshop_scripts_in_practice"]').toggle();
+            //   $('.introduction').show()
+            //   $('.setting-conditions, .prompts, .how-tos, .scripted-syllabi, .active-bibliographies, .colophon').hide();
+            // });
+
+            //links toggle on chapter click
             $('a[href*="Setting_conditions"]').click(function(){
               event.preventDefault();
 
@@ -147,8 +145,6 @@
               $('a[href*="Display(ing)"]').toggle();
 
               $('#Workshop_scripts_in_practice').hide();
-              // $('.how-tos').show()
-              // $('.introduction, .setting-conditions, .prompts, .scripted-syllabi, .active-bibliographies, .colophon-credits').hide();
             });
 
             $('a[href*="Distributed_Curricula"]').click(function(){
@@ -162,8 +158,6 @@
               $('a[href*="Scripting_Workshops"]').toggle();
 
               $('#Workshop_scripts_in_practice').hide();
-              // $('.scripted-syllabi').show()
-              // $('.introduction, .setting-conditions, .prompts, .how-tos, .active-bibliographies, .colophon-credits').hide();
             });
 
             $('a[href*="Active_bibliographies"]').click(function(){
@@ -188,11 +182,37 @@
               $('.scriptothek-wrapper').scrollTop(0);
             });
           
-            // prevent default on script-trailer
+//CONTENT related
+            var $n = $('<span />', {
+            'class' : 'star',
+            'text' : '*'
+            });
+
+            $('.footnote').before($n);
+
+            //add numbers to footnotes and stars
+            const paragraphs = document.getElementsByClassName('footnote');
+            for (let i = 0; i < paragraphs.length; i++) paragraphs[i].setAttribute('id', 'footnote' + i);
+
+            const stars = document.getElementsByClassName('star');
+            for (let i = 0; i < stars.length; i++) stars[i].setAttribute('id', 'star', + i);
+
+            // ADDING titles
+            //add title to scriptotheek
+            $('.scriptothek-wrapper').prepend('<h2 class="scriptothek-title">Scriptothek</h2>');
+            //add scrolling title to each article
+            $('.Workshop_scripts_in_practice').prepend('<marquee width="100%" direction="right" height="100px">First, Then… Repeat.</marquee>');
+            $('.Workshop-Histories-and-Practices, .open-source-parenting, .platframe-postscript, .add-chaptertitle, .WINWIN, .Re-_and_Un-_Defining_Tools, .Myclines, .fileSHA_as_protocol').prepend('<marquee width="100%" direction="right" height="100px">Setting conditions</marquee>');
+            $('.Across_Distance_and_Difference, .Channeling_Listeners, .Relearning_Food, .Untitling, .Roleplaying_in_Etherpad, .Skinship, .Spreadsheet_Routines').prepend('<marquee width="100%" direction="right" height="100px">Prompts</marquee>');
+            $('.add-chaptertitle1, .Give_and_Take, .Bodystrike, .Conceptual_Speed_Dating, .The_perfect_robbery, .The_Indonesian_Women_Movement_GERWANI, .mud-batteries, .Saga, .add-title1').prepend('<marquee width="100%" direction="right" height="100px">How tos</marquee>');
+            $('.Cooperative_gaming, .Interfacial-workout, .Scripting_Workshops, .add-chaptertitle2, .chattypub, .FREE-Wiki').prepend('<marquee width="100%" direction="right" height="100px">Distributed Curricula</marquee>');
+            $('.Critical_Coding_Cookbook, .add-title, .A_case_of_mistaken_identity, .Solarpunk_Postscript, .Workshop_Matters_and_Materials').prepend('<marquee width="100%" direction="right" height="100px">Active bibliographies</marquee>');
+            $('.Credits, .A_Note_on_the_design_of_this_publication, .License').prepend('<marquee width="100%" direction="right" height="100px">Colophon</marquee>');
+
+// SCRIPTOTHEK
+            // prevent default on script-image
             $('.script-image').click(function(e) {
               e.preventDefault();
-              // $('.scriptothek-wrapper').css("width", "96.5%");
-              // $('.chapter, .btn-wrapper').hide();
             }); 
 
             //universal scriptoteehk slideshow click
@@ -235,33 +255,6 @@
               }
             });
 
-            var $n = $('<span />', {
-            'class' : 'star',
-            'text' : '*'
-            });
-
-            $('.footnote').before($n);
-
-            //add numbers to footnotes and stars
-            const paragraphs = document.getElementsByClassName('footnote');
-            for (let i = 0; i < paragraphs.length; i++) paragraphs[i].setAttribute('id', 'footnote' + i);
-
-            const stars = document.getElementsByClassName('star');
-            for (let i = 0; i < stars.length; i++) stars[i].setAttribute('id', 'star', + i);
-
-            // ADDING titles and what not
-            //add title to scriptotheek
-            $('.scriptothek-wrapper').prepend('<h2 class="scriptothek-title">Scriptothek</h2>');
-            //add scrolling title
-            $('.Workshop_scripts_in_practice').prepend('<marquee width="100%" direction="right" height="100px">First, Then… Repeat.</marquee>');
-            $('.Workshop-Histories-and-Practices, .open-source-parenting, .platframe-postscript, .add-chaptertitle, .WINWIN, .Re-_and_Un-_Defining_Tools, .Myclines, .fileSHA_as_protocol').prepend('<marquee width="100%" direction="right" height="100px">Setting conditions</marquee>');
-            $('.Across_Distance_and_Difference, .Channeling_Listeners, .Relearning_Food, .Untitling, .Roleplaying_in_Etherpad, .Skinship, .Spreadsheet_Routines').prepend('<marquee width="100%" direction="right" height="100px">Prompts</marquee>');
-            $('.add-chaptertitle1, .Give_and_Take, .Bodystrike, .Conceptual_Speed_Dating, .The_perfect_robbery, .The_Indonesian_Women_Movement_GERWANI, .mud-batteries, .Saga, .add-title1').prepend('<marquee width="100%" direction="right" height="100px">How tos</marquee>');
-            $('.Cooperative_gaming, .Interfacial-workout, .Scripting_Workshops, .add-chaptertitle2, .chattypub, .FREE-Wiki').prepend('<marquee width="100%" direction="right" height="100px">Distributed Curricula</marquee>');
-            $('.Critical_Coding_Cookbook, .add-title, .A_case_of_mistaken_identity, .Solarpunk_Postscript, .Workshop_Matters_and_Materials').prepend('<marquee width="100%" direction="right" height="100px">Active bibliographies</marquee>');
-            $('.Credits, .A_Note_on_the_design_of_this_publication, .License').prepend('<marquee width="100%" direction="right" height="100px">Colophon</marquee>');
-
-// SCRIPTOTHEK
 //on articles that don't have scriptotheks, show none
             $('a[href*="Relearning_Food"], a[href*="Untitling"], a[href*="Skinship"], a[href*="Workshop_Matters_and_Materials"], a[href*="Credits"], a[href*="A_Note_on_the_design_of_this_publication"], a[href*="License"]').click(function(){
               $('.scriptothek-chapter').hide();
