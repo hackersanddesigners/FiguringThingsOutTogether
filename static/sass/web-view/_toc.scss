@@ -1,10 +1,12 @@
 .toc-wrap{
-	width: 20%;
-	height: 100%;
-	background-color: lightgray;
 	position: fixed;
 	top: 0;
 	left: 0;
+
+	width: 20%;
+	height: 100%;
+	
+	background-color: lightgray;
 
 	z-index: -1;
 	overflow: scroll;

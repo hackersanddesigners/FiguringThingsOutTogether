@@ -1,10 +1,4 @@
 /* General styling */
-// html {
-// 	font-size: 62.5%;
-// 	width: 100vw;
-// 	height: 100%;
-// }
-
 body {
 	color: var(--color-main);
 	margin: 0;
@@ -99,20 +93,3 @@ blockquote p{
 .layout-1 p{
 	text-indent: 0;
 }
-
-// .layout-2 img {
-//     border-radius: 10px;
-//     width: 100%;
-//     max-height: auto;
-// }
-
-/* mediawiki gives thumbs an inline fixed width */
-// .thumbinner.image-container {
-// 	width: auto !important;
-// }
-
-// @media (min-width: 576px) {  
-// 	.change-behind {
-// 		background-color:#f00;
-// 	}
-//   }

@@ -1,3 +1,18 @@
+//horizontal scrollbar
+.scriptothek-slideshow::-webkit-scrollbar {
+	width: 20px; 
+ }
+
+.scriptothek-slideshow::-webkit-scrollbar-track {
+  background-color: yellow;
+}
+
+.scriptothek-slideshow::-webkit-scrollbar-thumb {
+  background: yellow;
+  border: solid black;
+  border-radius: 25px 25px 0 0;
+}
+
 .scriptothek-wrapper{
 	position: fixed;
 	width: 21.5%;
@@ -26,15 +41,10 @@
 	top: 0;
 
 	z-index: 5;
-
-	// box-shadow: 0px 10px 14px 0px yellow;
-	// -webkit-box-shadow: 0px 10px 14px 0px yellow;
-	// -moz-box-shadow: 0px 10px 14px 0px yellow;
 }
 
 .scriptothek-chapter{
 	width: 100%;
-	// background-color: blue;
 }
 
 .scriptothek-slideshow{
@@ -43,84 +53,36 @@
 
 	height: 100%;
 	padding: 1%;
-	// padding-bottom: 20%;
 }
 
 .script-image-wrapper{
-	// height: auto;
 	padding: 5%;
-	// min-width: 60%;
 }
 
-// .scriptothek-slideshow a.image{
-// 	width: 100%;
-// 	height: auto;
-// }
-
-// hide all scriptotheeks
+// hide all scriptotheeks except for the first one
 .scriptothek-chapter:not(.scriptothek-chapter-1){
 	display: none;
 }
 
 .close-wrapper{
-	width: 96.5%;
 	position: fixed;
-	// background-color: #b19cd9;
-	right: 0;
-	z-index: 5;
-	top:0;
+	width: 96.5%;
 	display: none;
+
+	top:0;
+	right: 0;
+
+	z-index: 5;
 }
 
 .close{
-	font-size: 50px;
 	padding: 10px;
-	cursor: pointer;
+	font-size: 50px;
 	background-color: transparent;
 	border: none;
+	cursor: pointer;
 }
 
 .scriptothek-chapter .thumbcaption{
 	font-size: 10px;
-}
-
-
-// TRYOUT- horizontal scroll
-// .scriptothek-chapter {
-//     width: 400px;
-//     border: 1px solid #111;
-//     padding: 0px;
-//     margin: 0px;
-//     overflow-x: scroll;
-//     overflow-y: hidden;
-// }
-// .scriptothek-slideshow {
-//     padding: 0px;
-//     margin: 0px;
-//     height: 100px;
-//     width: 910px;
-// }
-// img {
-//     height: 90px;
-//     width: 100px;
-//     padding: 5px;
-//     background: #123;
-//     display: inline-block;
-// }
-  
-
-//horizontal scrollbar
-
-.scriptothek-slideshow::-webkit-scrollbar {
-	width: 20px; 
- }
-
-.scriptothek-slideshow::-webkit-scrollbar-track {
-  background-color: yellow;
-}
-
-.scriptothek-slideshow::-webkit-scrollbar-thumb {
-  background: yellow;
-  border: solid black;
-  border-radius: 25px 25px 0 0;
 }

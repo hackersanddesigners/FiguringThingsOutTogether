@@ -341,7 +341,9 @@
 
             $('.scriptothek-slideshow-7').click(function() {
               $('.close-wrapper, .close7').show();
-              // $('.script-image-7').css({"width": "400px"});
+              $('.script-image-wrapper:nth-of-type(13) .script-image-7, .script-image-wrapper:nth-of-type(14) .script-image-7').css({"height": "auto", "width":"100%"});
+              $('.script-image-wrapper:nth-of-type(13)').css({"padding-top": "5%"});
+              $('.script-image-wrapper:nth-of-type(14)').css({"padding-top": "10%"});
 
               // unique image adjustments
               $('.scriptothek-chapter-7 .script-image-wrapper').css({"min-width":"50%"});

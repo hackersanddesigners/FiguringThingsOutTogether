@@ -1,14 +1,14 @@
 @media (max-width: 416px) {
-    .change-behind{
-        display: none;
-    }
-
     body{
         display: flex;
         justify-content: center;
         font-size: 15pt;
 
         overflow-x: hidden!important;
+    }
+
+    .change-behind{
+        display: none;
     }
 
     .layout-1 p{
