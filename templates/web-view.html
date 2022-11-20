@@ -206,8 +206,7 @@
               $('.script-image-wrapper').css({"padding":"0 5% 0 5%"});
               $('.scriptothek-chapter a.image').css({"padding":"0"});
               $('.script-image').css({"height": "500px", "width":"auto"});
-
-              // $('.scriptothek-chapter .thumbcaption').css({"padding":"0", "margin": "30% 5% 5% -40%"});
+              $('.scriptothek-chapter .thumbcaption').css({"height": "80px", "width":"100%", "bottom":"0"});
 
               $('.close').hide();
             });
@@ -222,6 +221,7 @@
               $('.scriptothek-slideshow').css({"display":"block", "padding":"1%", "width": "auto", "position":"relative"});
               $('.script-image-wrapper').css({"padding":"5%"})
               $('.script-image').css({"width": "100%", "height":"auto"});
+              $('.scriptothek-chapter .thumbcaption').css({"height": "auto"});
 
               if($('.content, .btn-wrapper').attr("trigger")==="0"){
                 $('.content, .btn-wrapper').animate({"left":"20%"},700);
@@ -277,7 +277,7 @@
             $('.scriptothek-slideshow-1').click(function() {
               $('.close-wrapper, .close1').show();
               // unique image adjustments
-              $('.scriptothek-chapter-1 .script-image-wrapper').css({"min-width":"60%"});
+              $('.scriptothek-chapter-1 .script-image-wrapper').css({"min-width":"80%"});
             });
 
 // SLIDESHOW 2 - NEW
@@ -635,7 +635,7 @@
                     // alert("this function is still working on mobile");
                     $( ".article" ).prepend( '<button class="mobile-arrow-right">→</button>' );
                     $( ".article" ).prepend( '<button class="mobile-arrow-left">&larr;</button>' );
-                    $( ".scriptothek-wrapper" ).prepend( '<button class="close-script">X</button>' );
+                    $( ".scriptothek-wrapper").prepend( '<button class="close-script">X</button>' );
 
                     $('.toclevel-2').click(function(){
                       $('.mobile-arrow-right, .mobile-arrow-left').css({"z-index":"1"});
@@ -653,26 +653,30 @@
 
                     $('.mobile-arrow-left').click(function(){
                       $('.mobile-arrow-left').css({"z-index":"-1"});
+                      $('.close-script').css({"z-index":"50"});
+
 
                       $('.scriptothek-wrapper').css({"z-index":"1"});
-                      $('.close-script').css({"z-index":"1"});
                     });
 
-                    // $('.scriptothek-slideshow').click(function() {  
-                    //   $('.scriptothek-wrapper').css({"width":"80%"});   
-                    //   $('.scriptothek-slideshow').css({"display":"block", "position":"relative", "padding":"1%", "height":"100%"});
-                    //   $('.scriptothek-chapter a.image').css({"padding":"5%"});
-                    //   $('.script-image').css({"height": "auto", "width":"98%"});
-                    //   $('.chapter').show();
+                    $('.scriptothek-slideshow').click(function() {  
+                      $('.chapter').show();
 
-                    //   $('.close-script').css({"z-index":"5"});
-                    //   $('.close').hide();
-                    // });
+                      $('.scriptothek-wrapper').css({"width":"80%"});   
+                      $('.scriptothek-slideshow').css({"display":"block", "position":"relative", "padding":"1%", "height":"100%"});
+                      $('.script-image-wrapper').css({"padding":"5%"});
+
+                      $('.scriptothek-chapter a.image').css({"padding":"0"});
+                      $('.script-image').css({"height": "auto", "width":"100%"});
+                      $('.scriptothek-chapter .thumbcaption').css({"height": "auto", "width":"100%", "bottom":"0"});
+
+                      $('.close-script').css({"z-index":"50"});
+                      $('.close').hide();
+                    });
 
                     $('.close-script').click(function(){
                       $('.scriptothek-wrapper').css({"z-index":"-1"});
                       $('.mobile-arrow-left').css({"z-index":"1"});
-                      // $('.scriptothek-chapter').scrollTop(0);
                     });
 
                 }
@@ -682,37 +686,7 @@
             checkWidth();
             // Bind event listener
             $(window).resize(checkWidth);
-
-
-//ON VERTICAL SCROLL HORIZONTAL
     });
-
-    // var scroller = {};
-    // scroller.e = document.getElementsByClassName("scriptothek-wrapper");
-
-    // if (scroller.e.addEventListener) {
-    //     scroller.e.addEventListener("mousewheel", MouseWheelHandler, false);
-    //     scroller.e.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
-    // } else scroller.e.attachEvent("onmousewheel", MouseWheelHandler);
-
-    // function MouseWheelHandler(e) {
-
-    //     // cross-browser wheel delta
-    //     var e = window.event || e;
-    //     var delta = - 20 * (Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail))));
-
-    //     var pst = $('.scriptothek-wrapper').scrollLeft() + delta;
-
-    //     if (pst < 0) {
-    //         pst = 0;
-    //     } else if (pst > $('.scriptothek-slideshow').width()) {
-    //         pst = $('.scriptothek-slideshow').width();
-    //     }
-
-    //     $('.scriptothek-chapter').scrollLeft(pst);
-
-    //     return false;
-    // }
 
 
 </script>

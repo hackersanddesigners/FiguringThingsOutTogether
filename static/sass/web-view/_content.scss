@@ -76,12 +76,9 @@ marquee{
     line-height: 1em;
 	font-weight: 900;
 	margin-top: 0;
-	// margin-top: calc(15px + 30px);
 	width: 100%;
 	
 	position: relative;
-	// background-color: blue;
-	// top: 0!important;
 }
 
 .Workshop_scripts_in_practice{
@@ -125,18 +122,18 @@ marquee{
 	display: none;
 	background-color: yellow;
 	font-size: 14px;
-	transition: all 0s ease 1s; /*delay 1s*/
+	transition:0s 180s;
 }
 
 .star{
 	background-color: yellow;
 	cursor: pointer;
-
+	transition:0s 180s;
 }
 
 .star:hover + .footnote{
 	display: initial;
-    transition:5s;
+    transition:0s;
 }
 
 .layout-1 .block {
