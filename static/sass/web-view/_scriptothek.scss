@@ -1,7 +1,22 @@
+//horizontal scrollbar
+.scriptothek-slideshow::-webkit-scrollbar {
+	width: 20px; 
+ }
+
+.scriptothek-slideshow::-webkit-scrollbar-track {
+  background-color: yellow;
+}
+
+.scriptothek-slideshow::-webkit-scrollbar-thumb {
+  background: yellow;
+  border: solid black;
+  border-radius: 25px 25px 0 0;
+}
+
 .scriptothek-wrapper{
 	position: fixed;
 	width: 21.5%;
-	height: 100vh;
+	height: 100%;
 
 	margin: 0;
 	padding: 0;
@@ -12,7 +27,7 @@
 
 	z-index: -1;
 	overflow: scroll;
-	// overflow-y: hidden!important;
+	overflow-x: hidden!important;
 
 	visibility: visible;
 
@@ -25,79 +40,49 @@
 	position: relative;
 	top: 0;
 
-	box-shadow: 0px 10px 14px 0px yellow;
-	-webkit-box-shadow: 0px 10px 14px 0px yellow;
-	-moz-box-shadow: 0px 10px 14px 0px yellow;
+	z-index: 5;
+}
+
+.scriptothek-chapter{
+	width: 100%;
 }
 
 .scriptothek-slideshow{
-	padding: 10%;
-	height: 100%;
-	display: block;
-	padding: 1%;
 	position: relative;
+	display: block;
+
+	height: 100%;
+	padding: 1%;
 }
 
-// hide all scriptotheeks
-.scriptothek-chapter{
+.script-image-wrapper{
+	padding: 5%;
+}
+
+// hide all scriptotheeks except for the first one
+.scriptothek-chapter:not(.scriptothek-chapter-1){
 	display: none;
 }
 
 .close-wrapper{
-	width: 96.5%;
 	position: fixed;
-	// background-color: #b19cd9;
-	right: 0;
-	z-index: 5;
-	top:0;
+	width: 96.5%;
 	display: none;
+
+	top:0;
+	right: 0;
+
+	z-index: 5;
 }
 
 .close{
-	font-size: 50px;
 	padding: 10px;
-	cursor: pointer;
+	font-size: 50px;
 	background-color: transparent;
 	border: none;
+	cursor: pointer;
 }
-
-.scriptothek-slideshow a.image{
-	padding: 5%;
-}
-
-// .scriptothek-chapter .thumbcaption{
-// 	min-width: 800px;
-// 	height: 500px;
-// 	background-color: yellow;
-// 	border: solid 0.5px black;
-// }
 
 .scriptothek-chapter .thumbcaption{
-	font-size: 14px;
-	padding: 0 5% 0 5%;
+	font-size: 10px;
 }
-
-
-// TRYOUT- horizontal scroll
-// .scriptothek-chapter {
-//     width: 400px;
-//     border: 1px solid #111;
-//     padding: 0px;
-//     margin: 0px;
-//     overflow-x: scroll;
-//     overflow-y: hidden;
-// }
-// .scriptothek-slideshow {
-//     padding: 0px;
-//     margin: 0px;
-//     height: 100px;
-//     width: 910px;
-// }
-// img {
-//     height: 90px;
-//     width: 100px;
-//     padding: 5px;
-//     background: #123;
-//     display: inline-block;
-// }
-  

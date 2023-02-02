@@ -5,61 +5,65 @@
 <link href="{{ url_for('static', filename='css/print.css') }}" rel="stylesheet" type="text/css" media="screen">
 <link href="{{ url_for('static', filename=title + '.css') }}" rel="stylesheet" type="text/css" media="screen">
 <link href="{{ url_for('.static', filename='css/web-view.css') }}" rel="stylesheet" type="text/css" media="screen">
+<script src="{{ url_for('static', filename='js/demo.js')}}" type="text/javascript"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+
+
 {% endblock %}
 
 {% block content %}
 <main id="webview">
+    <div class="btn-wrapper">
+      <button class="change-behind">&larr;</button>
+    </div>
 
-  <!-- <button class="show-all-scripts">SHOW THEM</button> -->
-  <!-- BUTTON -->
-  <div class="btn-wrapper">
-    <button class="change-behind">&larr;</button>
-  </div>
+    <div class="close-wrapper">
+      <button class="close close0">&#215;</button>
+      <button class="close close1">&#215;</button>
+      <button class="close close2">&#215;</button>
+      <button class="close close3">&#215;</button>
+      <button class="close close4">&#215;</button>
+      <button class="close close5">&#215;</button>
+      <button class="close close6">&#215;</button>
+      <button class="close close7">&#215;</button>
+      <button class="close close8">&#215;</button>
+      <button class="close close9">&#215;</button>
+      <button class="close close10">&#215;</button>
+      <button class="close close11">&#215;</button>
+      <button class="close close12">&#215;</button>
+      <button class="close close13">&#215;</button>
+      <button class="close close14">&#215;</button>
+      <button class="close close15">&#215;</button>
+      <button class="close close16">&#215;</button>
+      <button class="close close17">&#215;</button>
+      <button class="close close18">&#215;</button>
+      <button class="close close19">&#215;</button>
+      <button class="close close20">&#215;</button>
+      <button class="close close21">&#215;</button>
+      <button class="close close22">&#215;</button>
+      <button class="close close23">&#215;</button>
+      <button class="close close24">&#215;</button>
+      <button class="close close25">&#215;</button>
+      <button class="close close26">&#215;</button>
+      <button class="close close27">&#215;</button>
+      <button class="close close28">&#215;</button>
+      <button class="close close29">&#215;</button>
+      <button class="close close30">&#215;</button>
+      <button class="close close31">&#215;</button>
+      <button class="close close32">&#215;</button>
+    </div>
 
-  <div class="close-wrapper">
-    <button class="close close0">&#215;</button>
-    <button class="close close1">&#215;</button>
-    <button class="close close2">&#215;</button>
-    <button class="close close3">&#215;</button>
-    <button class="close close4">&#215;</button>
-    <button class="close close5">&#215;</button>
-    <button class="close close6">&#215;</button>
-    <button class="close close7">&#215;</button>
-    <button class="close close8">&#215;</button>
-    <button class="close close9">&#215;</button>
-    <button class="close close10">&#215;</button>
-    <button class="close close11">&#215;</button>
-    <button class="close close12">&#215;</button>
-    <button class="close close13">&#215;</button>
-    <button class="close close14">&#215;</button>
-    <button class="close close15">&#215;</button>
-    <button class="close close16">&#215;</button>
-    <button class="close close17">&#215;</button>
-    <button class="close close18">&#215;</button>
-    <button class="close close19">&#215;</button>
-    <button class="close close20">&#215;</button>
-    <button class="close close21">&#215;</button>
-    <button class="close close22">&#215;</button>
-    <button class="close close23">&#215;</button>
-    <button class="close close24">&#215;</button>
-    <button class="close close25">&#215;</button>
-    <button class="close close26">&#215;</button>
-    <button class="close close27">&#215;</button>
-    <button class="close close28">&#215;</button>
-    <button class="close close29">&#215;</button>
-    <button class="close close30">&#215;</button>
-    <button class="close close31">&#215;</button>
-  </div>
-
-  <!-- ARTICLES + CONTENTS -->
     <div class="content">
       {{ html | safe }}
     </div>
 
     <script>
       $(document).ready(function(){
+        //if article is open and page reloaded, make sure the intro is hidden WORK THIS OUT
+        // if ( $(".article").css('display') == 'block'){
+        //   $('#Workshop_scripts_in_practice').css({"display":"none!important"});
+        // }
 
         // this one moves the page left and right
         $('.change-behind').click(function(){
@@ -75,15 +79,7 @@
             }
           });
 
-          // on article click hide intro == #TODO rename the class of #Workshop_scripts_in_practice from toclevel-2 to toclevel-special
-            $('a[href*="Workshop_Histories_and_Practices"], a[href*="Open-source_Parenting"], a[href*="Platframe_Postscript"], a[href*="WINWIN"], a[href*="On_consensus,_in_two_parts"], a[href*="#Re-_and_Un-_Defining_Tools"], a[href*="Mycelines:_A_Sympoetic_Imagination"], a[href*="fileSHA_as_protocol"], a[href*="Workshop_Histories_and_Practices"], a[href*="Relearning_Food"], a[href*="Across_Distance_and_Difference"], a[href*="Roleplaying_in_Etherpad"], a[href*="Spreadsheet_Routines"], a[href*="Channeling_Listeners"], a[href*="Untitling"], a[href*="Skinship"], a[href*="Learning_to_Experiment,_Sharing_Techniques"], a[href*="The_perfect_robbery"], a[href*="Scripts_from:_Learning_to_Experiment,_Sharing_Techniques_(ed._Julia_Bee_and_Gerko_Egert)"], a[href*="Give_and_Take"], a[href*="Bodystrike"], a[href*="The_perfect_robbery"], a[href*="Conceptual_Speed_Dating"], a[href*="The_Button_Saga"], a[href*="Mud_Batteries"], a[href*="Display(ing)"], a[href*="Cooperative_gaming"], a[href*="Interfacial-Workout"], a[href*="Am_I_a_hacker_now?"], a[href*="wiki_reflections"], a[href*="ChattyPub"], a[href*="Scripting_Workshops"],a[href*="Critical_Coding_Cookbook"], a[href*="Did_video_kill_the_radio_(star)?"], a[href*="A_case_of_mistaken_identity"], a[href*="Solarpunk_Postscript"], a[href*="Workshop_Matters_and_Materials"], a[href*="A_Note_on_the_design_of_this_publication"], a[href*="Colophon"]').click(function(){
-              $('#Workshop_scripts_in_practice').hide();
-            });
-
-            $('a[href*="Workshop_scripts_in_practice"]').click(function(){
-              $('#Workshop_scripts_in_practice').show();
-            });
-
+//TOC related
           //active link text-decoration underline
           var links = $("li.toclevel-2"); 
           $(links).click(function() {
@@ -91,15 +87,22 @@
               $(this).addClass('active');
           });
 
-          //TOC links toggle
-            $('a[href*="First,_Then…_Repeat."]').click(function(){
-
-              $('a[href*="Workshop_scripts_in_practice"]').toggle();
-
-              $('.introduction').show()
-              $('.setting-conditions, .prompts, .how-tos, .scripted-syllabi, .active-bibliographies, .colophon').hide();
+          // on article click hide intro == #TODO rename the class of #Workshop_scripts_in_practice from toclevel-2 to toclevel-special
+          $('a[href*="Workshop_Histories_and_Practices"], a[href*="Open-source_Parenting"], a[href*="Platframe_Postscript"], a[href*="WINWIN"], a[href*="On_consensus,_in_two_parts"], a[href*="#Re-_and_Un-_Defining_Tools"], a[href*="Mycelines:_A_Sympoetic_Imagination"], a[href*="fileSHA_as_protocol"], a[href*="Workshop_Histories_and_Practices"], a[href*="Reading_Food"], a[href*="Across_Distance_and_Difference"], a[href*="Roleplaying_in_Etherpad"], a[href*="Spreadsheet_Routines"], a[href*="Channeling_Listeners"], a[href*="Untitling"], a[href*="Skinship"], a[href*="Learning_to_Experiment,_Sharing_Techniques"], a[href*="The_perfect_robbery"], a[href*="Scripts_from:_Learning_to_Experiment,_Sharing_Techniques_(ed._Julia_Bee_and_Gerko_Egert)"], a[href*="Give_and_Take"], a[href*="Bodystrike"], a[href*="The_perfect_robbery"], a[href*="Conceptual_Speed_Dating"], a[href*="The_Button_Saga"], a[href*="Mud_Batteries"], a[href*="Display(ing)"], a[href*="Cooperative_gaming"], a[href*="Interfacial-Workout"], a[href*="Am_I_a_hacker_now?"], a[href*="wiki_reflections"], a[href*="ChattyPub"], a[href*="Scripting_Workshops"],a[href*="Critical_Coding_Cookbook"], a[href*="Did_video_kill_the_radio_(star)?"], a[href*="A_case_of_mistaken_identity"], a[href*="Solarpunk_Postscript"], a[href*="Workshop_Matters_and_Materials"], a[href*="A_Note_on_the_design_of_this_publication"], a[href*="Colophon"]').click(function(){
+              $('#Workshop_scripts_in_practice').hide();
             });
 
+            $('a[href*="Workshop_scripts_in_practice"]').click(function(){
+              $('#Workshop_scripts_in_practice').show();
+            });
+
+            // $('a[href*="First,_Then…_Repeat."]').click(function(){
+            //   $('a[href*="Workshop_scripts_in_practice"]').toggle();
+            //   $('.introduction').show()
+            //   $('.setting-conditions, .prompts, .how-tos, .scripted-syllabi, .active-bibliographies, .colophon').hide();
+            // });
+
+            //links toggle on chapter click
             $('a[href*="Setting_conditions"]').click(function(){
               event.preventDefault();
 
@@ -116,7 +119,7 @@
             $('a[href*="Prompts"]').click(function(){
               event.preventDefault();
 
-              $('a[href*="Relearning_Food"]').toggle();
+              $('a[href*="Reading_Food"]').toggle();
               $('a[href*="Across_Distance_and_Difference"]').toggle();
               $('a[href*="Roleplaying_in_Etherpad"]').toggle();
               $('a[href*="Spreadsheet_Routines"]').toggle();
@@ -142,8 +145,6 @@
               $('a[href*="Display(ing)"]').toggle();
 
               $('#Workshop_scripts_in_practice').hide();
-              // $('.how-tos').show()
-              // $('.introduction, .setting-conditions, .prompts, .scripted-syllabi, .active-bibliographies, .colophon-credits').hide();
             });
 
             $('a[href*="Distributed_Curricula"]').click(function(){
@@ -157,8 +158,6 @@
               $('a[href*="Scripting_Workshops"]').toggle();
 
               $('#Workshop_scripts_in_practice').hide();
-              // $('.scripted-syllabi').show()
-              // $('.introduction, .setting-conditions, .prompts, .how-tos, .active-bibliographies, .colophon-credits').hide();
             });
 
             $('a[href*="Active_bibliographies"]').click(function(){
@@ -179,55 +178,11 @@
               $('a[href*="License"]').toggle();
             });
 
-            //universal close (rewrite more of those)
-            $('.close').click(function(){
-              // $('.scriptothek-chapter').scrollTop(0);
-
-              $('.scriptothek-wrapper').css("width", "21.5%");
-              $('.close-wrapper').hide();
-              $('.chapter, .btn-wrapper').show();
-
-              $('.scriptothek-slideshow').css({"display":"block", "padding":"1%", "position":"relative"});
-              $('.scriptothek-chapter a.image').css({"padding":"5%"})
-              $('.script-image').css({"width": "100%", "height":"auto"});
-
-              if($('.content, .btn-wrapper').attr("trigger")==="0"){
-                $('.content, .btn-wrapper').animate({"left":"20%"},700);
-                $('.content, .btn-wrapper').attr("trigger","1");
-                $('.change-behind').text("←" == $(this).text() ? "→" : "←");
-              }
-              else{
-                  $('.content, .btn-wrapper').animate({"left":"50px"},700);
-                  $('.content, .btn-wrapper').attr("trigger","0");
-                  $('.change-behind').text("&larr;" == $(this).text() ? "&larr;" : "→");
-              }
+            $('.toclevel-2').click(function(){
+              $('.scriptothek-wrapper').scrollTop(0);
             });
           
-            // prevent default on script-trailer
-            $('.script-image').click(function(e) {
-              e.preventDefault();
-              $('.scriptothek-wrapper').css("width", "96.5%");
-              $('.chapter, .btn-wrapper').hide();
-            }); 
-
-            //universal scriptoteehk slideshow click
-            $('.scriptothek-slideshow').click(function() {
-              $('.scriptothek-slideshow').css({"display":"inline-flex", "padding":"1%", "overflow-x":"scroll", "width": "100%", "position":"relative"});
-              $('.scriptothek-chapter a.image').css({"padding":"0px 5% 0px 5%"})
-              $('.script-image').css({"height": "500px", "width":"auto"});
-
-              // $('.scriptothek-chapter .thumbcaption').css({"padding":"0", "margin": "30% 5% 5% -40%"});
-
-              $('.close').hide();
-            });
-
-            // show all scripts on button
-            // $('.show-all-scripts').click(function() {
-            //   $('.scriptothek-chapter').toggle();
-            // });    
-
-            // $('.footnote').prepend('<span class="star">&#x2731;</span>');
-
+//CONTENT related
             var $n = $('<span />', {
             'class' : 'star',
             'text' : '*'
@@ -242,34 +197,81 @@
             const stars = document.getElementsByClassName('star');
             for (let i = 0; i < stars.length; i++) stars[i].setAttribute('id', 'star', + i);
 
-            // ADDING titles and what not
+            // ADDING titles
             //add title to scriptotheek
             $('.scriptothek-wrapper').prepend('<h2 class="scriptothek-title">Scriptothek</h2>');
-            //add scrolling title
+            //add scrolling title to each article
             $('.Workshop_scripts_in_practice').prepend('<marquee width="100%" direction="right" height="100px">First, Then… Repeat.</marquee>');
             $('.Workshop-Histories-and-Practices, .open-source-parenting, .platframe-postscript, .add-chaptertitle, .WINWIN, .Re-_and_Un-_Defining_Tools, .Myclines, .fileSHA_as_protocol').prepend('<marquee width="100%" direction="right" height="100px">Setting conditions</marquee>');
-            $('.Across_Distance_and_Difference, .Channeling_Listeners, .Relearning_Food, .Untitling, .Roleplaying_in_Etherpad, .Skinship, .Spreadsheet_Routines').prepend('<marquee width="100%" direction="right" height="100px">Prompts</marquee>');
+            $('.Across_Distance_and_Difference, .Channeling_Listeners, .Reading_Food, .Untitling, .Roleplaying_in_Etherpad, .Skinship, .Spreadsheet_Routines').prepend('<marquee width="100%" direction="right" height="100px">Prompts</marquee>');
             $('.add-chaptertitle1, .Give_and_Take, .Bodystrike, .Conceptual_Speed_Dating, .The_perfect_robbery, .The_Indonesian_Women_Movement_GERWANI, .mud-batteries, .Saga, .add-title1').prepend('<marquee width="100%" direction="right" height="100px">How tos</marquee>');
             $('.Cooperative_gaming, .Interfacial-workout, .Scripting_Workshops, .add-chaptertitle2, .chattypub, .FREE-Wiki').prepend('<marquee width="100%" direction="right" height="100px">Distributed Curricula</marquee>');
             $('.Critical_Coding_Cookbook, .add-title, .A_case_of_mistaken_identity, .Solarpunk_Postscript, .Workshop_Matters_and_Materials').prepend('<marquee width="100%" direction="right" height="100px">Active bibliographies</marquee>');
             $('.Credits, .A_Note_on_the_design_of_this_publication, .License').prepend('<marquee width="100%" direction="right" height="100px">Colophon</marquee>');
 
 // SCRIPTOTHEK
+            // prevent default on script-image
+            $('.script-image').click(function(e) {
+              e.preventDefault();
+            }); 
+
+            //universal scriptoteehk slideshow click
+            $('.scriptothek-slideshow').click(function() {
+              $('.scriptothek-wrapper').css({"width":"96.5%", "z-index":"1"});
+              $('.chapter, .btn-wrapper').hide();
+
+              $('.scriptothek-slideshow').css({"display":"inline-flex", "overflow-x":"scroll", "width": "100%", "height":"auto", "position":"absolute", "bottom":"0"});
+              $('.scriptothek-chapter').css({"height":"auto"});
+
+              $('.script-image-wrapper').css({"padding":"0 5% 0 5%"});
+              $('.scriptothek-chapter a.image').css({"padding":"0"});
+              $('.script-image').css({"height": "500px", "width":"auto"});
+              $('.scriptothek-chapter .thumbcaption').css({"height": "80px", "width":"100%", "bottom":"0"});
+
+              $('.close').hide();
+            });
+
+            //universal close behaviour
+            $('.close').click(function(){
+              $('.scriptothek-wrapper').css({"width":"21.5%", "z-index":"-1"});
+
+              $('.close-wrapper').hide();
+              $('.chapter, .btn-wrapper').show();
+
+              $('.scriptothek-slideshow').css({"display":"block", "padding":"1%", "width": "auto", "position":"relative"});
+              $('.script-image-wrapper').css({"padding":"5%"})
+              $('.script-image').css({"width": "100%", "height":"auto"});
+              $('.scriptothek-chapter .thumbcaption').css({"height": "auto"});
+
+              if($('.content, .btn-wrapper').attr("trigger")==="0"){
+                $('.content, .btn-wrapper').animate({"left":"20%"},700);
+                $('.content, .btn-wrapper').attr("trigger","1");
+                $('.change-behind').text("←" == $(this).text() ? "→" : "←");
+              }
+              else{
+                  $('.content, .btn-wrapper').animate({"left":"50px"},700);
+                  $('.content, .btn-wrapper').attr("trigger","0");
+                  $('.change-behind').text("&larr;" == $(this).text() ? "&larr;" : "→");
+              }
+            });
+
 //on articles that don't have scriptotheks, show none
-            $('a[href*="Workshop_scripts_in_practice"], a[href*="Relearning_Food"], a[href*="Untitling"], a[href*="Skinship"], a[href*="Critical_Coding_Cookbook"], a[href*="Workshop_Matters_and_Materials"], a[href*="Credits"], a[href*="A_Note_on_the_design_of_this_publication"], a[href*="License"]').click(function(){
+            $('a[href*="Reading_Food"], a[href*="Untitling"], a[href*="Skinship"], a[href*="Workshop_Matters_and_Materials"], a[href*="Credits"], a[href*="A_Note_on_the_design_of_this_publication"], a[href*="License"]').click(function(){
               $('.scriptothek-chapter').hide();
             });
 
 //all acriptotheks here we go
-// SLIDESHOW 1 - NEW
-            // $('a[href*="href*="Workshop_scripts_in_practice"]').click(function(){
-            //   $('.scriptothek-chapter').hide();
-            //   $('.scriptothek-chapter-1').show();
-            // });
+// SLIDESHOW 1 - NEW Workshop_scripts_in_practice
+            $('a[href*="Workshop_scripts_in_practice"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-1').show();
+            });
 
-            // $('.scriptothek-slideshow-1').click(function() {
-            //   $('.close-wrapper, .close1').show();
-            // });
+            $('.scriptothek-slideshow-1').click(function() {
+              $('.close-wrapper, .close1').show();
+              // unique image adjustments
+              $('.scriptothek-chapter-1 .script-image-wrapper').css({"min-width":"80%"});
+            });
 
 // SLIDESHOW 2 - NEW
             $('a[href*="Workshop_Histories_and_Practices"]').click(function(){
@@ -301,6 +303,9 @@
               $('.close-wrapper, .close4').show();
             });
 
+            // unique image adjustments
+            $('.scriptothek-chapter-4 .script-image-wrapper').css({"min-width":"60%"});
+
 // SLIDESHOW 5
             $('a[href*="On_consensus,_in_two_parts"]').click(function(){
               $('.scriptothek-chapter').hide();
@@ -329,7 +334,12 @@
 
             $('.scriptothek-slideshow-7').click(function() {
               $('.close-wrapper, .close7').show();
-              $('.script-image-7').css({"width": "400px"});
+              $('.script-image-wrapper:nth-of-type(13) .script-image-7, .script-image-wrapper:nth-of-type(14) .script-image-7').css({"height": "auto", "width":"100%"});
+              $('.script-image-wrapper:nth-of-type(13)').css({"padding-top": "5%"});
+              $('.script-image-wrapper:nth-of-type(14)').css({"padding-top": "10%"});
+
+              // unique image adjustments
+              $('.scriptothek-chapter-7 .script-image-wrapper').css({"min-width":"50%"});
             });
 
 // SLIDESHOW 8
@@ -363,6 +373,9 @@
 
             $('.scriptothek-slideshow-10').click(function() {
               $('.close-wrapper, .close10').show();
+            
+            // unique image adjustments
+            $('.scriptothek-chapter-10 .script-image-wrapper').css({"min-width":"50%"});
             });
 
 // SLIDESHOW 11
@@ -383,8 +396,6 @@
 
             $('.scriptothek-slideshow-12').click(function() {
               $('.close-wrapper, .close12').show();
-              //unique features
-              $('.scriptothek-slideshow-12').css({"display":"block"});
             });
 
 // SLIDESHOW 13
@@ -393,7 +404,6 @@
               $('.scriptothek-chapter-13').show();
             });
 
-            // Spreadsheet_Routines
             $('.scriptothek-slideshow-13').click(function() {
               $('.close-wrapper, .close13').show();
               $('.Spreadsheet_Routines').css({"z-index":"-1"});
@@ -487,6 +497,8 @@
 
             $('.scriptothek-slideshow-21').click(function() {
               $('.close-wrapper, .close21').show();
+              //unique features
+              $('.scriptothek-slideshow-21').css({"display":"block"});
             });
 
 // SLIDESHOW 22
@@ -520,7 +532,7 @@
             $('.scriptothek-slideshow-24').click(function() {
               $('.close-wrapper, .close24').show();
               //unique features
-              $('.scriptothek-slideshow-24').css({"display":"block"});
+              // $('.scriptothek-slideshow-24').css({"display":"block"});
             });
 
 // SLIDESHOW 25
@@ -553,7 +565,7 @@
               $('.close-wrapper, .close27').show();
             });
 
-// SLIDESHOW 28 - check this one its new
+// SLIDESHOW 28 
             $('a[href*="wiki_reflections"]').click(function(){
               $('.scriptothek-chapter').hide();
               $('.scriptothek-chapter-28').show();
@@ -566,17 +578,19 @@
             });
 
 // SLIDESHOW 29
-            $('a[href*="Did_video_kill_the_radio_(star)?"]').click(function(){
+            $('a[href*="Critical_Coding_Cookbook"]').click(function(){
               $('.scriptothek-chapter').hide();
               $('.scriptothek-chapter-29').show();
             });
 
             $('.scriptothek-slideshow-29').click(function() {
               $('.close-wrapper, .close29').show();
+              // unique features
+              $('.scriptothek-slideshow-29').css({"display":"block"});
             });
 
 // SLIDESHOW 30
-            $('a[href*="A_case_of_mistaken_identity"]').click(function(){
+            $('a[href*="Did_video_kill_the_radio_(star)?"]').click(function(){
               $('.scriptothek-chapter').hide();
               $('.scriptothek-chapter-30').show();
             });
@@ -586,15 +600,25 @@
             });
 
 // SLIDESHOW 31
-            $('a[href*="Solarpunk_Postscript"]').click(function(){
+            $('a[href*="A_case_of_mistaken_identity"]').click(function(){
               $('.scriptothek-chapter').hide();
               $('.scriptothek-chapter-31').show();
             });
 
             $('.scriptothek-slideshow-31').click(function() {
               $('.close-wrapper, .close31').show();
+            });
+
+// SLIDESHOW 32
+            $('a[href*="Solarpunk_Postscript"]').click(function(){
+              $('.scriptothek-chapter').hide();
+              $('.scriptothek-chapter-32').show();
+            });
+
+            $('.scriptothek-slideshow-32').click(function() {
+              $('.close-wrapper, .close32').show();
               //unique features
-              $('.scriptothek-slideshow-31').css({"display":"block"});
+              $('.scriptothek-slideshow-32').css({"display":"block"});
             });
 
 
@@ -606,7 +630,7 @@
                     // alert("this function is still working on mobile");
                     $( ".article" ).prepend( '<button class="mobile-arrow-right">→</button>' );
                     $( ".article" ).prepend( '<button class="mobile-arrow-left">&larr;</button>' );
-                    $( ".scriptothek-wrapper" ).prepend( '<button class="close-script">X</button>' );
+                    $( ".scriptothek-wrapper").prepend( '<button class="close-script">X</button>' );
 
                     $('.toclevel-2').click(function(){
                       $('.mobile-arrow-right, .mobile-arrow-left').css({"z-index":"1"});
@@ -624,26 +648,30 @@
 
                     $('.mobile-arrow-left').click(function(){
                       $('.mobile-arrow-left').css({"z-index":"-1"});
+                      $('.close-script').css({"z-index":"50"});
+
 
                       $('.scriptothek-wrapper').css({"z-index":"1"});
-                      $('.close-script').css({"z-index":"1"});
                     });
 
-                    // $('.scriptothek-slideshow').click(function() {  
-                    //   $('.scriptothek-wrapper').css({"width":"80%"});   
-                    //   $('.scriptothek-slideshow').css({"display":"block", "position":"relative", "padding":"1%", "height":"100%"});
-                    //   $('.scriptothek-chapter a.image').css({"padding":"5%"});
-                    //   $('.script-image').css({"height": "auto", "width":"98%"});
-                    //   $('.chapter').show();
+                    $('.scriptothek-slideshow').click(function() {  
+                      $('.chapter').show();
 
-                    //   $('.close-script').css({"z-index":"5"});
-                    //   $('.close').hide();
-                    // });
+                      $('.scriptothek-wrapper').css({"width":"80%"});   
+                      $('.scriptothek-slideshow').css({"display":"block", "position":"relative", "padding":"1%", "height":"100%"});
+                      $('.script-image-wrapper').css({"padding":"5%"});
+
+                      $('.scriptothek-chapter a.image').css({"padding":"0"});
+                      $('.script-image').css({"height": "auto", "width":"100%"});
+                      $('.scriptothek-chapter .thumbcaption').css({"height": "auto", "width":"100%", "bottom":"0"});
+
+                      $('.close-script').css({"z-index":"50"});
+                      $('.close').hide();
+                    });
 
                     $('.close-script').click(function(){
                       $('.scriptothek-wrapper').css({"z-index":"-1"});
                       $('.mobile-arrow-left').css({"z-index":"1"});
-                      // $('.scriptothek-chapter').scrollTop(0);
                     });
 
                 }
@@ -653,37 +681,7 @@
             checkWidth();
             // Bind event listener
             $(window).resize(checkWidth);
-
-
-//ON VERTICAL SCROLL HORIZONTAL
     });
-
-    // var scroller = {};
-    // scroller.e = document.getElementsByClassName("scriptothek-wrapper");
-
-    // if (scroller.e.addEventListener) {
-    //     scroller.e.addEventListener("mousewheel", MouseWheelHandler, false);
-    //     scroller.e.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
-    // } else scroller.e.attachEvent("onmousewheel", MouseWheelHandler);
-
-    // function MouseWheelHandler(e) {
-
-    //     // cross-browser wheel delta
-    //     var e = window.event || e;
-    //     var delta = - 20 * (Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail))));
-
-    //     var pst = $('.scriptothek-wrapper').scrollLeft() + delta;
-
-    //     if (pst < 0) {
-    //         pst = 0;
-    //     } else if (pst > $('.scriptothek-slideshow').width()) {
-    //         pst = $('.scriptothek-slideshow').width();
-    //     }
-
-    //     $('.scriptothek-chapter').scrollLeft(pst);
-
-    //     return false;
-    // }
 
 
 </script>

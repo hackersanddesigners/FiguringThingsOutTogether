@@ -10,6 +10,11 @@
 	display: none;
 }
 
+#Workshop_scripts_in_practice{
+	display: block;
+	top: 0;
+}
+
 .chapter{
 	position: absolute;
 	top: 0;
@@ -25,33 +30,6 @@
 .chapter-title{
 	display: block;
 	text-align: center;
-}
-
-ul{
-	list-style: none;
-}
-
-.article ul li::before {
-	list-style-type: none;
-
-	content: "";
-    background: white;
-    border: black solid 0.5px;
-    border-radius: 50%;
-    color: #fff;
-    content: "";
-    display: inline-block;
-    height: 15px;
-    line-height: 0;
-    list-style-type: none;
-    margin-right: 0.5rem;
-    text-align: center;
-    width: 15px;
-}
-
-.article ol li::marker {
-    font-size: inherit;
-    line-height: .5;
 }
 
 .article{
@@ -70,28 +48,27 @@ ul{
 	-moz-box-shadow: 10px 10px 40px 0px rgba(0,0,0,0.94);
 }
 
+.article:target{
+	display: block;
+	top: 0;
+}
+
 marquee{
 	font-family: inherit;
     font-size: 20pt;
     line-height: 1em;
 	font-weight: 900;
 	margin-top: 0;
-	// margin-top: calc(15px + 30px);
 	width: 100%;
 	
 	position: relative;
-	// background-color: blue;
-	// top: 0!important;
 }
 
-#Workshop_scripts_in_practice{
-	display: block;
-	top: 0;
-}
-
-.article:target{
-	display: block;
-	top: 0;
+.layout-1 h3,
+.layout-2 h3{
+	margin: 0;
+	padding-top: 20px!important;
+	padding-bottom: 20px!important;
 }
 
 .author-wrap{
@@ -112,20 +89,19 @@ marquee{
 .footnote{
 	position: relative;
 	display: none;
-	background-color: yellow;
+
 	font-size: 14px;
-	transition: all 0s ease 1s; /*delay 1s*/
+	background-color: yellow;
 }
 
 .star{
 	background-color: yellow;
 	cursor: pointer;
-
 }
 
 .star:hover + .footnote{
 	display: initial;
-    transition:5s;
+    transition:0s;
 }
 
 .layout-1 .block {
@@ -137,11 +113,39 @@ marquee{
 	display: none;
 }
 
-.embedvideo{
+ul{
+	list-style: none;
+}
+
+.article ul li::before {
+	display: inline-block;
+	content: "";
+
+	width: 15px;
+    height: 15px;
+	line-height: 0;
+
+	margin-right: 0.5rem;
+    text-align: center;
+
+	list-style-type: none;
+    background: white;
+	color: #fff;
+	border-radius: 50%;
+    border: black solid 0.5px;
+}
+
+.article ol li::marker {
+    font-size: inherit;
+    line-height: .5;
+}
+
+.embedvideo,
+.video-center{
 	display: flex;
+	width: 100%!important;
     align-items: center;
     justify-content: center;
-	width: 100%!important;
 }
 
 .embedvideowrap{
@@ -149,9 +153,9 @@ marquee{
 }
 
 .visual-footnote{
+	display: flex;
 	width: 100%;
 	justify-content: center;
-	display: flex;
 }
 
 .visual-footnote .thumb .thumbinner{
@@ -167,16 +171,12 @@ marquee{
 	padding: 10pt;
 }
 
-// $finalHeight: 250px;
-// $finalWidth: 3 * $finalHeight;
-// $scrollBarHeight: 1px;
+// _________special treatment
+.Workshop_Matters_and_Materials>:nth-child(3){
+	display: none;
+}
 
-// ::-webkit-scrollbar {
-//   width: $scrollBarHeight;
-//   height: $scrollBarHeight;
-// }
 
-// ::-webkit-scrollbar-button {
-//   width: $scrollBarHeight;
-//   height: $scrollBarHeight;
-// }
+
+
+
