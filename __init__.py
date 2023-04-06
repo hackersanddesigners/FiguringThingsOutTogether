@@ -50,7 +50,7 @@ def pagedjs(pagename):
         WIKI,
         SUBJECT_NS,
         STYLES_NS,
-        
+        SCRIPTS_NS,
         pagename,
     )
     return filter(flask.render_template(
