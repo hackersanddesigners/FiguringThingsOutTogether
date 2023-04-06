@@ -31,6 +31,7 @@ sys.path.insert(0, '.../../..')
 WIKI = conf['wiki']['base_url']
 SUBJECT_NS = conf['wiki']['subject_ns']
 STYLES_NS = conf['wiki']['styles_ns']
+SCRIPTS_NS   = conf['wiki']['scripts_ns']
 
 plugin = Plugin(
     static_folder='static',
@@ -49,6 +50,7 @@ def pagedjs(pagename):
         WIKI,
         SUBJECT_NS,
         STYLES_NS,
+        
         pagename,
     )
     return filter(flask.render_template(
@@ -67,6 +69,7 @@ def inspect():
         WIKI,
         SUBJECT_NS,
         STYLES_NS,
+        SCRIPTS_NS,
         plugin.name,
     )
     return web_filter(flask.render_template(
@@ -88,13 +91,15 @@ def filtered_html(pagename):
         WIKI,
         SUBJECT_NS,
         STYLES_NS,
+        SCRIPTS_NS,
         pagename,
     )
     return web_filter(flask.render_template(
         'inspect.html',
         title=pagename,
         html=publication['html'],
-        css=publication['css']
+        css=publication['css'],
+        js=publication['js']
     ))
 
 # misc transformations of the mediawiki html
