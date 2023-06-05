@@ -76,7 +76,8 @@ def inspect():
         'web-view.html',
         title=plugin.name,
         html=publication['html'],
-        css=publication['css']
+        css=publication['css'],
+        js=publication['js']
     ))
 
 # The filters in this plugin work on request time
